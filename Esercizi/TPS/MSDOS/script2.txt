@@ -1,0 +1,23 @@
+@echo off
+if %1 == C goto COPIA
+if %1 == S goto SPOSTA
+	echo ERR - Parametro errato
+	goto FINE
+:COPIA
+	if exist %2 goto ES_COPIA
+		echo ERR - File inesistente
+		goto FINE
+	:ES_COPIA
+		copy %2 %3
+		echo Operazione eseguita
+		goto FINE
+:SPOSTA
+	if exist %2 goto ES_SPOSTA
+		echo ERR - File inesistente
+		goto FINE
+	:ES_SPOSTA
+		move %2 %3
+		echo Operazione eseguita
+:FINE
+	echo Arrivederci...
+	pause

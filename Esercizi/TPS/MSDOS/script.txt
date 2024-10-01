@@ -1,0 +1,13 @@
+@echo off
+if exist %2\%1 goto copiaF
+	REM ramo FALSE dell'IF
+	echo Il file non esiste
+	goto fine
+:copiaF 
+	REM ramo TRUE dell'IF
+	echo Inserisci unita' USB:
+	pause
+	copy %2\%1 E:
+:fine
+	pause
+	exit

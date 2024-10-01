@@ -1,0 +1,29 @@
+@echo off
+if %1 == C goto CONTROLLA_FILE
+if %1 == S goto CONTROLLA_FILE
+	echo ERR - Parametro errato
+	goto FINE
+:CONTROLLA_FILE
+	if exist %2 goto CONTROLLA_PATH
+		echo ERR - File inesistente
+		goto FINE
+		
+:CONTROLLA_PATH
+	if 	exist %3 goto CHECK
+		echo ERR - Percorso inesistente
+		goto FINE
+	:CHECK
+		if %1 == C goto ESEGUI_COPIA
+			goto ESEGUI_SPOSTA
+			
+	:ESEGUI_COPIA
+		copy %2 %3
+		echo Operazione eseguita
+		goto FINE
+	:ESEGUI_SPOSTA
+		move %2 %3
+		echo Operazione eseguita
+:FINE
+	echo Arrivederci...
+	pause
+	cls

@@ -1,0 +1,62 @@
+1 - 
+1.  cd desktop
+    md x\x1 x\x2 y\y1\y11 y\y1\y12
+2.  cd x\x1
+    dir ..\..\y\y1\y11
+3.  cd ..\..\y\y1\y11
+    cd\
+    cd C:
+4.  cd desktop\x
+    dir /s
+5.  cd x2
+    dir ..\..\y\y1
+6.  cls
+7.  exit
+
+2 - 
+1.  cd desktop
+    md x\x1 x\x2 y\y1\y11 y\y1\y12
+2.  rd /?
+3.  rd x\x1
+    rd x\x2
+4.  rd y\y1 /s /q
+5.  dir
+6.  cls
+7.  exit
+
+3 - 
+1.  cd\
+2.  dir F:\BETA ????.*
+3.  a)  dir a*.*
+    b)  dir *.txt
+    c)  ??1*.*
+4.  md C:\NUOVA
+5.  del C:\COPIA\pro*.p*
+6.  del ..\P3*.bak
+7.  copy MAGAZ\ARTICOLI.DAT E:\
+    ren MAGAZ\ARTICOLI.DAT PRODOTTI.OLD
+8.  copy C:\COPIA\PROVAI.txt F:\TRASF
+9.  copy C:\TESTI\*.doc D:\T01
+10. move C:\PROVA\DOCUMENTI\*.docx C:\PROVA2
+11. date /t > Orario.txt
+    time /t >> Orario.txt
+12. del /s /q F:\DOCUMENTI
+13. help
+14. dir ?A*.??m*
+15. ren C:\DISCO\INTESTA.doc PRIMA.doc
+16. dir ?R*.doc > Documenti.txt
+
+4 - 
+1.  rd ALFA /s /q
+2.  md F:\PROVA2\ARCHIVIO2
+3.  copy C:\ciao.txt F:\
+    ren ciao.txt PROVA.doc
+4.  copy C:\cartella\.*exe G:
+5.  more CLIENTI.txt
+
+5 - 
+1.  dir ?R*.doc > Documenti.txt
+2.  dir | find "/2023"
+3.  dir | find "/02/" | more
+4.  find "26" ARCHIV2\STUD2.txt | sort
+5.  

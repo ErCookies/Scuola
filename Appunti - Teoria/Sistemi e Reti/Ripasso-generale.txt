@@ -1,0 +1,28 @@
+Una rete e' un insieme di elementi.
+
+I dispositivi di una rete vengono individuati dal loro indirizzo IP.
+Esso e' formato da 32 bit, 4 numeri separati da un .
+
+Il MAC address e' l'indirizzo della scheda di rete.
+
+bit --> binary digit
+
+esistono vari segnali: digitali, analogici, continui e discreti.
+
+continuo/analogico: dato il grafico della funzione del segnale, presi due punti qualsiasi ve ne sono sempre infiniti che li collegano.
+
+digitale/discreto: dato il grafico della funzione del segnale, presi due punti qualsiasi, non sempre ve ne sono infiniti che li collegano.
+
+Il segnale digitale binario puo' assumere solo due valori.
+
+Un algoritmo e' l'insieme di passaggi da eseguire per risolvere un problema.
+
+4bit e' un nibble (o semi-byte).
+
+Una word vale 2 byte, mentre una double word 4 byte.
+
+1KB = 1024B * 8 = n bit
+1MB = 1024KB * 1024B * 8 = n bit
+
+I primi 3 byte di un MAC address identificano l'azienda produttrice, mentre i secondi 3 determinano il seriale della scheda.
+

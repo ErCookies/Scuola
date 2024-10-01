@@ -1,0 +1,89 @@
+CD     :   spostarsi da una directory all' altra
+CD..   :   tornare indietro alla directory precedente
+CD\    :   tornare alla directory principale
+
+CLS : cancella lo schermo
+
+DIR: Visualizza l'elenco di file e directory di una directory 
+DIR /S : Mostra file della directory e delle relative sottodirectory
+DIR /B : Mostra solamente il nome di file e directory escludendo tutte le altre informazioni
+
+DATE: Visualizza la data permettendo di impostarne una nuova
+TIME: Visualizza l'orario permettendo di impostarne uno nuovo
+DATE /T: Visualizza solamente la data
+TIME /T: Visualizza solamente l'orario
+
+MD: crea una directory (può essere utilizzato anche il comando MKDIR)
+RD: elimina una directory solo se è vuota (può essere utilizzato anche il comando RMDIR)
+RD /S: elimina una directory e tutte le sue sottodirectory presenti in essa.(Chiede conferma di cancellazione)
+RD /S /Q: elimina una directory e tutte le sue sottodirectory presenti in essa.(NON chiede conferma di cancellazione)
+
+COPY: Copia uno o più presenti in una directory in un'altra directory
+MOVE: Sposta uno o più presenti in una directory in un'altra directory
+RENAME: Rinominare un file o una directory (può essere utilizzato anche il comando REN). Può essere utilizzato anche il comando MOVE
+DEL: cancellare un file
+
+HELP "nome del comando" : visualizza la funzione del comando indicato e tutti i suoi attributi(può essere utilizzato anche "NOME DEL COMANDO"/?)
+TREE: visualizza graficamente la struttura di una direcroty
+
+TYPE: visualizza il contenuto di un file
+MORE: visualizza il contenuto di un file 29 righe per volta
+
+SORT: attende l'inserimento di stringhe per poi ordinarle (per terminare la digitazione : CTRL+Z e in seguito INVIO)
+SORT "nomefile.est": ordina una file in modo alfabeticamente crescente 
+SORT /R: ordina una file in modo alfabeticamente decrescente
+
+FIND : ricerca di una stringa in un file: SINTASSI - FIND "stringa" FILE.TXT
+
+EXIT: Termina il programma CMD.EXE (interprete dei comandi).
+
+
+***CARATTERI JOLLY***
+ ? --> sostituisce un qualsiasi carattere
+ * --> sostituisce una qualsiasi stringa
+
+
+***OPERATORI REINDIRIZZAMENTO INPUT/OUTPUT***
+
+ > : operatore reindirizzamento output( es. dir > file.txt ----> l'output del comando dir viene inserito in file chiamato FILE.TXT)
+ >> : operatore che inserisce l'output reindirizzato nella prima riga disponibile del file indicato
+ <  : operatore reindirizzamento input ( condidera il file indicato come input per eserguire un comando : es. SORT < FILE.TXT  )
+
+
+***PIPELINE***
+  | : PIPE---> metodo per utilizzare l'output di un comando come input di un altro comando ( es. dir | find "12/10/2021" )
+
+
+***COMANDI DI SISTEMA***
+
+FORMAT "nome unità":  formatta l'unità indicata
+SYSTEMINFO:  visualizza le proprietà e la configuarazione dell'elaboratore in uso
+VER:  visualizza la versione del sistema operativo
+HOSTNAME: visualizza il nome dell'host
+IPCONFIG: visualizza la configuarzione di rete
+PING: verifica la connessione ad un altro host della rete
+
+SHUTDOWN /s : spegne il computer dopo un minuti
+         /p : spegna il computer senza attendere nessun timeout
+         /f : forza la chiusura delle applicazioni senza avvisare l'utente
+         /t xxx : xxx secondo dopo arresto/riavvio
+         /r : riavvio
+         /l : disconessione
+
+
+***FILE BATCH***
+I file BATCH ( chiamati anche SCRIPT ) , sono dei file di testo contenenti comandi inerenti alla shell di comando. Hanno un'estenzione .BAT
+e una volta eseguiti l' interprete dei comandi si occuupa di eseguire tutti i comandi scritti all'interno.
+
+ECHO OFF : viene utilizzato per nascondere l'esecuzione di tutti i comandi successivi a ECHO OFF
+@ECHO OFF : oltre ai comandi successivi a ECHO OFF, l'aggiunta della chiocciola nasconde il comando ECHO OFF
+PAUSE: attende che venga premuto un qualsiasi tasto sulla tastiera prima di eseguire i comandi successivi al comando PAUSE.
+
+
+
+
+
+
+
+
+                                                                              

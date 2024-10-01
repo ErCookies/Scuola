@@ -1,0 +1,16 @@
+CODIFICA DELLE INFORMAZIONI
+Come si trasformano in dati digitali
+
+La codifica e' un linguaggio che puo' essere compreso da un dispositivo.
+Il passaggio di corrente assume valore logico 1, mentre l'assenza della stessa 0. (uno standard)
+Un bit (binary digit) puo' assumere solo due valori: 0-1; quindi 2^(num bit) = possibilita'.
+
+Esistono due principali tecniche di codifica e decodifica delle informazioni: 
+ - American Standard Code for Information Interchange (ASCII) utilizza 8 bit, un massimo di 256 caratteri;
+ - Codice UNICODE utilizza 16 bit, un massimo 65536 caratteri.
+
+ESERCIZIO:
+La frase "CODIFICA DELLE INFORMAZIONI" quanto spazio su hard disk occupa, se consideriamo una codifica UNICODE?
+
+Risposta: 27 caratteri (spazi compresi), ognuno occupa 16 bit (2 byte); quindi 27*2 = 54B (o 27 word)
+

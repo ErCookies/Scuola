@@ -1,0 +1,50 @@
+FILE * fopen ( const char * filename, const char * mode );
+FILE* pFile = fopen("ciao.txt", "w");
+//serve per aprire un file
+//filename: nome del file interessato
+//mode: modalita' di apertura: 
+// - r: read; input
+// - w: write; output, sovrascrizione totale
+// - a: append; aggiunta in coda
+// - r+: read/update; lettura e modifica di un dato
+// - w+: write/update; elimina l'intero contenuto del file e si predispone per modificarlo
+// - a+: append/update; aggiunge in coda
+
+int fclose ( FILE * stream );
+//serve per chiudere il file
+
+int feof ( FILE * stream );
+//ritorna un valore pari a 0 quando la flag End-Of-File NON e' stata raggiunta
+
+char * fgets ( char * str, int num, FILE * stream );
+//continua a leggere caratteri in str, finche' non vengono raggiunti num-1 caratteri od un end-of-line/file.
+//str: indirizzo iniziale della stringa in cui memorizzare il contenuto
+//num: numero massimo di caratteri estraibili dallo stream
+//stream: flusso di dati da cui estrarre la stringa
+
+int fscanf ( FILE * stream, const char * format, ... );
+//legge dallo stream i dati e li memorizza, secondo il parametro format, nei puntatori indicati dai parametri //aggiuntivi
+//si puo' utilizzare solo se conosciamo l'ordine dei dati
+-----
+CSV:
+1 8.6
+44 0.5
+-----
+FILE* fp = fopen("file.csv", "r");
+int a;
+float b;
+fscanf(fp,"%d",&a);
+fscanf(fp,"%f",&b);
+//oppure
+fscanf(fp,"%d %f", &a, &b);
+
+
+char * strtok ( char * str, const char * delimiters );
+//separa la stringa indicata da str nei vari elementi, secondo i carattere/i delimitatore/i delimiters
+//str rappresenta l'intera stringa, per accedere al secondo elemento (in poi) si deve utilizzare NULL al posto //di str
+
+int atoi (const char * str);
+//trasforma una stringa da ASCII a valore int
+
+double atof (const char* str);
+//trasforma una stringa da ASCII a valore float

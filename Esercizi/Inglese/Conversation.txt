@@ -1,0 +1,20 @@
+Conversation
+1  - What's a favorite memory from elementary school
+2  - What's a favorite memory from middle school
+3  - What's a favorite memory from high school
+5  - Tell me about your favorite teacher growing up
+6  - What was your favorite subject when you were a kid
+7  - What are some qualities of a good teacher
+8  - What are some qualities of a bad teacher
+9  - Have you ever thought about being a teacher for your job
+10 - If you could change something about the education system in your country, what would you change
+11 - What do you think about parents who choose to home school their children
+12 - What's the purpose of school and education
+
+
+7  - engaging lesson
+8  - too strict
+9  - never
+10 -  
+11 - a good choice in very few scenarios
+12 - 

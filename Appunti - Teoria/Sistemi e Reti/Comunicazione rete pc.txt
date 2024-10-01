@@ -1,0 +1,35 @@
+RETE DI COMPUTER
+Insieme di computer, opportunamente collegati fra loro, che trasmettono informazioni
+Stazione/Nodo: apparecchio collegato alla rete
+Un host e' solo un pc
+Una rete di pc puo; essere collegata ad un'altra rete
+
+La TOPOLOGIA DI RETE indica la sua forma, il suo schema.
+Anello
+Bus
+Stella
+Albero
+
+La tipologia di una rete indica la sua dimensione
+
+Le reti sono utili dato che si fanno collaborare piu' macchine per risolvere uno stesso problema,
+permettono l'accesso agli stessi dati per utilizzi diversi.
+
+NIC --> Network Interface Card
+
+SERIALE: si trasmette un bit alla volta;
+PARALLELA: si trasmettono piu' bit contemporaneamente;
+SIMPLEX: Il dispositivo puo' solo ricevere o trasmettere;
+HALF-DUPLEX: entrambi i dispositivi ricevono e trasmettono, ma non contemporaneamente;
+DUPLEX: i dispositivi possono ricevere e trasmettere allo stesso momento.
+
+COMMUTAZIONE
+ - di circuito  (1): dispositivi collegati per tutta la durata della comunicazione (telefonata);
+ - di pacchetto (2): dipositivi non collegati (per l'intera durata) | dati trasmessi in blocchi
+		     di grandezza fissata (pacchetti) attraverso nodi intermedi;
+
+1) alta velocita' e capacita' di trasmissione sfruttata a pieno, ma linea occupata fino al termine.
+2) collegamenti condivisi da piu' utenti, ma piu' lenti e dimensione non sfruttata a pieno, per via
+   dei caratteri di controllo.
+
+FREQUENZA linea telefonica: 2700 MHz

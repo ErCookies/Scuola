@@ -1,0 +1,81 @@
+Una variabile puntatore memorizza l'indirizzo di memoria del primo byte di una cella, non un valore definito.
+A livello grafico, vengono rappresentate con un cerchio avente una freccia che indica la cella di riferimento.
+
+L'HEAP e' una zona di memoria relativa ai puntatori.
+
+In C:
+int alfa;    //variabile intera
+int* punt;   //puntatore ad un valore intero
+char c;      //variabile carattere
+char* puntc; //puntatore ad un carattere
+E' differenziato il tipo dato che il C permette le somme coi puntatori.
+puntc + 1;   //si spostera' di 1 byte
+punt + 1;    //si spostera' di 4 byte
+Il tipo determina la quantita' di byte di cui spostarsi.
+
+INIZIALIZZAZIONE
+--------------
+int a;
+int* p = &a;    //al momento dell'inizializzazione (p) individua l'indirizzo di (a)
+--------------
+int a;
+prova(&a);      //inizializzo il parametro formale (p) con l'indirizzo del parametro attuale (a)
+
+void prova(int* p){
+	...
+}
+--------------
+ALLOCAZIONE DINAMICA
+--------------
+DISEGNI:
+https://drive.google.com/file/d/1lEznIRjzuEZQDYAHU32Q0oTEkdU953Er/view?usp=drive_link
+--------------
+void* malloc (size_t size); //void* ritorna un indirizzo di cui non conosce il tipo
+alloca uno spazio di memoria di dimensione size.
+
+esempio: 
+int* p = (int*) malloc(sizeof(int));  //cast ad (int*) per convertire 
+
+free(p);  //libera lo spazio puntato da (p). Dopo quest'operazione (p) otterra' il valore NULL
+--------------
+
+USO DI UN PUNTATORE
+int* p;
+///ASSUMIAMO CHE (p) ABBIA GIA' UNA CELLA A CUI RIFERIRSI, DI TIPO int
+*p = 15;  //la cella puntata da (p) assumera' il valore 15
+p = 15    //l'indirizzo (p) verra' aumentato di 15 celle.
+
+char str[LEN];
+char* s;  //questo puo' riferirsi sia ad una singola cella carattere, sia ad un vettore.
+s = str;
+s = &str[0];
+//queste due assegnazioni hanno il medesimo significato, per quanto la prima sia piu' comoda.
+strcpy(s,"ciao");
+
+--------------
+
+struct Tdati{
+	int c1;
+	double c2;
+};
+
+Tdati rec;
+Tdati* p = &rec;
+//lo stesso si puo' fare con i record.
+rec.c1 = 5;
+p->c1 = 5;
+(*p).c1 = 5;
+//questi sono i 3 modi per accedere ai singoli campi del record, gli ultimi 2 utilizzando i puntatori.
+
+
+MATEMATICA DEI PUNTATORI
+int a[100];
+int* p1 = &a;
+char* p2;
+Tdati ar[100]
+Tdati* p3 = &ar;
+p1++; //p1 puntera' all'intero successivo, spostando il puntatore di sizeof(int), 4byte
+
+
+
+
