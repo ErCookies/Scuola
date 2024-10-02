@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1726480076 source:c:\users\ercoo\desktop\test_pointer\main.c
-	<stdio.h>
-	<stdlib.h>
-	<limits.h>
-

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1727809143 source:c:\users\ercoo\desktop\concat\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
