@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1726656912 source:c:\users\ercoo\desktop\es1\funzioni.c
+	"header.h"
+
+1726656758 c:\users\ercoo\desktop\es1\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726656708 source:c:\users\ercoo\desktop\es1\input.c
+	"header.h"
+
+1727681552 source:c:\users\ercoo\dsktp\scuola\4a\info\esercizi\casa\2024-09-27_bmi\funzioni.c
+	"header.h"
+
+1727681297 c:\users\ercoo\dsktp\scuola\4a\info\esercizi\casa\2024-09-27_bmi\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1727679794 source:c:\users\ercoo\dsktp\scuola\4a\info\esercizi\casa\2024-09-27_bmi\input.c
+	"header.h"
+
+1727683878 source:c:\users\ercoo\dsktp\scuola\4a\info\esercizi\casa\2024-09-27_bmi\main.c
+	"header.h"
+

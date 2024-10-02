@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1726480076 source:c:\users\ercoo\desktop\test_pointer\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1726487464 source:c:\users\ercoo\desktop\test_pointer_heap\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+
+1726829073 source:c:\users\ercoo\dsktp\scuola\4a\info\esercizi\casa\test_pointer_heap\main.c
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+

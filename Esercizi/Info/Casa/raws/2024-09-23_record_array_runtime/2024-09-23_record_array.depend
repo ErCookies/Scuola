@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1726911985 source:c:\users\ercoo\desktop\2024-09-23_record_array\main.c
+	"header.h"
+
+1726907404 c:\users\ercoo\desktop\2024-09-23_record_array\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726911622 source:c:\users\ercoo\desktop\2024-09-23_record_array\procedurees.c
+	"header.h"
+
+1726911986 source:c:\users\ercoo\desktop\2024-09-23_record_array_runtime\main.c
+	"header.h"
+
+1726907406 c:\users\ercoo\desktop\2024-09-23_record_array_runtime\header.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726912018 source:c:\users\ercoo\desktop\2024-09-23_record_array_runtime\procedurees.c
+	"header.h"
+
