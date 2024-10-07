@@ -33,3 +33,28 @@ COMMUTAZIONE
    dei caratteri di controllo.
 
 FREQUENZA linea telefonica: 2700 MHz
+
+CONVERSIONE Analogico -> Digidale | Digitale -> Analogico
+
+il collegamento fra telefono e centrale e' analogico, mentre fra centrali e' digitale
+
+MoDem --> Modulatore / Demodulatore
+Puo' essere interno (in uno slot PCI) o esterno al pc (in un USB)
+
+Limite teorico: 64Kbps
+Limite: 115.2Kbps
+Velocita' effettiva 56.6Kbps
+
+Durante la trasmissione vengono aggiunti dei byte di controllo per verificare la correttezza del messaggio
+
+COLLEGAMENTO TRAMITE PORTE I/O
+
+Input 	--> 	Mettere dentro
+Output 	-->	Mettere fuori
+Collegare mediante un cavi due computer mediante la porta seriale (con un software di comunicazione)
+
+CONNESSIONI
+ISDN: Integrated Services Digital Network
+--> non si usa un modem perche' sia la macchina che questo protocollo lavorano in digitale. Serve pero' un adattatore, per "pacchettizzare" i bit
+
+DIRECT PC: Si ricevono (Downstream) dati su un pc via satellite e si inviano dati tramite le vie telefoniche.
