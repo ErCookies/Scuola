@@ -1,0 +1,2 @@
+Un microprocessore è un particolare tipo di processore, costituito da uno o più circuiti integrati, da questo le sue dimensioni ridotte (ed il suo nome).
+Attualmente, i microprocessori sono impiegati nella quasi totalità dei moderni computer, la sua caratteristica è che per ogni elaborazione, utilizza un insieme di istruzioni di base (instrucion set).
