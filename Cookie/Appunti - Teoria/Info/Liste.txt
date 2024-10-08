@@ -12,7 +12,7 @@ INSERIMENTO
 All'inizio dell'esecuzione del programma si inizializza un ptr a TNodo = NULL
 TNodo* first = NULL;
  - In testa; 			(1)
- - In coda,			(2)
+ - In coda;			(2)
  - In posizione centrale;	(3)
 ----------------------------------------------
 https://istitutoperlasca.sharepoint.com/sites/4BI_2425_Informatica/_layouts/15/Doc.aspx?sourcedoc={228f06f6-37f9-4d6a-b33a-042a34989fb9}&action=view&wd=target%28FRANCESCO%20CUCCHI%2FAppunti%20di%20classe.one%7Ce5640e92-2859-43b5-9c54-1f4db2f335cd%2F%29&wdorigin=717
