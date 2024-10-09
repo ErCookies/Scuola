@@ -35,6 +35,7 @@ int main()
     TNodo* first = NULL;
     char* nf[CMOD];
     do{
+        system("cls");
         menu();
         sc = lgInt(0,5,"Selezionare funzione interessata: ");
         switch(sc){
@@ -59,9 +60,10 @@ int main()
                 //voce
                 break;
             }
-            case 0:
-                break;
+            case 0: break;
         }
+        system("pause");
+        system("cls");
     }while(sc!=0);
     return 0;
 }

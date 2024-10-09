@@ -103,11 +103,15 @@ bool ricTipo(TNodo *f, char *elTipo){
 }
 
 void stampa(TNodo *f){
-    TNodo* el = f;
-    while(el != NULL){
-        stampaEl(el);
-        el = el->next;
+    if(f != NULL){
+        TNodo* el = f;
+        while(el != NULL){
+            stampaEl(el);
+            el = el->next;
+        }
     }
+    else
+        printf("Importa prima i dati\n");
 }
 
 void stampaEl(TNodo *el){
@@ -116,4 +120,13 @@ void stampaEl(TNodo *el){
     printf("TIpologia: %s | ", el->car.tipo);
     printf("Prezzo al giorno: %.2f | ", el->car.prc);
     printf("Kilometraggio: %d\n", el->car.km);
+}
+
+void stampaTar(TNodo *f){
+    if(f != NULL){
+        char ausTar[CTAR];
+        lgStr(ausTar, "Inserire targa auto interessata: ");
+    }
+    else
+        printf("Importa prima i dati\n");
 }
