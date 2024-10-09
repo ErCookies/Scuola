@@ -10,22 +10,28 @@
     PSEUDOCODIFICA:
     INIZIO
         first = NULL
-        apri il file f.csv come f (input)
+        apri il file nf come f (input)
         se f esiste
         allora
             leggi la prima riga dal file f in str
             mentre il file non e' finito
-                istanzio un nuovo nodo el
-                spezza str nei suoi item ed assegnali a el.car.tar, .mod, .tipo, .prc e .km
-                se first == NULL
+                spezzo str nei suoi item
+                assegno il primo item a car.tar
+                ricerco car.tar nella lista e ritorno true in tro se trovato altrimenti false
+                se !tro
                 allora
-                    imposta el come primo ed unico elemento della lista
-                    n = 1
-                altrimenti
-                    inserisci il nodo el prima dell'elemento first
-                    n++
+                    assegno il secondo e terzo item a car.mod e .tipo
+                    verifico che car.tipo sia corretto e ritorno true in cor se corretto, altrimenti false
+                    se cor
+                    allora
+                        assegno il quarto item a car.prc
+                        se car.prc > 0
+                        allora
+                            assegno l'ultimo item a car.km
+                            se car.km
+                        fse
+                    fse
                 fse
-                leggi la riga successiva dal file in str
             fciclo
         altrimenti
             errore
