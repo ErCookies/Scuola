@@ -1,0 +1,13 @@
+fopen - apertura del file
+
+size_t fread ( void * ptr, size_t size, size_t count, FILE * stream );
+// ptr: puntatore (di qualsiasi tipo) alla zona di memoria in cui caricare i dati
+// size: numero di byte da leggere
+// count: numero di size da leggere
+// stream: file da cui leggere i dati
+
+size_t fwrite ( const void * ptr, size_t size, size_t count, FILE * stream );
+// ptr: puntatore (di qualsiasi tipo) alla zona di memoria in cui caricare i dati
+// size: numero di byte da scrivere
+// count: numero di size da scrivere
+// stream: file su cui scrivere i dati
