@@ -51,3 +51,37 @@ altrimenti
 	prec->next = p
 	p->next = z
 fse
+
+-----------------------------------------------------
+
+CANCELLAZIONE DI NODI DA LISTE
+
+Dipende se la gestione dell'HEAP:
+1 - A carico del programmatore (come il C)
+2 - A carico del processo (come JAVA)
+
+SOLO se la lista esiste
+
+TESTA (1)
+TNodo* aus;
+aus = first;
+first = first->next;
+free(aus);
+
+CODA (2)
+TNodo* prec, aus;
+prec = NULL;
+aus = first;
+while(aus->next != NULL){
+    prec = aus;
+    aus = aus->next;
+}
+prec->next == NULL;
+free(aus);
+if(prec == NULL){
+    first = NULL;
+}
+else{
+    prec->next = NULL
+}
+free(aus);
