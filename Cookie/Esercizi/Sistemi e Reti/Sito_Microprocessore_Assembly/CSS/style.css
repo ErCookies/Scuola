@@ -20,7 +20,7 @@ h1{
 }
 
 .flex-element{
-	width: 50%;
+	width: 45%;
 	text-align: center;
 	font-size: 22px;
 }
@@ -49,4 +49,47 @@ nav > a{
 	padding: 10px;
 	border: white solid 2px;
 	border-radius: 20px;
+}
+
+p{
+	text-align: center;
+	color:white;
+	font-size: 22px;
+}
+
+.gal{
+	width: 20%;
+}
+
+sup{
+	color: lightblue;
+}
+
+span{
+	color: lightblue;
+	font-size: 20px;
+	text-align: center;
+}
+
+nav > span{
+	color: yellow;
+	font-size: 20px;
+	padding: 10px;
+	border: yellow solid 2px;
+	border-radius: 20px;
+}
+
+ul > li{
+	font-size: 22px;
+}
+
+div > p{
+	border-left: black solid 1px;
+	border-right: black solid 1px;
+}
+
+#archit{
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
 }
