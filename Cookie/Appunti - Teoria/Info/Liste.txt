@@ -56,7 +56,7 @@ fse
 
 CANCELLAZIONE DI NODI DA LISTE
 
-Dipende se la gestione dell'HEAP:
+Dipende se la gestione dell'HEAP e':
 1 - A carico del programmatore (come il C)
 2 - A carico del processo (come JAVA)
 
