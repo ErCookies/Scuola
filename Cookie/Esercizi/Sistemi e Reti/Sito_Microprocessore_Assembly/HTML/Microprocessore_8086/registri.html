@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<!-- Cucchi Francesco 4BI registri.html -->
-		<title>Novità</title>
+		<title>Registri</title>
 		<link rel="stylesheet" type="text/css" href="..\..\CSS\style.css">
 	</head>
 
@@ -16,5 +16,99 @@
 			<span> REGISTRI </span>
 		</nav>
         <h1>REGISTRI</h1>
+		<table>
+			<tr>
+				<th id="bboh">NOME</th>
+				<th>DESCRIZIONE</th>
+			</tr>
+			<tr>
+				<td>AX (Accumulatori)</td>
+				<td>
+					Questo è il registro principale per le operazioni aritmetiche e logiche.
+					Viene utilizzato per memorizzare i risultati delle operazioni e come operando per molte istruzioni.
+					Può essere diviso in due registri a 8 bit: AH (Alto) e AL (Basso).
+				</td>
+			</tr>
+			<tr>
+				<td>BX (Base)</td>
+				<td>
+					Questo registro viene utilizzato come indice per indirizzare la memoria.
+					Può essere utilizzato anche come operando per alcune istruzioni.
+					Può essere diviso in due registri a 8 bit: BH (Alto) e BL (Basso).
+				</td>
+			</tr>
+			<tr>
+				<td>CX (Count)</td>
+				<td>
+					Questo registro viene utilizzato per memorizzare il numero di iterazioni in loop
+					e per operazioni di stringa. Può essere diviso in due registri a 8 bit: CH (Alto) e CL (Basso).
+				</td>
+			</tr>
+			<tr>
+				<td>DX (Dati)</td>
+				<td>
+					Questo registro viene utilizzato per memorizzare dati e come operando per alcune istruzioni.
+					 Può essere diviso in due registri a 8 bit: DH (Alto) e DL (Basso).
+				</td>
+			</tr>
+			<tr>
+				<td>SP (Stack Pointer)</td>
+				<td>
+					Questo registro punta alla cima dello stack. Viene utilizzato per gestire le chiamate di
+					funzione e le interruzioni.
+				</td>
+			</tr>
+			<tr>
+				<td>BP (Base Pointer)</td>
+				<td>
+					Questo registro punta alla base del frame di stack corrente.
+					Viene utilizzato per accedere alle variabili locali all'interno delle funzioni.
+				</td>
+			</tr>
+			<tr>
+				<td>SI (Source Index)</td>
+				<td>
+					Questo registro viene utilizzato come indice per indirizzare la sorgente delle operazioni di stringa.
+				</td>
+			</tr>
+			<tr>
+				<td>DI (Destination Index)</td>
+				<td>
+					Questo registro viene utilizzato come indice per indirizzare la destinazione delle operazioni di stringa.
+				</td>
+			</tr>
+			<tr>
+				<td>CS (Code Segment)</td>
+				<td>
+					Questo registro contiene l'indirizzo del segmento di codice corrente.
+				</td>
+			</tr>
+			<tr>
+				<td>DS (Data Segment)</td>
+				<td>
+					Questo registro contiene l'indirizzo del segmento di dati corrente.
+				</td>
+			</tr>
+			<tr>
+				<td>SS (Stack Segment)</td>
+				<td>
+					Questo registro contiene l'indirizzo del segmento dello stack corrente.
+				</td>
+			</tr>
+			<tr>
+				<td>ES (Extra Segment)</td>
+				<td>
+					Questo registro può essere utilizzato per indirizzare un segmento di dati aggiuntivo.
+				</td>
+			</tr>
+			<tr>
+				<td>Flags</td>
+				<td>
+					Questo registro a 16 bit contiene i flag di stato del processore, che riflettono il risultato
+					delle operazioni. I flag più importanti sono CF, PF, AF, ZF, SF, OF.
+				</td>
+			</tr>
+			</tr>
+		</table>
     </body>
 </html>

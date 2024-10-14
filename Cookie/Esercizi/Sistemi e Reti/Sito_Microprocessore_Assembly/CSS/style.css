@@ -89,7 +89,31 @@ div > p{
 }
 
 #archit{
-	width: 75%;
-	margin-left: auto;
-	margin-right: auto;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+#bboh{
+	width: 15%;
+}
+
+table{
+	width: 100%;
+	color: white;
+	text-align: center;
+}
+
+th{
+	font-size: 32px;
+}
+
+td{
+	font-size: 22px;
+}
+
+table, td, th{
+	border: black solid 2px;
+	border-collapse: collapse;
 }

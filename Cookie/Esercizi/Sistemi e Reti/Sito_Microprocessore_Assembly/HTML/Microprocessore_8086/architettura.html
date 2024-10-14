@@ -23,13 +23,52 @@
             <area shape="rect" coords="805,75,1050,110" alt="CU" href="#CU">
             <area shape="rect" coords="720,125,890,195" alt="PC" href="#PC">
             <area shape="rect" coords="720,215,1272,280" alt="IR" href="#IR">
-            <area shape="rect" coords="970,215,," alt="PSW" href="#PSW">
-            <area shape="rect" coords=",,," alt="MAR" href="#MAR">
-            <area shape="rect" coords=",,," alt="MDR" href="#MDR">
-            <area shape="rect" coords=",,," alt="ALU" href="#ALU">
-            <area shape="rect" coords=",,," alt="BUScon" href="#BUScon">
-            <area shape="rect" coords=",,," alt="BUSin" href="#BUSin">
-            <area shape="rect" coords=",,," alt="BUSda" href="#BUSda">
+            <area shape="rect" coords="970,215,1140,280" alt="PSW" href="#PSW">
+            <area shape="rect" coords="405,180,590,245" alt="MAR" href="#MAR">
+            <area shape="rect" coords="405,290,590,355" alt="MDR" href="#MDR">
+            <area shape="poly" coords="785,410,865,410,880,465,1010,465,1025,410,1105,410,1065,565,825,565" alt="ALU" href="#ALU">
+            <area shape="rect" coords="165,35,365,115" alt="BUScon" href="#BUScon">
+            <area shape="rect" coords="165,170,365,230" alt="BUSin" href="#BUSin">
+            <area shape="rect" coords="165,280,365,340" alt="BUSda" href="#BUSda">
+            <area shape="rect" coords="645,400,770,565" alt="reg" href="registri.html">
         </map>
+        <p id="CU">
+            CU: La Control Unit è il cervello del processore. È responsabile di interpretare le istruzioni, di gestire 
+            i dati, di controllare i registri e di sincronizzare le operazioni.
+        </p>
+        <p id="PC">
+            Il Program Counter (PC), o Contatore di Istruzioni, è un registro all'interno del processore che
+            tiene traccia dell'indirizzo della prossima istruzione da eseguire.
+        </p>
+        <p id="IR">
+            L'Instruction Register (IR), o Registro Istruzioni, è un registro all'interno del processore che
+            contiene l'istruzione corrente che sta per essere eseguita.
+        </p>
+        <p id="PSW">
+            Il Registro dei Flag (o Flag Register) è un registro all'interno del processore che contiene
+            informazioni sullo stato di un'operazione appena eseguita.
+        </p>
+        <p id="MAR">
+            Il Memory Address Register (MAR), o Registro Indirizzo Memoria, è un piccolo registro all'interno
+            del processore che contiene l'indirizzo di memoria della locazione che il processore sta per leggere o scrivere.
+        </p>
+        <p id="MDR">
+            Il Memory Data Register (MDR), o Registro Dati Memoria, è un altro piccolo registro all'interno del processore
+            che contiene i dati che devono essere scritti in memoria o che sono stati letti dalla memoria.
+        </p>
+        <p id="ALU">
+            L'ALU, o Arithmetic Logic Unit, è il cuore pulsante del processore. Si occupa di operazioni aritmetiche,
+            logiche, confronti e determinare il risultato delle operazioni
+        </p>
+        <p id="BUScon">
+            I bus di controllo permettono al processore di selezionare il dispositivo con cui comunicare, permettono di
+            inviare comandi ai dispositivi e di sincronizzare le operazioni fra i vari componenti
+        </p>
+        <p id="BUSin">
+            I bus degli indirizzi trasportano gli indirizzi dei dati dalla memoria al processore
+        </p>
+        <p id="BUSda">
+            I bus dei dati trasportano gli i dati dalla memoria al processore
+        </p>
     </body>
 </html>
