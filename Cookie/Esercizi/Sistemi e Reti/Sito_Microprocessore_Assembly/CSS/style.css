@@ -30,11 +30,6 @@ a{
 	text-decoration: none;
 }
 
-li{
-	color: white;
-	font-size: 30px;
-}
-
 nav{
 	display: flex;
 	width: 100%;
@@ -79,11 +74,12 @@ nav > span{
 	border-radius: 20px;
 }
 
-ul > li{
+li{
+	color: white;
 	font-size: 22px;
 }
 
-div > p{
+.brdr{
 	border-left: black solid 1px;
 	border-right: black solid 1px;
 }

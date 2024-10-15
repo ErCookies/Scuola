@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<!-- Cucchi Francesco 4BI interrupt.html -->
+		<title>Interrupt</title>
+		<link rel="stylesheet" type="text/css" href="..\..\CSS\style.css">
+	</head>
+	
+	<body>
+		<nav class="flexbox">
+			<a href="..\..\index.html"> HOME </a>
+			<a href="assembly.html">ASSEMBLY</a>
+			<a href="comandi.html">COMANDI</a>
+			<span>INTERRUPT</span>
+		</nav>
+		<h1>INTERRUPT</h1>
+		<p>
+            Gli interrupt servono a gestire eventi imprevisti o a richiedere l'attenzione del processore. Possono essere generati da hardware
+            (ad esempio, un timer, una tastiera o un disco rigido) o da software (ad esempio, una divisione per zero).
+        </p>
+        <p>
+            Quando si verifica un interrupt, il processore interrompe l'esecuzione del programma corrente e passa a un'apposita routine di
+            gestione dell'interrupt (ISR - Interrupt Service Routine). L'ISR contiene il codice che gestisce l'evento specifico che ha causato l'interrupt.
+        </p>
+        <p>
+            Il sistema operativo mantiene una tabella degli interrupt che contiene gli indirizzi delle ISR per ogni tipo di interrupt. Quando si verifica un
+            interrupt, il processore utilizza il numero dell'interrupt per trovare l'indirizzo della relativa ISR nella tabella.
+        </p>
+        <p>
+            In assembly, l'istruzione INT viene utilizzata per generare un interrupt. L'operando dell'istruzione specifica il numero dell'interrupt da generare.
+            Ad esempio l'<b>INT 21h</b>.
+        </p>
+        <p>
+            L'INT 21h L'interrupt 21h contiene un gran numero di funzioni, ma alcune delle pi&ugrave; importanti sono:
+            lettura di un carattere da tastiera con eco su video, scrittura di un carattere su video, lettura e scrittura su un file.
+        </p>
+	</body>
+</html>
