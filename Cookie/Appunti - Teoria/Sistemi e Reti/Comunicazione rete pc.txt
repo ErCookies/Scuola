@@ -58,3 +58,8 @@ ISDN: Integrated Services Digital Network
 --> non si usa un modem perche' sia la macchina che questo protocollo lavorano in digitale. Serve pero' un adattatore, per "pacchettizzare" i bit
 
 DIRECT PC: Si ricevono (Downstream) dati su un pc via satellite e si inviano dati tramite le vie telefoniche.
+
+Lo switch collega tutte le macchine ad una rete, e lavora al secondo livello dell'ISO-OSI (data link)
+Il livello rete (terzo) si occupa dell'assegnazione di un indirizzo IP.
+Lo switch non puo' possedere un indirizzo IP, dato che viene assegnato al terzo livello, ma esso lavora al secondo.
+
