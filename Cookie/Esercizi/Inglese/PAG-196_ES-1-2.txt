@@ -1,0 +1,19 @@
+ES 1
+1  - put on weight
+2  - a diet
+3  - exercise
+4  - join
+5  - machines
+6  - do weights
+7  - class
+8  - circuit
+9  - work out
+10 - fit
+
+ES 2
+1  - take up a sport
+2  - give up smoking
+3  - get plenty of sleep
+4  - do press-ups
+5  - cut down sugars
+6  - eat fruit and vegetables
