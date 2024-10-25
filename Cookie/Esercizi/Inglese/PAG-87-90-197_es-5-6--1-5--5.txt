@@ -1,0 +1,53 @@
+PAG 87 ES 5-6
+5)
+1  - couldn't
+2  - manage to
+3  - could
+4  - couldn't
+5  - couldn't
+6  - managed to
+
+6)
+1  - could
+2  - could
+3  - could
+4  - Were you able to
+5  - couldn't
+6  - Did you manage to
+7  - were able
+8  - 
+
+PAG 90 ES 1-5
+1)
+1  - managed to
+2  - I couldn't
+3  - couldn't
+4  - could
+5  - weren't able
+6  - wasn't able
+7  - Were you able
+8  - could
+
+5)
+1  - get
+2  - do
+3  - up
+4  - lose
+5  - on
+6  - counting
+7  - down
+8  - doing
+9  - out
+10 - take
+
+PAG 197 ES 5
+5)
+1  - managed to
+2  - couldn't
+3  - couldn't
+4  - could
+5  - could(n't)
+6  - could
+7  - didn't manage
+8  - didn't manage
+9  - could

@@ -175,7 +175,16 @@
             ],
             "Enable": true
           },
-          null
+          {
+            "Path": "OpenTabletDriver.Desktop.Binding.MultiKeyBinding",
+            "Settings": [
+              {
+                "Property": "Keys",
+                "Value": "Control+Z"
+              }
+            ],
+            "Enable": true
+          }
         ],
         "MouseButtons": [],
         "MouseScrollUp": null,
