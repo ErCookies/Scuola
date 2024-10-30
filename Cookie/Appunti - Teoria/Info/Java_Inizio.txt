@@ -1,0 +1,6 @@
+public static void main (String[] args)
+
+PUBLIC --> visibile all'intero progetto
+STATIC --> non necessita di un oggetto per essere richiamato
+
+

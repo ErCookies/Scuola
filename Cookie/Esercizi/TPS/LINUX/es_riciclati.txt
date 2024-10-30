@@ -1,0 +1,46 @@
+1)
+1  - mkdirhier x/x1 x/x2 y/y1/y11 y/y1/y12
+2  - cd x/x1
+     cd ls ../../y/y1/y11
+3  - cd \
+     cd ../../../../..
+4  - ls -R
+5  - ls ../../y/y1
+6  - clear
+7  - exit
+
+2)
+1  - mkdirhier x/x1 x/x2 y/y1/y11 y/y1/y12
+2  - man rd
+3  - rm x/x1 x/x2
+4  - rm -r y/y1
+5  - ls
+6  - cd ..
+     rm -r Desktop
+7  - clear
+8  - exit
+
+3)
+1  - cd /
+2  - ls VSBF/BETA/????.*
+3  - ls A*.*
+     ls *.txt
+     ls ??1*.*
+4  - cd /
+     mkdir NUOVA
+5  - rm COPIA/PRO*.P*
+6  - rm ..P3*.BAK
+7  - cp MAGAZ/ARTICOLI.DAT ~/PRODOTTI.OLD
+8  - cp COPIA/PROVAI.txt ~/
+9  - cp ~/TESTI/*.DOC ~/Desktop/T01
+10 - mv PROVA/DOCUMENTI/*.docx PROVA2
+11 - rm -r DOCUMENTI
+12 - man (comando)
+13 - ls ?A*.??M*
+14 - mv DISCO/INTESTA.doc /DISCO/PRIMA.doc
+15 - ls ?R*.DOC > Documenti.txt
+16 - ls -r ALFA
+17 - mkdirhier PROVA2/ARCHIV2
+18 - cp nome.txt F:/nome.txt
+     mv F:/nome.txt F:/PROVA.DOC
+19 - cp *.PKG Desktop/PACK/

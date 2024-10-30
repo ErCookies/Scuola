@@ -1,0 +1,52 @@
+Uno dei linguaggi di programmazione per pagine web.
+JAVASCRIPT != JAVA (hanno caratteristiche in comune, come quello di essere C-like e Case-Sensitive)
+JS e' prettamente orientato agli oggetti ed agli eventi, nonche' INTERPRETATO.
+Orientato agli oggetti
+Gli oggetti sono degli elementi che hanno un comportamento simile fra loro.
+Lo si possono vedere come dei record piu' evoluti, dato che oltre ai campi ha delle funzioni e procedure associate (chiamate metodi).
+Orientato agli eventi
+Un programma tradizionale segue una struttura relativamente lineare, avendo ramificazioni in punti ben precisi;
+utilizzando la tecnica "ad eventi" si avra' una maggiore dipendenza dagli eventi esterni.
+JS viene interpretato dal browser direttamente sulla macchina CLIENT
+
+SINTASSI
+Per "avvertire" il browser della presenza di un codice JS si utilizza il tag <script>
+
+<script>
+	...
+</script>
+
+ESEMPIO
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Prova JS</title>
+	</head>
+
+	<body>
+		<p id="pippo">Paragrafo PIPPO</p>
+		<p id="pluto">Paragrafo PLUTO</p>
+		<script>
+			pippo.onclick = function(){
+				pluto.innerHTML = "WOW";
+			}
+		</script>
+	</body>
+</html>
+--------------------------------------------------------------------
+		<script>
+			pippo.onclick = function(){
+				pluto.innerHTML = "WOW";
+			}
+		</script>
+
+function() definisce una funzione (in questo specifico caso, SENZA NOME)
+.onclick e' un EVENTO. Tutto cio' che viene dopo si verifica DOPO CHE SI VERIFICA L'EVENTO (attualmente .onclick)
+pippo e' un ID dato ad un TAG. TAG = ELEMENTO ==> ELEMENTO = OGGETTO ==> TAG = OGGETTO
+Ogni tag HTML e' un oggetto
+
+
+document.getElementById("...").innerHTML="Hello JavaScript";
+Prende l'elemento il quale id e' "..." e ne associa "Hello JavaScript" al codice interno
+
+
