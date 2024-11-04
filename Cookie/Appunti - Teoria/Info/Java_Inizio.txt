@@ -1,3 +1,64 @@
+La classe e' una struttura che contiene sia dati fisici, sia funzioni e procedure che lavorano sui suddetti dati.
+Gli attributi sono degli elementi della classe, come puo' essere il modello di un'auto
+Un oggetto e' l'ISTANZA di una classe (esistono vari oggetti di classe auto).
+Concetto di INCAPSULAMENTO: proprieta' degli oggetti di contenere attributi e metodi
+
+La classe rappresenta oggetti astratti con caratteristiche simili, mentre l'oggetto e' l'elemento fisico specifico
+
+DESCRIZIONE:
+--
+Nome Classe
+---
+elenco attributi
+---
+elenco metodi
+---
+
+ESEMPIO
+
+Automobile
+---
+velocita'
+colore
+porte
+carburante
+marcia
+---
+accelera
+frena
+gira
+cambiaMarcia
+rifornimento
+
+Istanze della classe
+auto1
+---
+velocita' = 60
+colore = rosso
+porte = 5
+carburante = 1/2
+marcia = 3
+
+auto2
+---
+velocita' = 48
+colore = bianco
+porte = 5
+carburante = 3/4
+marcia = 2
+
+DICHIARAZIONE:
+class nomeClasse{
+	//attributi
+	//metodi
+}
+
+public: l'elemento puo' essere utilizzato da qualsiasi elemento ESTERNO
+private: accessibile SOLO all'interno della classe dichiarante
+protected: accessibile dalla classe dichiarante ED EVENTUALI SOTTOCLASSI
+
+-----------------------------------------------------------------------------------
+
 public static void main (String[] args)
 
 PUBLIC --> visibile all'intero progetto
