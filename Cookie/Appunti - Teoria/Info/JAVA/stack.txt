@@ -1,0 +1,12 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+LINK ONENOTE:
+https://istitutoperlasca.sharepoint.com/sites/4BI_2425_Informatica/_layouts/OneNote.aspx?id=%2Fsites%2F4BI_2425_Informatica%2FSiteAssets%2F4BI_2425_Informatica%20-%20Blocco%20appunti&wd=target%28FRANCESCO%20CUCCHI%2FAppunti%20di%20classe.one%7C5C458EB0-7075-48B5-AEBD-39B45D04FA45%2FJAVA%7C0F61CD6F-9F59-4CC7-9861-B389058BA14B%2F%29
+onenote:https://istitutoperlasca.sharepoint.com/sites/4BI_2425_Informatica/SiteAssets/4BI_2425_Informatica%20-%20Blocco%20appunti/FRANCESCO%20CUCCHI/Appunti%20di%20classe.one#JAVA&section-id={5C458EB0-7075-48B5-AEBD-39B45D04FA45}&page-id={0F61CD6F-9F59-4CC7-9861-B389058BA14B}&end
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Le variabili primitive vengono sempre istanziate a compile-time.
+
+Scanner sc = new Scanner(System.in);
+Questo invece e' una variabile di tipo riferimento, verra' istanziata a runtime sull'heap.
+Esistono dei particolari metodi, chiamati COSTRUTTORI, identificati dal fatto che hanno lo stesso nome della classe, che inizializzano le variabili dell'oggetto.
+
+Un metodo static, come il main, puo' richiamare procedure e funzioni della stessa classe (anch'esse static)
