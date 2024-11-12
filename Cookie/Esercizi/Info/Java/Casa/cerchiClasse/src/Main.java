@@ -16,10 +16,10 @@ public class Main {
             c1 = insDati();
         while(c2 == null)
             c2 = insDati();
-        if(c1.appart())
-            System.out.println("Il punto appartiene alla circonferenza");
+        if(c1.area() > c2.area())
+            System.out.println("Il primo cerchio ha area maggiore");
         else
-            System.out.println("Il punto non appartiene alla circonferenza");
+            System.out.println("Il secondo cerchio ha area maggiore");
     }
 
     public static Cerchio insDati(){

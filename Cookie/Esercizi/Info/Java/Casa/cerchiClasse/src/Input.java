@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Input {
     private Scanner in;
-    ///costruttore
+
     public Input(){
         in = new Scanner(System.in);
     }
