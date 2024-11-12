@@ -1,0 +1,21 @@
+La corrente continua ha dei grossi problemi di trasporto, data la sua immensa dispersione e generazione di calore.
+
+Un generatore "spinge" gli elettroni, in un singolo verso, nel circuito.
+
+La resistenza "resiste" al passaggio di corrente.
+
+La massa, o messa a terra, tecnicamente si chiama neutro.
+
+La polarizzazione e' il processo di calcolo atto a trovare il valore che e' necessario dare ad una resistenza per permettere ai componenti di un circuito di funzionare correttamente.
+
+Tipicamente, i diodi vengono utilizzati come protezioni fra circuiti, per impedire che la corrente scorra nel verso sbagliato.
+
+Le tensioni sono solo DIFFERENZIALI, ossia si lavora sulla DIFFERENZA DI POTENZIALE, senza sapere i valori di riferimento.
+Le correnti invece sono ASSOLUTE.
+
+QUALSIASI componente passivo introduce una caduta di tensione
+
+Il carico stabilisce l'ammontare della corrente che circola nel circuito
+
+potenza = tensione * intensita'
+W = V * I

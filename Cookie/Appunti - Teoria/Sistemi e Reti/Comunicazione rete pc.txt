@@ -63,3 +63,4 @@ Lo switch collega tutte le macchine ad una rete, e lavora al secondo livello del
 Il livello rete (terzo) si occupa dell'assegnazione di un indirizzo IP.
 Lo switch non puo' possedere un indirizzo IP, dato che viene assegnato al terzo livello, ma esso lavora al secondo.
 
+Gli indirizzi statici sono variabili sono se si interviene manualmente.

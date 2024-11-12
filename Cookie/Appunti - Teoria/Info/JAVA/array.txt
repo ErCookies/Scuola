@@ -1,0 +1,13 @@
+NON ESISTONO ARRAY ISTANZIATI SULLO STACK
+---
+DICHIARAZIONE
+int[] i;
+String[] nomi;
+Cerchio[] vc;
+//tutto SENZA dimensione
+
+i = new int[5]; 	//array di 5 interi
+vc = new Cerchio[5] 	//array di 5 RIFERMIMENTI a Cerchio
+//noi non possiamo lavorare sulle celle di un vettore (di var di
+//tipo riferimento) senza averle istanziate singolarmente
+

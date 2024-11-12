@@ -1,0 +1,59 @@
+COSTRUTTORI:
+
+1) default
+senza parametri, quindi i valori a cui verra' inizializzato l'oggetto saranno settati dal programmatore
+
+2) con parametri
+i valori sono passati dall'esterno, settati dall'utente
+
+3) di copia
+si inizializza l'oggetto ad uno gia' esistente
+
+ESEMPI:
+
+class Cerchio{
+	
+
+	public Cerchio(){			//default
+		this.aaa = 0;
+		this.bbb = 9;
+	}
+
+	public Cerchio(int par1){		//con parametri
+		this.aaa = par1;
+	}
+
+	public Cerchio(Cerchio b){		//di copia
+		if(b!=NULL){
+			this.raggio = b.getRaggio();
+			//per tutti gli elementi
+		}
+	}
+
+	public float getRaggio(){
+		return this.raggio;
+	}
+
+	public boolean setRaggio(float raggio){
+		//
+	}
+
+}
+
+class Princ{
+	public static void main(String args[]){
+		Cerchio c1,c2;
+		c1 = new Cerchio(0,4,18);	//con parametri
+		c2 = new Cerchio(c2);
+
+		try{
+			//blocco che verra' eseguito SEMPRE
+		}
+		catch(Exception alfa){
+			//se viene catturata l'eccezione specificata dall'attributo viene eseguito il blocco catch
+		}
+		finally{
+			//questo blocco verra' eseguito SEMPRE, indpendentemente dall'esecuzione del catch
+		}
+	}
+}
