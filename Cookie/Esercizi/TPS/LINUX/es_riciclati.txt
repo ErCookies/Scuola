@@ -44,3 +44,31 @@
 18 - cp nome.txt F:/nome.txt
      mv F:/nome.txt F:/PROVA.DOC
 19 - cp *.PKG Desktop/PACK/
+
+4)
+1  - cd /
+     mkdirhier PIPPO/A1 PIPPO/A2 PLUTO/B PINCO/C PINCO/C1
+     touch PIPPO/A1/F1.txt
+     touch PIPPO/A1/F2.txt
+     touch PIPPO/A1/F3.doc
+     touch PLUTO/B/MARCO.txt
+     touch PLUTO/B/ALBERTO.txt
+     touch PLUTO/B/UGO.doc
+     echo Tavolo > PINCO/C1/Oggetti.txt
+     echo Albero >> PINCO/C1/Oggetti.txt
+     echo Sedia >> PINCO/C1/Oggetti.txt
+     echo Poltrona >> PINCO/C1/Oggetti.txt
+     echo bicchiere >> PINCO/C1/Oggetti.txt
+     cd PIPPO
+     cd ../PINCO
+     ls -s -R -t > lista.doc
+2  - cd /
+     ls -l | grep ?????.*F | grep "12/10/2020"
+3  - cd PLUTO/B
+     head -N 2 ../../PINCO/C1/Oggetti.txt > ../../PIPPO/A1/elenco.txt
+     tail -N 1 ../../PINCO/C1/Oggetti.txt >> ../../PIPPO/A1/elenco.txt
+4  - cd /PIPPO/A1
+     chmod +r elenco.txt
+     chmod -w elenco.txt
+     chmod -x elenco.txt
+5  - 

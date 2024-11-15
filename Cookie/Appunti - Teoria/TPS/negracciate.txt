@@ -1,0 +1,60 @@
+cd
+cd ~ 
+cd /
+cd -
+cd ..
+
+pwd print working directory
+ls --> dir in DOS
+ls -l -r -R -s -t
+-l elenco con piu' dettagli
+-r reverse
+-R ricorsivamente
+-s nome e dimensione
+-t ordina per data e or ultima modifica
+
+clear 
+history
+exit
+
+mkdir
+mkdirhier = mkdir -p
+rmdir
+rm -d -r
+
+man
+
+touch crea un file
+rm
+
+cat scrive un file
+cat -n lo numera
+tac --> reverse
+more --> su piu pagine
+less
+
+cp copia file
+cp -r cartella
+cp -v copia e fa visualizzare il processo
+
+mv sposta e rinomina
+mv -v fa visualizzare il processo
+
+date data e ora
+cal calendar
+
+head prime 10 righe
+head -N prime n righe
+tail ultime 10 righe
+tail -N ultime n righe
+
+sort
+sort -r reverse
+sort -R random
+
+grep ==> find in DOS
+
+echo
+
+chmod +r/+w/+x attribuzione di permesse read - write - execute
+chmod -r/-w/-x rimozione di permesse read - write - execute
