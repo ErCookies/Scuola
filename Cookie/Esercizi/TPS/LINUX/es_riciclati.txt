@@ -5,7 +5,7 @@
 3  - cd \
      cd ../../../../..
 4  - ls -R
-5  - ls ../../y/y1
+5  - ls ../../y/y1 -s
 6  - clear
 7  - exit
 
@@ -29,7 +29,7 @@
 4  - cd /
      mkdir NUOVA
 5  - rm COPIA/PRO*.P*
-6  - rm ..P3*.BAK
+6  - rm ../P3*.BAK
 7  - cp MAGAZ/ARTICOLI.DAT ~/PRODOTTI.OLD
 8  - cp COPIA/PROVAI.txt ~/
 9  - cp ~/TESTI/*.DOC ~/Desktop/T01

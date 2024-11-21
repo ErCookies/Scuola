@@ -69,17 +69,15 @@ public class Cerchio {
             throw new IllegalArgumentException("Errore, oggetto non ancora istanziato");
     }
 
-    public boolean appart(double x, double y){
+    public boolean appart(double x, double y) {
         return (Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2) == Math.pow(this.raggio, 2));
     }
-
     public boolean appart(){
         Input lg = new Input();
         double x = lg.dbl(- Double.MAX_VALUE, Double.MAX_VALUE, "Inserire x del punto: ");
         double y = lg.dbl(- Double.MAX_VALUE, Double.MAX_VALUE, "Inserire y del punto: ");
         return (Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2) == Math.pow(this.raggio, 2));
     }
-
     public int quad(){
         int q;
         if(this.x != 0 && this.y != 0) {
@@ -99,35 +97,27 @@ public class Cerchio {
             throw new IllegalArgumentException("Una delle coordinate e' 0:\nIl centro del cerchio non appartiene ad alcun quadrante");
         return q;
     }
-
     public double area(){
         return (Math.PI * Math.pow(this.raggio, 2));
     }
-
     public double perim(){
         return 2 * Math.PI * this.raggio;
     }
-
     public double getX() {
         return x;
     }
-
     public void setX(double x) {
         this.x = x;
     }
-
     public double getY() {
         return y;
     }
-
     public void setY(double y) {
         this.y = y;
     }
-
     public double getRaggio() {
         return raggio;
     }
-
     public void setRaggio(double r) {
         this.raggio = r;
     }

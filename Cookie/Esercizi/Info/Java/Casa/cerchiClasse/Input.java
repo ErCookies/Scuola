@@ -35,7 +35,6 @@ public class Input {
         System.out.print(mex);
         c = in.next();
         while(c.isEmpty()){
-        //while(c.charAt(0) == '\0'){
             System.out.println("Errore");
             System.out.print(mex);
             c = in.next();
@@ -48,7 +47,6 @@ public class Input {
         System.out.print(mex);
         s = in.next();
         while(s.isEmpty()){
-        //while(s.charAt(0) == '\0'){
             System.out.println("Errore");
             System.out.print(mex);
             s = in.next();
