@@ -27,7 +27,7 @@ man
 touch crea un file
 rm
 
-cat scrive un file
+cat stampa un file
 cat -n lo numera
 tac --> reverse
 more --> su piu pagine
@@ -44,9 +44,9 @@ date data e ora
 cal calendar
 
 head prime 10 righe
-head -N prime n righe
+head -N prime N righe
 tail ultime 10 righe
-tail -N ultime n righe
+tail -N ultime N righe
 
 sort
 sort -r reverse
