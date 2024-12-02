@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!-- Cucchi Francesco 4BI index.html -->
+		<title>Tabella co potenze</title>
+	</head>
+
+	<body>
+		<script>
+			document.write('<table>');
+			document.write('<thead><tr><th>Num</th><th>Num<sup>2</sup></th><th>Num<sup>3</sup></th></tr></thead>');
+			document.write('<tbody>');
+			for(let i = 0; i <= 15; i++){
+				document.write('<tr>');
+				document.write('<td>' + i + '</td>');
+				document.write('<td>' + Math.pow(i, 2) + '</td>');
+				document.write('<td>' + Math.pow(i, 3) + '</td>');
+				document.write('</tr>');
+			}
+			document.write('</tbody>');
+			document.write('</table>');
+		</script>
+	</body>
+</html>

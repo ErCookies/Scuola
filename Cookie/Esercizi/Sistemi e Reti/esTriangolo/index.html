@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!-- Cucchi Francesco 4BI index.html -->
+		<title>Il triangolo no...</title>
+		<script src=..\funcEsterne.js></script>
+	</head>
+
+	<body>
+		<script>
+			let x1 = 0, x2 = 0, x3 = 0;
+			do{
+				x1 = lgInt("Inserire primo lato:");
+				while(contrPos(x1)){
+					alert("No val negativi");
+					x1 = lgInt("Inserire primo lato:");
+				}
+				x2 = lgInt("Inserire secondo lato:");
+				while(contrPos(x2)){
+					alert("No val negativi");
+					x2 = lgInt("Inserire secondo lato:");
+				}
+				x3 = lgInt("Inserire terzo lato:");
+				while(contrPos(x3)){
+					alert("No val negativi");
+					x3 = lgInt("Inserire terzo lato:");
+				}
+			}while(!contrTriangolo());
+		</script>
+	</body>
+</html>
