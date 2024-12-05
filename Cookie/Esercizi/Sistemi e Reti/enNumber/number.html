@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!-- Cucchi Francesco 4BI number.html -->
+		<title>Gioco numero</title>
+		<script>
+			let st = 0, end = 1000, cen = 500, tr = 1
+			while(!confirm("Numero: " + cen + "?") && tr < 10) {
+				if(confirm("Maggiore o minore?")) {
+					st = cen;
+					cen = (cen + end) / 2;
+				}
+				else{
+					end = cen;
+					cen = (cen + st) / 2;
+				}
+				cen = parseInt(cen);
+				tr++;
+			}
+		</script>
+	</head>
+
+	<body>
+		<script>
+			if(tr <= 10){
+				alert("Tuo numero: " + cen + " | Tentativi: " + tr);
+			}
+			else
+				alert("Numero non trovato");
+		</script>
+	</body>
+</html>

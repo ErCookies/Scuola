@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<!-- Cucchi Francesco 4BI index.html -->
+		<title>Tabella co potenze</title>
+		<script src=..\funcEsterne.js></script>
+	</head>
+
+	<body>
+		<script>
+			let x1, x2;
+			x1 = lgInt("Inserire valore minimo:");
+			x2 = lgInt("Inserire valore massimo:");
+			while(x1 >= x2){
+				alert("Errore, minore num1 > num2");
+				x1 = lgNum("Inserire valore minimo:");
+				x2 = lgNum("Inserire valore massimo:");
+			}
+		</script>
+		<table border=1>
+			<thead>
+				<th>Num</th>
+				<th>Num<sup>2</sup></th>
+				<th>Num<sup>3</sup></th>
+			</thead>
+			<tbody id=corpoTab>
+				<script>
+					for(let k = x1; k <= x2; k++){
+						document.getElementById("corpoTab").innerHTML += "<tr><td>" + Math.pow(k, 1) + "</td><td>" + Math.pow(k, 2) + "</td><td>" + Math.pow(k, 3) + "</td></tr>";
+					}
+				</script>
+			</tbody>
+		</table>
+	</body>
+</html>
