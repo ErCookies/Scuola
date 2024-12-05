@@ -1,0 +1,11 @@
+creazione classe Coda (FIFO)
+
+Coda
+---
+ - capacita'
+---
+ + push		//aggiunta in coda
+ + pop		//estrazione primo elemento
+ + isEmpty	
+ + ifFull
+ + getLast	//ritorna il riferimento all'ultimo oggetto inserito

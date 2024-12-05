@@ -1,0 +1,37 @@
+Interface: e' una classe della quale sono stati dichiarati solo i prototipi dei metodi, senza il codice.
+
+Interface List<E>
+
+<E> --> sta a significare il tipo di oggetto che vogliamo gestire.
+---------------------------------
+Comparable
+String s = "ciao";
+String s2 = "pippo";
+if(s.compareto(s2) > 0)
+	sout("s1 > s2");
+else
+	sout("s2 > s1");
+---------------------------------
+class Frazione implements Comparable<Frazione>, ...{
+	//costruttori, getter, setter, metodi, attributi, etc. 
+	public int compareto(Frazione f){
+		...
+	}
+}
+---------------------------------
+ArrayList<String> nomi = new ArrayList<>();
+nomi.add("pippo"); //aggiunge un nodo alla lista
+nomi.add("pluto");
+nomi.add("pinco");
+
+1 met)
+for(int k = 0; k < nomi.size(); k++){ //size = numero di elementi
+	sout(nomi.get(k)); //get ritorna l'elemento all'indice passato come parametro
+}
+
+2 met)
+for(String s : nomi){	// struttura *for each*, usando un oggetto ausiliario DELLA STESSA CLASSE DELLA LISTA, 
+	sout(s);
+}
+
+
