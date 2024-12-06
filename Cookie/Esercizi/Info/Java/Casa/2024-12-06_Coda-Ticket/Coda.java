@@ -4,10 +4,11 @@
     metodi: pop, push, isEmpty, isFull, getLast. Produrre anche l'UML associato.
     Postare il tutto su OneNote.
 */
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Coda {
-    private ArrayList<Ticket> coda;
+
+    private LinkedList<Ticket> coda;
     private int nmax;
 
     /// GETTER - SETTER
@@ -18,20 +19,20 @@ public class Coda {
         return this.coda.size();
     }
     private void setNmax(int nmax){
-        if(nmax > 0)
+        if(nmax > coda.size())
             this.nmax = nmax;
         else
-            throw new IllegalArgumentException("Il numero massimo deve essere positivo");
+            throw new IllegalArgumentException("Il numero massimo deve essere superiore della dimensione attuale della coda (" + this.getSize() + ")");
     }
 
     /// COSTRUTTORI
     public Coda(){          //default
+        this.coda = new LinkedList<>();
         this.setNmax(10);
-        this.coda = new ArrayList<>(this.getNmax());
     }
     public Coda(int nmax){  //con parametri
+        this.coda = new LinkedList<>();
         this.setNmax(nmax);
-        this.coda = new ArrayList<>(this.getNmax());
     }
 
     /// METODI
@@ -42,15 +43,12 @@ public class Coda {
             throw new IllegalStateException("La coda e' gia' vuota");
     }
 
-    public void push(Ticket t){
+    public void push(){
         if(!this.isFull())
-            this.coda.addLast(t);
-        else
-            throw new IllegalStateException("La coda e' piena");
-    }
-    public void push(int num){
-        if(!this.isFull())
-            this.coda.addLast(new Ticket(num));
+            if(this.coda.isEmpty())
+                this.coda.addLast(new Ticket(1));
+            else
+                 this.coda.addLast(new Ticket(this.getLastNum() + 1));
         else
             throw new IllegalStateException("La coda e' piena");
     }
@@ -65,5 +63,9 @@ public class Coda {
 
     public Ticket getLast(){
         return this.coda.getLast();
+    }
+
+    public int getLastNum(){
+        return this.coda.getLast().getNum();
     }
 }

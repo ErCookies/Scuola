@@ -1,0 +1,6 @@
+Iterator<Macchina>it=llm.iterator();
+String s = "";
+while(it.hasNext()){
+	Macchina m = it.next();
+	s = s+m.getTarga() + '\n';
+}
