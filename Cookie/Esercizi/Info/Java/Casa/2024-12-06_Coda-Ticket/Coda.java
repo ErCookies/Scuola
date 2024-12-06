@@ -14,6 +14,9 @@ public class Coda {
     public int getNmax(){
         return this.nmax;
     }
+    public int getSize(){
+        return this.coda.size();
+    }
     private void setNmax(int nmax){
         if(nmax > 0)
             this.nmax = nmax;
@@ -23,7 +26,7 @@ public class Coda {
 
     /// COSTRUTTORI
     public Coda(){          //default
-        this.setNmax(50);
+        this.setNmax(10);
         this.coda = new ArrayList<>(this.getNmax());
     }
     public Coda(int nmax){  //con parametri
@@ -42,6 +45,12 @@ public class Coda {
     public void push(Ticket t){
         if(!this.isFull())
             this.coda.addLast(t);
+        else
+            throw new IllegalStateException("La coda e' piena");
+    }
+    public void push(int num){
+        if(!this.isFull())
+            this.coda.addLast(new Ticket(num));
         else
             throw new IllegalStateException("La coda e' piena");
     }

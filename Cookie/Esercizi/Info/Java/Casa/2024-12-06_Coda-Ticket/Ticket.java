@@ -8,4 +8,8 @@ public class Ticket {
         this.num = num;
     }
 
+    public int getNum(){
+        return this.num;
+    }
+
 }
