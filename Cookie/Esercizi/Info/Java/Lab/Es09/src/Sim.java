@@ -26,8 +26,8 @@
         Visulizza hh:mm totale di chiamate
         Disattiva SIM
 */
-public class Sim {
-    private String nomeInst, iccid, numTel;
+public class Sim implements Comparable<Sim>{
+    private String nomeInst, iccid, numTel, opt;
     private double cred, minuti;
     private boolean active;
     private final double TARIFFA = 0.32;
@@ -49,6 +49,9 @@ public class Sim {
     }
     public boolean isActive() {
         return this.active;
+    }
+    public String getOpt() {
+        return opt;
     }
     public void setNomeInst(String nomeInst) {
         if(!nomeInst.isEmpty())
@@ -83,19 +86,27 @@ public class Sim {
     public void setActive(boolean active) {
         this.active = active;
     }
+    public void setOpt(String opt) {
+        if(!opt.isEmpty())
+            this.opt = opt;
+        else
+            throw new IllegalArgumentException("Operatore invalido");
+    }
     public Sim(){
         this.setActive(false);
         this.setNomeInst("Mario Rossi");
         this.setIccid("aa11aa11aa11aa11aa11");
         this.setNumTel("3792654036");
+        this.setOpt("TIM");
         this.setCred(0);
         this.setMinuti(0);
     }
-    public Sim(String nomeInst, String iccid, String numTel){
+    public Sim(String nomeInst, String iccid, String numTel, String opt){
         this.setActive(false);
         this.setNomeInst(nomeInst);
         this.setIccid(iccid);
         this.setNumTel(numTel);
+        this.setOpt(opt);
         this.setCred(0);
         this.setMinuti(0);
     }
@@ -104,28 +115,22 @@ public class Sim {
         this.setNomeInst(sim.getNomeInst());
         this.setIccid(sim.getIccid());
         this.setNumTel(sim.getNumTel());
+        this.setOpt(sim.getOpt());
         this.setCred(sim.getCred());
         this.setMinuti(sim.getMinuti());
     }
 
-    public String toStrin(){
-        String s = new String();
+    @Override
+    public String toString(){
+        String s = "";
         s = s.concat(this.getNomeInst() + ";");
         s = s.concat(this.getIccid() + ";");
         s = s.concat(this.getNumTel() + ";");
-        s = s.concat("" + this.getCred() + ";");
+        s = s.concat(this.getCred() + ";");
         s = s.concat(this.convertMinToHhMm() + ";");
-        s = s.concat("" + this.isActive() + ";\n");
+        s = s.concat(this.isActive() + ";\n");
         return s;
     }
-
-    /*public void compareTo(Sim sim){
-        if(this.isActive()){
-            //compare
-        }
-        else
-            //ecccezione
-    }*/
 
     public void ricarica(double val){
         if(this.isActive())
@@ -144,16 +149,33 @@ public class Sim {
     }
 
     public void attivazione(boolean state){
-        this.setActive(state);
+        if(this.isActive() != state)
+            this.setActive(state);
+        else if(state)
+            throw new IllegalArgumentException("Sim gia' attiva");
+        else
+            throw new IllegalArgumentException("Sim gia' disattivata");
     }
 
     public String convertMinToHhMm(){
-        String s = new String();
-        int hh = 0;
+        String s;
+        int hh;
         double min = this.getMinuti();
         hh = (int) min / 60;
         min = min % 60;
-        s = Integer.toString(hh) + ":" + Double.toString(min);
+        s = hh + ":" + min;
         return s;
+    }
+
+    public int compareTo(Sim sim) {
+        int x;
+        if(this.getIccid().equals(sim.getIccid()))
+            x = 0;
+        else if(this.getIccid().compareTo(sim.getIccid()) > 0)
+            x = 1;
+        else
+            x = -1;
+
+        return x;
     }
 }

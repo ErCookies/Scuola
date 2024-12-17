@@ -26,15 +26,13 @@ public class Shop {
 
     /// GETTER - SETTER
     public String getpIva() {
-        return pIva;
+        return this.pIva;
     }
-
     public String getName() {
-        return name;
+        return this.name;
     }
-
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setpIva(String pIva) {
@@ -46,15 +44,12 @@ public class Shop {
         else
             throw new NoSuchElementException("Stringa vuota");
     }
-
     public void setName(String name) {
         if(!name.isEmpty())
             this.name = name;
         else
             throw new NoSuchElementException("Stringa vuota");
     }
-
-
     public void setAddress(String address) {
         if(!address.isEmpty())
             this.address = address;
@@ -81,32 +76,52 @@ public class Shop {
 
     /// Punto 1 --> Attivare una SIM
     public void attivazione(Sim s, String name){
-        if(this.existsStor(s)){
-            s.setActive(true);
-            s.setNomeInst(name);
-            this.bought.add(this.stor.remove(this.stor.indexOf(s)));
+        if(s != null){
+            if(!this.stor.isEmpty()){
+                if(this.existsStor(s)){
+                    s.setActive(true);
+                    s.setNomeInst(name);
+                    this.bought.add(this.stor.remove(this.stor.indexOf(s)));
+                }
+                else
+                    throw new NoSuchElementException("Sim non trovata");
+            }
+            else
+                throw new IllegalStateException("Storage vuoto");
         }
         else
-            throw new NoSuchElementException("Sim non trovata");
+            throw new NullPointerException("Puntatore a NULL non consentito");
     }
 
     /// Punto 2 --> Disattivare una SIM
     public void disattivazione(Sim s){
-        if(this.existsBought(s)){
-            s.setActive(false);
-            s.setNomeInst("");
-            this.stor.add(this.bought.remove(this.bought.indexOf(s)));
+        if(s != null){
+            if(!this.bought.isEmpty()){
+                if(this.existsBought(s)){
+                    s.setActive(false);
+                    s.setNomeInst("");
+                    this.stor.add(this.bought.remove(this.bought.indexOf(s)));
+                }
+                else
+                    throw new NoSuchElementException("Sim non trovata");
+            }
+            else
+                throw new IllegalStateException("Nessuna SIM acquistata");
         }
         else
-            throw new NoSuchElementException("Sim non trovata");
+            throw new NullPointerException("Puntatore a NULL non consentito");
     }
 
     /// Punto 3 --> Rifornimento del negozio
     public void restock(Sim s){
-        if(!this.existsBought(s) || !this.existsStor(s))
-            this.stor.add(s);
+        if(s != null){
+            if(!this.existsBought(s) || !this.existsStor(s))
+                this.stor.add(s);
+            else
+                throw new IllegalArgumentException("Sim gia' esistente");
+        }
         else
-            throw new IllegalArgumentException("Sim gia' esistente");
+            throw new NullPointerException("Puntatore a NULL non consentito");
     }
 
     ///Punto 4 --> Ricarica SIM
