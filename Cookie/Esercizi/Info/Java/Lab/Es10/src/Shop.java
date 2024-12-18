@@ -76,12 +76,14 @@ public class Shop {
 
     /// Punto 1 --> Attivare una SIM
     public void attivazione(Sim s, String name){
+        int pos;
         if(s != null){
             if(!this.stor.isEmpty()){
-                if(this.existsStor(s)){
-                    s.setActive(true);
-                    s.setNomeInst(name);
-                    this.bought.add(this.stor.remove(this.stor.indexOf(s)));
+                pos = this.stor.indexOf(s);
+                if(pos != -1){
+                    this.stor.get(pos).setActive(true);
+                    this.stor.get(pos).setNomeInst(name);
+                    this.bought.add(this.stor.remove(pos));
                 }
                 else
                     throw new NoSuchElementException("Sim non trovata");
@@ -97,10 +99,11 @@ public class Shop {
     public void disattivazione(Sim s){
         if(s != null){
             if(!this.bought.isEmpty()){
-                if(this.existsBought(s)){
-                    s.setActive(false);
-                    s.setNomeInst("");
-                    this.stor.add(this.bought.remove(this.bought.indexOf(s)));
+                int pos = this.bought.indexOf(s);
+                if(pos != -1){
+                    this.bought.get(pos).setActive(false);
+                    this.bought.get(pos).setNomeInst("");
+                    this.stor.add(this.bought.remove(pos));
                 }
                 else
                     throw new NoSuchElementException("Sim non trovata");
@@ -135,8 +138,8 @@ public class Shop {
     }
 
     /// Punto 5 --> Portabilita' del numero
-    public void portabilita(String iccid, String numTel, String oldOpt, String newOpt, boolean impCred){
-        int pos = srcNumIccidOpt(numTel, iccid, oldOpt);
+    public void portabilita(String iccid, String numTel, String newOpt, boolean impCred){
+        int pos = srcNumIccid(numTel, iccid);
         if(pos != -1){
             this.bought.get(pos).setOpt(newOpt);
             if(!impCred)
@@ -170,7 +173,7 @@ public class Shop {
         }
         return pos;
     }
-    private int srcNumIccidOpt(String numTel, String iccid, String opt){
+    private int srcNumIccid(String numTel, String iccid){
         int pos = -1;
         Iterator<Sim> it = this.bought.iterator();
         for(int k = 0; it.hasNext() && pos == -1; k++){
