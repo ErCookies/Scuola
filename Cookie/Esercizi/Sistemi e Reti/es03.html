@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>es03</title>
+		
+		<script>
+			//let nCol = lgNum(1, 8, "Inserire numero colonne: ");
+			let nCol = 6;
+		</script>
+	</head>
+	
+	<body>
+		<table id="ciao" border=1></table>
+		<script>
+			let out = "<tr>";
+			for(let k = 0; k < nCol; k++)
+				out += "<th>Valore</th><th>Carattere</th>";
+			out += "</tr>";
+			
+			for(let k = 32; k < 256; k += nCol){
+				out += "<tr>";
+				for(let j = k; j < (nCol + k); j++){
+					out += "<td>" + j + "</td>";
+					if(j < 256)
+						out += "<td>&#" + j + ";</td>";
+					else
+						out += "<td></td>";
+				}
+				out += "</tr>";
+			}
+			document.getElementById("ciao").innerHTML = out;
+		</script>
+	</body>
+</html>
