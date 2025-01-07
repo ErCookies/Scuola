@@ -1,0 +1,44 @@
+Il tag <form></form> e' un contenitore di tutti i suoi vari campi, che collezionano informazioni.
+Alcuni esempi di campi sono le textbox, tickbok, combobox (menu' a tendina) e radio button.
+<form action="ricevente.php" method="POST">
+	<!-- VARI CAMPI -->
+</form>
+action = url della pagina a cui inviare i dati collezionti dal form, solitamente una pagina php che li elabora
+method = specifica il metodo HTTP per gestire i dati: GET || POST
+il GET aggiunge al link i dati inseriti nel form
+il POST li nasconde
+
+Gli elementi principali di un form sono: 
+<input type="text" name="user"> 			--> crea un campo di testo in chiaro
+<input type="password" name="psw"> 			--> crea un campo di testo con caratteri oscurati
+<input type="submit" value="Invia">			--> crea il pulsante che raccoglie le info inserite e le invia alla pagina interessata. 
+value indica il testo del pulsante
+
+<input type="radio">					--> crea un bottone circolare, solitamente per la scelta univoca
+<input type="radio" name="genere" value="m" checked>	--> sara' selezionato di base (proprieta' checked)
+<input type="radio" name="genere" value="f">
+
+<input type="checkbox"> 				--> praticamente la stessa roba sopra, tranne l'univocita' della scelta
+
+
+<select name="colore">					--> crea un elenco a tendina. Se nelle opzioni non e' specificata una proprieta' selected, di default 							    sara' la prima
+	<option value=" "> </option>
+	<option value=" "> </option>
+	<option value=" "> </option>
+	<option value=" " selected> </option>
+</select>
+
+
+<button type="button" onclick="alert("Hello World!")">	--> type puo' assumere i valori: button, reset o submit
+	Cliccami!
+</button>
+
+Il fieldset crea un riquadro contenente vari campi, il cui titolo e' specificato dal tag legend
+<form ...>
+	<fieldset>
+		<legend>Titolo</legend>
+		<!-- Vari campi -->
+	<fieldset>
+	
+	<!-- Eventuali altri campi -->
+</form>

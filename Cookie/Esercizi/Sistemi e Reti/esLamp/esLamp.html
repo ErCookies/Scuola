@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head></head>
+	
+	<body>
+		<script>
+			let state = false;
+			function onOff(){
+				const l = document.getElementById("lamp");
+				alert(state);
+				state = !state;
+				if(state)
+					l.src = "./lampOn.png";
+				else
+					l.src = "./lampOff.png";
+			}
+		</script>
+		<img id="lamp" src="./lampOff.png" height="320" width="320">
+		<button onclick="onOff();">ON / OFF</button>
+	<body>
+</html>
