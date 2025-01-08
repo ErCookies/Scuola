@@ -6,20 +6,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.es11.HelloController">
    <children>
-      <TextField fx:id="txtX1" layoutX="290.0" layoutY="124.0" />
-      <TextField fx:id="txtX2" layoutX="291.0" layoutY="179.0" />
-      <Label layoutX="358.0" layoutY="149.0" text="+">
+      <TextField fx:id="txtX1" layoutX="290.0" layoutY="182.0" onKeyTyped="#txtOnKeyPress" />
+      <TextField fx:id="txtX2" layoutX="291.0" layoutY="237.0" onKeyTyped="#txtOnKeyPress" />
+      <Label layoutX="358.0" layoutY="207.0" text="+">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="btnSomma" layoutX="334.0" layoutY="230.0" mnemonicParsing="false" onAction="#btnSommaOnClick" text="SOMMA" />
-      <Label fx:id="lblResult" layoutX="356.0" layoutY="285.0">
+      <Button fx:id="btnSomma" layoutX="334.0" layoutY="288.0" mnemonicParsing="false" onAction="#btnSommaOnClick" text="SOMMA" />
+      <Label fx:id="lblResult" layoutX="356.0" layoutY="343.0">
          <font>
             <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErr" layoutX="210.0" layoutY="63.0" textFill="RED">
+         <font>
+            <Font size="36.0" />
          </font>
       </Label>
    </children>
