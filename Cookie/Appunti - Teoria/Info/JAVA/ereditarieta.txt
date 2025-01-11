@@ -1,0 +1,11 @@
+La classe figlia vedra' atributi e metodi public e protected.
+Per far si che una classe erediti da un'altra si utilizza il termine **extends**
+
+class ClasseFiglia extends ClassePadre{
+	...
+}
+
+La sottoclasse PUO' RIDEFINIRE i metodi della sopraclasse, a patto che abbia lo STESSO prototipo, per nome ed attributi
+
+super(...);
+Richiama un costruttore della classe padre
