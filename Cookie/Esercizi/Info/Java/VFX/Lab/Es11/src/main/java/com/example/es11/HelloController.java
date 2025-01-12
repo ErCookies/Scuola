@@ -19,14 +19,14 @@ public class HelloController {
 
     public void btnSommaOnClick(){
         int x1, x2;
-            try{
-                x1 = Integer.parseInt(this.txtX1.getText());
-                x2 = Integer.parseInt(this.txtX2.getText());
-                this.lblResult.setText(String.valueOf(x1 + x2));
-            }
-            catch(NumberFormatException exc){
-                this.lblErr.setText("Inserire due numeri");
-            }
+        try{
+            x1 = Integer.parseInt(this.txtX1.getText());
+            x2 = Integer.parseInt(this.txtX2.getText());
+            this.lblResult.setText(String.valueOf(x1 + x2));
+        }
+        catch(NumberFormatException exc){
+            this.lblErr.setText("Inserire due numeri");
+        }
     }
 
     public void txtOnKeyPress(){
