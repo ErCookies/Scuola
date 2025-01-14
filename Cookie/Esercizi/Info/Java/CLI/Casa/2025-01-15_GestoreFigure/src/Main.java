@@ -1,7 +1,7 @@
 /*
     Cucchi Francesco    4BI
     TESTO:
-    Getstire quadrilateri e triangoli come elementi ereditati da classe figura e metodi comuni come stampa,
+    Gestire quadrilateri e triangoli come elementi ereditati da classe figura e metodi comuni come stampa,
     area e perimetro.
     Realizzare un programma che gestisce n figure tramite classe GESTORE che possono essere o quadrilateri o
     triangoli (a scelta dell'utente) sui quali si possano fare le seguenti operazioni:
@@ -14,7 +14,78 @@
 */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Inserire che figura vuole gestire");
-        String s = Input.lgStr("Quadrilateri o triangoli (quad / tri): ");
+        Gestore<Figura> ges = new Gestore<>();
+        int sc;
+        do{
+            menu();
+            sc = Input.lgInt(0,3,"Inserire funzione interesstata: ");
+            switch(sc){
+                case 0: {break;}
+                case 1: {
+                    aggiunta(ges);
+                    break;
+                }
+                case 2: {
+                    stampaTot(ges);
+                    break;
+                }
+                case 3: {
+                    stampaAree(ges);
+                    break;
+                }
+            }
+        }while(sc != 0);
+    }
+
+    private static void aggiunta(Gestore<Figura> ges) {
+        char f;
+        double l1, l2, l3, l4;
+        boolean val = false;
+        do{
+            f = Input.lgChar("Desidera inserire un quadrilatero od un triangolo (q/t)? ");
+            if(f == 'q'){
+                try{
+                    l1 = Input.lgDbl(0, Double.MAX_VALUE, "Inserire primo lato: ");
+                    l2 = Input.lgDbl(0, Double.MAX_VALUE, "Inserire secondo lato: ");
+                    l3 = Input.lgDbl(0, Double.MAX_VALUE, "Inserire terzo lato: ");
+                    l4 = Input.lgDbl(0, Double.MAX_VALUE, "Inserire quarto lato: ");
+                    ges.add(new Quadrilatero(l1, l2, l3, l4));
+                    val = true;
+                }
+                catch(IllegalArgumentException exc){
+                    System.out.println(exc.getMessage());
+                }
+            }
+            else if(f == 't'){
+                try{
+                    l1 = Input.lgDbl(0, Double.MAX_VALUE, "Inserire primo lato: ");
+                    l2 = Input.lgDbl(0, Double.MAX_VALUE, "Inserire secondo lato: ");
+                    l3 = Input.lgDbl(0, Double.MAX_VALUE, "Inserire terzo lato: ");
+                    ges.add(new Triangolo(l1, l2, l3));
+                    val = true;
+                }
+                catch(IllegalArgumentException exc){
+                    System.out.println(exc.getMessage());
+                }
+            }
+            else
+                System.out.println("Errore, reinserire: ");
+        }while(f != 'q' && f != 't' && !val);
+
+    }
+
+    private static void stampaTot(Gestore<Figura> ges) {
+        //
+    }
+
+    private static void stampaAree(Gestore<Figura> ges) {
+        //
+    }
+
+    private static void menu(){
+        System.out.println("1) Inserire una figura;");
+        System.out.println("2) Stampa tutti i dati delle figure inserite;");
+        System.out.println("3) Stampa le aree delle figure inserite;");
+        System.out.println("0) Termina il programma;");
     }
 }

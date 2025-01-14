@@ -13,6 +13,20 @@
     ed il main che realizzata I/O con utente e classe Gestore.
 */
 
+import java.util.LinkedList;
+
 public class Gestore<E> {
-    //
+    private final LinkedList<E> figs;
+
+    public Gestore(){
+        this.figs = new LinkedList<>();
+    }
+
+    public void add(E f){
+        if(f != null)
+            this.figs.add(f);
+        else
+            throw new NullPointerException("Puntatore a NULL non valido");
+    }
+
 }

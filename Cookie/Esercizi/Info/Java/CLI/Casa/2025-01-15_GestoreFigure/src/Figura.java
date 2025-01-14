@@ -14,30 +14,24 @@
 */
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
-public class Figure {
+public class Figura {
     protected int nSides;
     protected ArrayList<Double> sides;
     protected double area, per;
 
-    public String stampa() {
-        String s = "Figura+";
-        Double l;
-        Iterator<Double> it = this.sides.iterator();
-        for(int k = 0; it.hasNext() && k < this.getnSides(); k++){
-            l = it.next();
-            s = s.concat("l" + (k+1) + "=" + l + "+");
-        }
-        s = s.concat("area=" + this.getArea() + "+");
-        s = s.concat("perimetro=" + this.getPer() + ";");
-        return s;
+    @Override
+    public String toString() {
+        return this.sides.toString();
     }
-    public void area(){
-        //
+    protected double area(){
+        return 0;
     }
-    public void perimetro(){
-        //
+    protected double perimetro(){
+        double p = 0;
+        for(int k = 1; k <= this.getnSides(); k++)
+            p += this.getSide(k);
+        return p;
     }
 
     /// GETTER
@@ -50,11 +44,10 @@ public class Figure {
     public int getnSides(){
         return this.nSides;
     }
-    public Double getSide(int index){
-        if(index > 0){
-            if(index <= this.nSides)
-                return this.sides.get(index - 1);
-                // -1 perche' il lato 1 sara' ad indice 0 e cosi' via
+    public Double getSide(int num){
+        if(num - 1 >= 0){
+            if(num - 1 < this.getnSides())
+                return this.sides.get(num - 1);
             else
                 throw new IndexOutOfBoundsException("Indice maggiore del numero di elementi");
         }
@@ -78,9 +71,26 @@ public class Figure {
             throw new IllegalArgumentException("Perimetro non positivo");
     }
     protected void setnSides(int nSides){
-        if(nSides == 0 || nSides >=3)
+        if(nSides >=3)
             this.nSides = nSides;
         else
             throw new IllegalArgumentException("Numero lati non valido");
+    }
+    protected void setSide(int num, double value){
+        if(num - 1 >= 0 && num - 1 <= this.getnSides())
+            if(value > 0){
+                if(num == this.sides.size() && !this.isFull())
+                    this.sides.set(num - 1, value);
+                else
+                    this.sides.add(value);
+            }
+            else
+                throw new IllegalArgumentException("Valore da assegnare al lato non positivo");
+        else
+            throw new IndexOutOfBoundsException("Numero lato non valido");
+    }
+
+    protected boolean isFull(){
+        return this.sides.size() == this.getnSides();
     }
 }
