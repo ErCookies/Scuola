@@ -13,6 +13,6 @@
     ed il main che realizzata I/O con utente e classe Gestore.
 */
 
-public class Gestore {
+public class Gestore<E> {
     //
 }

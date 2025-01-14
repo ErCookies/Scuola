@@ -17,6 +17,6 @@ public class Quadrilatero extends Figure{
     //
 
     public Quadrilatero(){
-        this.setnSides(4);
+        //this.setnSides(4);
     }
 }

@@ -14,14 +14,24 @@
 */
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Figure {
     protected int nSides;
     protected ArrayList<Double> sides;
     protected double area, per;
 
-    public void stampa() {
-        //
+    public String stampa() {
+        String s = "Figura+";
+        Double l;
+        Iterator<Double> it = this.sides.iterator();
+        for(int k = 0; it.hasNext() && k < this.getnSides(); k++){
+            l = it.next();
+            s = s.concat("l" + (k+1) + "=" + l + "+");
+        }
+        s = s.concat("area=" + this.getArea() + "+");
+        s = s.concat("perimetro=" + this.getPer() + ";");
+        return s;
     }
     public void area(){
         //
@@ -68,7 +78,7 @@ public class Figure {
             throw new IllegalArgumentException("Perimetro non positivo");
     }
     protected void setnSides(int nSides){
-        if(nSides >= 3)
+        if(nSides == 0 || nSides >=3)
             this.nSides = nSides;
         else
             throw new IllegalArgumentException("Numero lati non valido");

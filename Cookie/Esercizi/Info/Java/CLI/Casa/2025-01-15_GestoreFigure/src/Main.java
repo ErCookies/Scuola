@@ -14,6 +14,7 @@
 */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        System.out.println("Inserire che figura vuole gestire");
+        String s = Input.lgStr("Quadrilateri o triangoli (quad / tri): ");
     }
 }

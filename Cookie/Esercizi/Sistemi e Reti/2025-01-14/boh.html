@@ -6,35 +6,7 @@
 	</head>
 	
 	<body>
-		<script>
-			let k = 0;
-			/*
-				3 → 2
-				2 → 1
-				1 → 0
-				0 → -1 (3)
-				-------
-				3 → 4 (0)
-				2 → 3
-				1 → 2
-				0 → 1
-			*/
-			function bck(){
-				const im = document.getElementById("imgg");
-				k--;
-				if(k == -1)
-					k = 3;
-				im.src = "./img" + k + ".jpg";
-			}
-			
-			function fwd(){
-				const im = document.getElementById("imgg");
-				k++;
-				if(k == 4)
-					k = 0;
-				im.src = "./img" + k + ".jpg";
-			}
-		</script>
+		<script src="./script.js"></script>
 		<button onclick="bck();">&larr; Indietro</button>
 		<img id="imgg" src="./img0.jpg" height="320" width="320">
 		<button onclick="fwd();">Avanti &rarr;</button>
