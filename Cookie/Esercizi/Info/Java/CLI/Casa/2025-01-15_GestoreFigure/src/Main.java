@@ -16,6 +16,7 @@ public class Main {
     public static void main(String[] args) {
         Gestore<Figura> ges = new Gestore<>();
         int sc;
+        Figura f;
         do{
             menu();
             sc = Input.lgInt(0,3,"Inserire funzione interesstata: ");
@@ -26,11 +27,11 @@ public class Main {
                     break;
                 }
                 case 2: {
-                    stampaTot(ges);
+                    System.out.println(ges);
                     break;
                 }
                 case 3: {
-                    stampaAree(ges);
+                    System.out.println(ges.elencoAree());
                     break;
                 }
             }
@@ -72,14 +73,6 @@ public class Main {
                 System.out.println("Errore, reinserire: ");
         }while(f != 'q' && f != 't' && !val);
 
-    }
-
-    private static void stampaTot(Gestore<Figura> ges) {
-        //
-    }
-
-    private static void stampaAree(Gestore<Figura> ges) {
-        //
     }
 
     private static void menu(){
