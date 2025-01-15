@@ -14,7 +14,7 @@
 */
 public class Main {
     public static void main(String[] args) {
-        Gestore<Figura> ges = new Gestore<>();
+        Gestore ges = new Gestore();
         int sc;
         Figura f;
         do{
@@ -38,7 +38,7 @@ public class Main {
         }while(sc != 0);
     }
 
-    private static void aggiunta(Gestore<Figura> ges) {
+    private static void aggiunta(Gestore ges) {
         char f;
         double l1, l2, l3, l4;
         boolean val = false;
