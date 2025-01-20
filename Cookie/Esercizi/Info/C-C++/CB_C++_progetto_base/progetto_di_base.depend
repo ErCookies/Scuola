@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1713187490 source:c:\users\ercoo\desktop\progetto_di_base\funzioni_utili.cpp
+	"header.h"
+
+1713187520 c:\users\ercoo\desktop\progetto_di_base\header.h
+	<iostream>
+	<fstream>
+	<string>
+	<string.h>
+	<float.h>
+
+1713712738 source:c:\users\ercoo\desktop\scuola\cookie\esercizi\info\c-c++\cb_c++_progetto_base\main.cpp
+	"header.h"
+
+1736867069 c:\users\ercoo\desktop\scuola\cookie\esercizi\info\c-c++\cb_c++_progetto_base\header.h
+	<iostream>
+	<fstream>
+	<string>
+	<string.h>
+	<float.h>
+
+1713335844 source:c:\users\ercoo\desktop\scuola\cookie\esercizi\info\c-c++\cb_c++_progetto_base\procedure_esercizio.cpp
+	"header.h"
+
