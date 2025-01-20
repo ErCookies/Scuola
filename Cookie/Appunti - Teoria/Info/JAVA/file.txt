@@ -1,0 +1,29 @@
+Esistono due tipologie di classi per gestire dei flussi di informazioni:
+ - basate sui BYTE;
+ - basate sui CARATTERI;
+
+L'interfaccia Serializable dichiara lz possibilita' di salvare delle immagini di oggetti in maniera persistente;
+
+FILE DI TESTO:
+Sono necessarie due classi: 
+PrintWriter								// a diretto contatto con il programma
+FileWriter								// lavora direttamente con i con il file
+
+PrintWriter fout = new PrintWriter(new FileWriter(fileName, true));	// specificare true per aprire in append
+
+METODI UTILI:
+SCRITTURA:
+ - write(String);
+ - append(String);
+ - print(String);
+ - println(String);
+
+LETTURA:
+ - int read()
+ - String readLine();
+
+readLine ritorna null se nessuna stringa e' stata letta dal file
+
+Il PrintWriter ha molti metodi print/println, differiscono nel tipo dei parametri: uno per int, uno per String etc.
+
+StringTokenizer

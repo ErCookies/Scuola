@@ -15,6 +15,7 @@
 public class Main {
     public static void main(String[] args) {
         Gestore ges = new Gestore();
+        System.out.println(ges.getClass().toString());
         int sc;
         Figura f;
         do{

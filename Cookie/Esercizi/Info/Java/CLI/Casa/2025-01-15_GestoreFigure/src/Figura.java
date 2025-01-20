@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
-public class Figura {
+public class Figura implements FileCSV{
     protected int nSides;
     protected ArrayList<Double> sides;
-    //protected double area, per;
 
     @Override
     public String toString() {
@@ -58,4 +57,18 @@ public class Figura {
     protected boolean isFull(){
         return this.sides.size() == this.getnSides();
     }
+
+    public String toCSV(){
+        String s = "";
+        s = s.concat(this.getnSides() + ";");
+        for(int k = 1; k <= this.getnSides(); k++)
+            s =  s.concat(this.getSide(k) + ";");
+        s = s.concat(this.perimetro() + ";");
+        s = s.concat(this.area() + ";\n");
+        return s;
+    }
+    public void fromCSV(String s){
+        //
+    }
+
 }
