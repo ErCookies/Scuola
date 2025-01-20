@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Figura {
     protected int nSides;
     protected ArrayList<Double> sides;
-    protected double area, per;
+    //protected double area, per;
 
     @Override
     public String toString() {
@@ -20,12 +20,6 @@ public class Figura {
     }
 
     /// GETTER
-    public double getArea(){
-        return this.area;
-    }
-    public double getPer(){
-        return this.per;
-    }
     public int getnSides(){
         return this.nSides;
     }
@@ -41,20 +35,6 @@ public class Figura {
     }
 
     /// SETTER
-    protected void setArea(double area){
-        if(area >= 0){
-            this.area = area;
-        }
-        else
-            throw new IllegalArgumentException("Area non positiva");
-    }
-    protected void setPer(double per){
-        if(per >= 0){
-            this.per = per;
-        }
-        else
-            throw new IllegalArgumentException("Perimetro non positivo");
-    }
     protected void setnSides(int nSides){
         if(nSides >=3)
             this.nSides = nSides;

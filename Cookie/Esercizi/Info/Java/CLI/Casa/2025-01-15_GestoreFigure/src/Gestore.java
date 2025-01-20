@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class Gestore<Figura> {
+public class Gestore{
     private final LinkedList<Figura> figs;
 
     public Gestore(){
@@ -32,10 +32,18 @@ public class Gestore<Figura> {
         Figura f;
         for(int k = 1; it.hasNext(); k++){
             f = it.next();
-            s = s.concat(k + ") " + f.getClass() + ": Area = "/* + f.getArea()*/ + "\n");
+
+            s = s.concat(k + ") " + f.getClass() + ": Area = " + f.area() + "\n");
         }
 
         return s;
     }
 
+    public void importa(String filename){
+        //
+    }
+
+    public void esporta(String filename){
+        //
+    }
 }
