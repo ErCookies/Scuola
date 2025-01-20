@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class Quadrilatero extends Figura {
-    //
 
     public Quadrilatero() throws IndexOutOfBoundsException, IllegalArgumentException{
         this.setnSides(4);

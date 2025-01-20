@@ -39,4 +39,11 @@ public class Gestore{
         return s;
     }
 
+    public void importa(String filename){
+        //
+    }
+
+    public void esporta(String filename){
+        //
+    }
 }
