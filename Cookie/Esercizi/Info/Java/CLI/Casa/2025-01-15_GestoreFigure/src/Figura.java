@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
+import java.util.StringTokenizer;
 
 public class Figura implements FileCSV{
     protected int nSides;
@@ -68,7 +70,17 @@ public class Figura implements FileCSV{
         return s;
     }
     public void fromCSV(String s){
-        //
+        if(s != null){
+            if(!s.isEmpty()){
+                StringTokenizer toks = new StringTokenizer(s, ";");
+                this.setnSides(Integer.parseInt(toks.nextToken()));
+                for(int k = 1; k <= this.getnSides(); k++)
+                    this.setSide(k, Double.parseDouble(toks.nextToken()));
+            }
+            else
+                throw new NoSuchElementException("Stringa vuota");
+        }
+        else
+            throw new NullPointerException("Puntatore a NULL non consentito");
     }
-
 }
