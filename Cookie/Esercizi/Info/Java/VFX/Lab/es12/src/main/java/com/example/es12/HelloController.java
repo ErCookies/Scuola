@@ -29,15 +29,16 @@ public class HelloController {
 
     public void btnCreateOnClick(){
         try{
-            //System.out.println(txtName.getText());
-            this.lamp = new LampadinaRGB(txtName.getText());
-            this.crcLamp.setFill(Color.rgb(lamp.getR(), lamp.getG(), lamp.getB()));
-            this.crcLamp.setVisible(false);
-            disabilita(false);
+            if(this.lamp == null){
+                this.lamp = new LampadinaRGB(txtName.getText());
+                this.crcLamp.setVisible(false);
+                disabilita(false);
+            }
+            else
+                throw new IllegalStateException("Lampadina gia' esistente");
         }
-        catch(IllegalArgumentException | NullPointerException e){
+        catch(IllegalArgumentException | NullPointerException | IllegalStateException e){
             this.lblErrCreate.setText(e.getMessage());
-            //System.out.println(e.getMessage());
         }
     }
 
@@ -49,13 +50,15 @@ public class HelloController {
         else{
             this.lamp.accendi();
             this.crcLamp.setVisible(true);
+            this.crcLamp.setFill(Color.rgb(lamp.getR(), lamp.getG(), lamp.getB()));
         }
     }
 
     public void btnLumOnClick(){
         try{
             this.lamp.setLum(Integer.parseInt(txtLum.getText()));
-            this.crcLamp.setOpacity((double)(lamp.getLum() / 5));
+            this.crcLamp.setOpacity(((double)lamp.getLum() / 5));
+            this.crcLamp.setFill(Color.rgb(lamp.getR(), lamp.getG(), lamp.getB()));
         }
         catch(NumberFormatException e){
             this.lblErrLum.setText("Inserire valore lum");
@@ -71,6 +74,7 @@ public class HelloController {
             int g = Integer.parseInt(txtG.getText());
             int b = Integer.parseInt(txtB.getText());
             this.lamp.setRGB(r,g,b);
+            this.crcLamp.setFill(Color.rgb(lamp.getR(), lamp.getG(), lamp.getB()));
         }
         catch(NumberFormatException e){
             this.lblErrRGB.setText("Inserire 3 valori RGB (0-255)");
@@ -94,11 +98,28 @@ public class HelloController {
         this.lblErrCreate.setText("");
         this.lblErrDelete.setText("");
     }
+    public void txtNameOnClick(){
+        this.txtName.setText("");
+    }
     public void txtLumOnKeyPressed(){
         this.lblErrLum.setText("");
+        this.lblErrLum.setText("");
+    }
+    public void txtLumOnClick(){
+        this.txtLum.setText("");
     }
     public void txtRGBOnKeyPressed(){
         this.lblErrRGB.setText("");
+        this.lblErrRGB.setText("");
+    }
+    public void txtROnClick(){
+        this.txtR.setText("");
+    }
+    public void txtGOnClick(){
+        this.txtG.setText("");
+    }
+    public void txtBOnClick(){
+        this.txtB.setText("");
     }
     public void disabilita(boolean state){
         this.btnOnOff.setDisable(state);
