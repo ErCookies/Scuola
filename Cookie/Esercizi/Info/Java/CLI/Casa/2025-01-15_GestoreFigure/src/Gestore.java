@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -40,10 +41,33 @@ public class Gestore{
     }
 
     public void importa(String filename){
-        //
+        try{
+            FileReader f;
+            BufferedReader fin;
+            String s;
+            f = new FileReader(filename);
+            //
+            f.close();
+        }
+        catch(FileNotFoundException exc){
+            System.out.println("Errore nell'apertura del file");
+        }
+        catch(IOException exc){
+            System.out.println(exc.getMessage());
+        }
     }
 
     public void esporta(String filename){
-        //
+        if(!this.figs.isEmpty()){
+            try{
+                String s;
+                PrintWriter fout = new PrintWriter(new FileWriter(filename));
+            }
+            catch(Exception exc){
+                System.out.println(exc.getMessage());
+            }
+        }
+        else
+            throw new IllegalStateException("Nessuna figura importata");
     }
 }

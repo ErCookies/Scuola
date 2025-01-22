@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.es12.HelloController">
+   <children>
+      <Circle fx:id="crcLamp" layoutX="135.0" layoutY="133.0" radius="128.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Button fx:id="btnCreate" layoutX="224.0" layoutY="341.0" mnemonicParsing="false" onAction="#btnCreateOnClick" text="Creazione">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtName" layoutX="14.0" layoutY="341.0" onKeyPressed="#txtNameOnKeyPressed" promptText="Inserire nome:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtLum" disable="true" layoutX="400.0" layoutY="83.0" onKeyPressed="#txtLumOnKeyPressed" promptText="Luminosita' (1-5):">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnLum" disable="true" layoutX="610.0" layoutY="83.0" mnemonicParsing="false" onAction="#btnLumOnClick" text="Imposta">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtR" disable="true" layoutX="400.0" layoutY="204.0" onKeyPressed="#txtRGBOnKeyPressed" prefHeight="25.0" prefWidth="57.0" promptText="R:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtG" disable="true" layoutX="470.0" layoutY="204.0" onKeyPressed="#txtRGBOnKeyPressed" prefHeight="25.0" prefWidth="57.0" promptText="G:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtB" disable="true" layoutX="540.0" layoutY="204.0" onKeyPressed="#txtRGBOnKeyPressed" prefHeight="25.0" prefWidth="57.0" promptText="B:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnRGB" disable="true" layoutX="610.0" layoutY="204.0" mnemonicParsing="false" onAction="#btnRGBOnClick" text="Imposta">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="img" fitHeight="54.0" fitWidth="57.0" layoutX="676.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../futaba-pixel.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblErrCreate" layoutX="329.0" layoutY="341.0" prefHeight="35.0" prefWidth="215.0" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrLum" layoutX="401.0" layoutY="133.0" prefHeight="35.0" prefWidth="284.0" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrRGB" layoutX="401.0" layoutY="261.0" prefHeight="35.0" prefWidth="290.0" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnOnOff" disable="true" layoutX="7.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnOnOffOnClick" text="ON/OFF">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" disable="true" layoutX="173.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnDeleteOnClick" text="Elimina">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblErrDelete" layoutX="271.0" layoutY="281.0" prefHeight="35.0" prefWidth="256.0" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
