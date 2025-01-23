@@ -12,6 +12,7 @@
     Produrre classe GESTORE (con metodi add, toString ed elencoAree), la classe Figura e le classi Quadrilatero e Triangolo
     ed il main che realizzata I/O con utente e classe Gestore.
 */
+
 public class Main {
     public static void main(String[] args) {
         Gestore ges = new Gestore();
