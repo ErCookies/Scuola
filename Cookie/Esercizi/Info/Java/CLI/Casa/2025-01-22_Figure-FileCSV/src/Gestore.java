@@ -35,7 +35,7 @@ public class Gestore{
         for(int k = 1; it.hasNext(); k++){
             f = it.next();
 
-            s = s.concat(k + ") " + f.getClass() + ": Area = " + f.area() + "\n");
+            s = s.concat(k + ") " + f.getClass().toString().replace("class ","") + ": Area = " + f.area() + "\n");
         }
 
         return s;
@@ -47,7 +47,7 @@ public class Gestore{
         for(int k = 1; it.hasNext(); k++){
             f = it.next();
 
-            s = s.concat(k + ") " + f.getClass() + ": Perimetro = " + f.perimetro() + "\n");
+            s = s.concat(k + ") " + f.getClass().toString().replace("class ","") + ": Perimetro = " + f.perimetro() + "\n");
         }
         return s;
     }
