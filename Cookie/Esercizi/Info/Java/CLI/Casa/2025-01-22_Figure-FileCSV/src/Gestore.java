@@ -71,7 +71,7 @@ public class Gestore{
                     this.figs.add(new Quadrilatero(Double.parseDouble(toks.nextToken()), Double.parseDouble(toks.nextToken()), Double.parseDouble(toks.nextToken()), Double.parseDouble(toks.nextToken())));
                 s = fin.readLine();
             }
-            f.close();
+            fin.close();
         }
         catch(FileNotFoundException exc){
             System.out.println("Errore nell'apertura del file");
@@ -88,6 +88,8 @@ public class Gestore{
                 PrintWriter fout = new PrintWriter(new FileWriter(filename), app);
                 for(Figura f : this.figs)
                     fout.println(f.toCSV());
+
+                fout.close();
             }
             catch(IOException exc){
                 System.out.println(exc.getMessage());
