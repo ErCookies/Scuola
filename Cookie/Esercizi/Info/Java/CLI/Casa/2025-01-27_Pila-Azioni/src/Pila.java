@@ -2,11 +2,34 @@ import java.io.*;
 import java.util.LinkedList;
 
 public class Pila<E extends FileCSV & Copyable<E>>{
-    private LinkedList<E> pila;
+    private final LinkedList<E> pila;
+    private String nome;
 
+    /// GETTER - SETTER
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        if(nome != null)
+            if(!nome.isEmpty())
+                this.nome = nome;
+            else
+                throw new IllegalArgumentException("Stringa vuota");
+        else
+            throw new NullPointerException("null pointer non valido");
+    }
+
+    /// COSTRUTTORI
     public Pila(){
         pila = new LinkedList<>();
+        setNome("default");
     }
+    public Pila(String nome) throws IllegalArgumentException, NullPointerException{
+        pila = new LinkedList<>();
+        setNome(nome);
+    }
+
+    /// METODI SU PILA
     public boolean isEmpty(){
         return this.pila.isEmpty();
     }
@@ -26,9 +49,20 @@ public class Pila<E extends FileCSV & Copyable<E>>{
             throw new NullPointerException("Puntatore a NULL non consentito");
     }
 
+    /*@Override
+    public String toString() {
+        String s = "";
+        for(E obj : this.pila)
+            s = s.concat(obj.toCSV() + "\n");
+        return s;
+    }*/
+
+
+    /// METODI SU FILE
     public void esporta(String filename, boolean app) throws IOException {
         if(!filename.isEmpty()){
             PrintWriter fout = new PrintWriter(new FileWriter(filename), app);
+            fout.println(getNome());
             for(E obj : this.pila)
                 fout.println(obj.toCSV());
 
@@ -37,18 +71,30 @@ public class Pila<E extends FileCSV & Copyable<E>>{
         else
             throw new IllegalArgumentException("Nome non valido");
     }
+    public void esporta(boolean app) throws IOException {
+        PrintWriter fout = new PrintWriter(new FileWriter(getNome() + ".csv"), app);
+        fout.println(getNome());
+        for(E obj : this.pila)
+                fout.println(obj.toCSV());
+        fout.close();
+    }
     public void importa(String filename, E aus) throws IOException {
-        if(!filename.isEmpty()){
-            BufferedReader fin = new BufferedReader(new FileReader(filename));      //FileNotFoundException
-            String s = fin.readLine();      //IOException
-            while(s != null){
-                E obj = aus.copy();
-                obj.fromCSV(s);
-                push(obj);
-                s = fin.readLine();
+        if(aus != null){
+            if(!filename.isEmpty()){
+                BufferedReader fin = new BufferedReader(new FileReader(filename));      //FileNotFoundException
+                this.setNome(fin.readLine());
+                String s = fin.readLine();      //IOException
+                while(s != null){
+                    E obj = aus.copy();
+                    obj.fromCSV(s);
+                    push(obj);
+                    s = fin.readLine();
+                }
             }
+            else
+                throw new IllegalArgumentException("Nome non valido");
         }
         else
-            throw new IllegalArgumentException("Nome non valido");
+            throw new NullPointerException("Passare oggetto istanziato");
     }
 }

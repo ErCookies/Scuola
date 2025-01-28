@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.StringTokenizer;
 
 public class PacchettoAzionario implements FileCSV, Copyable<PacchettoAzionario>{
-
     private int num;
     private double value;
     private Date data;
@@ -66,6 +65,11 @@ public class PacchettoAzionario implements FileCSV, Copyable<PacchettoAzionario>
         else throw new NullPointerException("Puntatore a NULL non consentito");
     }
 
+    /// METODI
+    public double valTot(){
+        return (getNum() * getValue());
+    }
+
     /// METODI INTERFACE FILECSV
     public String toCSV(){
         String s = "";
@@ -74,7 +78,6 @@ public class PacchettoAzionario implements FileCSV, Copyable<PacchettoAzionario>
         s = s.concat(df.format(getData()) + ";");
         return s;
     }
-
     public void fromCSV(String s) {
         StringTokenizer toks = new StringTokenizer(s,";");
         try{
