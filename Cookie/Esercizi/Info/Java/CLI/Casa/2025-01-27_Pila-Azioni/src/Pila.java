@@ -49,13 +49,13 @@ public class Pila<E extends FileCSV & Copyable<E>>{
             throw new NullPointerException("Puntatore a NULL non consentito");
     }
 
-    /*@Override
+    @Override
     public String toString() {
         String s = "";
         for(E obj : this.pila)
             s = s.concat(obj.toCSV() + "\n");
         return s;
-    }*/
+    }
 
 
     /// METODI SU FILE

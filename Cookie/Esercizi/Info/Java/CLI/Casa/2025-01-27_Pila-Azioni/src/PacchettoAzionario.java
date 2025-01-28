@@ -19,6 +19,7 @@ public class PacchettoAzionario implements FileCSV, Copyable<PacchettoAzionario>
     public Date getData() {
         return this.data;
     }
+    public String getDataF(){return df.format(getData());}
 
     /// SETTER
     public void setData(Date data){
@@ -78,7 +79,7 @@ public class PacchettoAzionario implements FileCSV, Copyable<PacchettoAzionario>
         s = s.concat(df.format(getData()) + ";");
         return s;
     }
-    public void fromCSV(String s) {
+    public void fromCSV(String s){
         StringTokenizer toks = new StringTokenizer(s,";");
         try{
             setNum(Integer.parseInt(toks.nextToken()));

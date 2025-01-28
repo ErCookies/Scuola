@@ -1,6 +1,5 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 /*
     Cucchi Francesco
     Creare la classe Pila su tipo generico vincolato (metodi: costruttori, size, pop, push, importa ed esporta)
@@ -14,48 +13,53 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         int sc;
+        boolean val = false;
         Pila<PacchettoAzionario> azioni = new Pila<>();
         try{
             azioni.importa(Input.lgStr("Inserire nome file: "), new PacchettoAzionario());
+            val = true;
         }
         catch(FileNotFoundException e){
             System.out.println("File inesistente");
-            azioni.setNome(Input.lgStr("Inserire nome azione: "));
+            azioni.setNome(Input.lgStr("Inserire nome nuova azione: "));
+            val = true;
         }
         catch (IOException e) {
             System.out.println(e.getMessage());
         }
 
-        do{
-            menu();
-            sc = Input.lgInt(0,3, "Inserire funzione interessata");
-            switch (sc){
-                case 1:{
-                    acquisto(azioni);
-                    break;
-                }
-                case 2:{
-                    vendita(azioni);
-                    break;
-                }
-                case 3:{
-                    stampa(azioni);
-                    break;
-                }
-                case 0:{
-                    try {
-                        azioni.esporta(false);
+        if(val){
+            do{
+                menu();
+                sc = Input.lgInt(0,3, "Inserire funzione interessata: ");
+                switch (sc){
+                    case 1:{
+                        acquisto(azioni);
+                        break;
                     }
-                    catch (IOException e) {
-                        System.out.println("Impossibile procedere con l'esportazione");
-                        sc = -1;
+                    case 2:{
+                        vendita(azioni);
+                        break;
                     }
-                    break;
+                    case 3:{
+                        stampa(azioni);
+                        break;
+                    }
+                    case 0:{
+                        try {
+                            azioni.esporta(false);
+                        }
+                        catch (IOException e) {
+                            System.out.println("Impossibile procedere con l'esportazione");
+                            sc = -1;
+                        }
+                        break;
+                    }
                 }
-            }
-        }while(sc != 0);
+            }while(sc != 0);
 
-        out(azioni);
+            out(azioni);
+        }
     }
 
     public static void acquisto(Pila<PacchettoAzionario> azioni) {
@@ -75,12 +79,38 @@ public class Main {
         }
     }
     public static void vendita(Pila<PacchettoAzionario> azioni){
-        //
+        int numToS = Input.lgInt(0, Integer.MAX_VALUE, "Inserire numero azioni da vendere: ");
+        double sValue = Input.lgDbl(0, Double.MAX_VALUE, "Inserire valore di vendita: ");
+        int numSold;    //azioni vendute
+        PacchettoAzionario pack;
+        while(numToS > 0){
+            try{
+                pack = azioni.pop();
+                if(numToS <= pack.getNum()){
+                    numSold = numToS;
+                    numToS = 0;
+                    pack.setNum(pack.getNum() - numSold);
+                    if(pack.getNum() > 0)
+                        azioni.push(pack);
+                }
+                else{
+                    numSold = pack.getNum();
+                    numToS -= numSold;
+                }
+                System.out.println("Valenza pacchetto in data " + pack.getDataF() + ": " + ((sValue - pack.getValue()) * numSold));
+                System.out.println("Azioni vendute: " + numSold);
+                //
+            }
+            catch(IllegalStateException e){
+                System.out.println(e.getMessage() + ", impossibile continuare con la vendita");
+                numToS = 0;
+            }
+        }
     }
     public static void stampa(Pila<PacchettoAzionario> azioni){
-        //
+        System.out.println("\nNumero;ValoreAcquisto;Data;");
+        System.out.println(azioni.toString());
     }
-
 
     public static void menu(){
         System.out.println("1) Acquisto azione;");
