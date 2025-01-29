@@ -79,7 +79,6 @@ public class LampadinaRGB {
         this.setG(g);
         this.setB(b);
     }
-
     public void accendi(){
         if(this.isStateON())
             throw new IllegalStateException("Lampadina gia' accesa");
@@ -94,5 +93,4 @@ public class LampadinaRGB {
         else
             throw new IllegalStateException("Lampadina gia' spenta");
     }
-
 }

@@ -1,5 +1,5 @@
 package com.example.es12;
-
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -24,12 +24,14 @@ public class HelloController {
     @FXML private TextField txtName;
     @FXML private TextField txtR;
 
+    /// CREAZIONE
     public void btnCreateOnClick(){
         try{
             if(this.lamp == null){
                 this.lamp = new LampadinaRGB(txtName.getText());
                 this.crcLamp.setVisible(false);
                 disabilita(false);
+                this.lblErrCreate.setText("Lampadina " + this.lamp.getName() + " creata");
             }
             else
                 throw new IllegalStateException("Lampadina gia' esistente");
@@ -39,6 +41,7 @@ public class HelloController {
         }
     }
 
+    /// ACCENSIONE - SPEGNIMENTO
     public void btnOnOffOnClick(){
         if(this.lamp.isStateON()){
             this.lamp.spegni();
@@ -51,6 +54,7 @@ public class HelloController {
         }
     }
 
+    /// SET LUMINOSITA'
     public void btnLumOnClick(){
         try{
             this.lamp.setLum(Integer.parseInt(txtLum.getText()));
@@ -65,6 +69,7 @@ public class HelloController {
         }
     }
 
+    /// SET RGB
     public void btnRGBOnClick(){
         try{
             int r = Integer.parseInt(txtR.getText());
@@ -81,16 +86,20 @@ public class HelloController {
         }
     }
 
+    /// CANCELLAZIONE
     public void btnDeleteOnClick(){
         if(lamp != null){
             crcLamp.setVisible(false);
+            crcLamp.setOpacity(1);
             lamp = null;
             disabilita(true);
+            lblErrCreate.setText("");
         }
         else
             lblErrDelete.setText("Lampadina inesistente");
     }
 
+    /// RESET LABEL ERRORE
     public void txtNameOnKeyPressed(){
         this.lblErrCreate.setText("");
         this.lblErrDelete.setText("");
@@ -118,6 +127,8 @@ public class HelloController {
     public void txtBOnClick(){
         this.txtB.setText("");
     }
+
+    /// DISABILITA ELEMENTI
     public void disabilita(boolean state){
         this.btnOnOff.setDisable(state);
         this.txtLum.setDisable(state);
@@ -127,5 +138,10 @@ public class HelloController {
         this.txtB.setDisable(state);
         this.btnRGB.setDisable(state);
         this.btnDelete.setDisable(state);
+    }
+
+    /// TERMINA PROGRAMMA
+    public void imgOnClick(){
+        Platform.exit();
     }
 }
