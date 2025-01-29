@@ -10,13 +10,11 @@ import javafx.scene.shape.Circle;
 
 public class HelloController {
     private LampadinaRGB lamp;
-    @FXML private Button btnCreate;
     @FXML private Button btnDelete;
     @FXML private Button btnOnOff;
     @FXML private Button btnLum;
     @FXML private Button btnRGB;
     @FXML private Circle crcLamp;
-    @FXML private ImageView img;
     @FXML private Label lblErrCreate;
     @FXML private Label lblErrDelete;
     @FXML private Label lblErrLum;

@@ -70,7 +70,7 @@ public class LampadinaRGB {
         this.setName(name);
         this.stateON = false;
         this.setLum(1);
-        this.setRGB(255,255,255);
+        this.setRGB(252, 255, 202);
     }
 
     /// METODI
@@ -85,7 +85,6 @@ public class LampadinaRGB {
             throw new IllegalStateException("Lampadina gia' accesa");
         else{
             this.changeState();
-            this.setRGB(252, 255, 202);
         }
     }
     public void spegni(){
