@@ -14,18 +14,32 @@
 */
 package com.example.es12;
 
-public class LampadinaRGB {
+import java.util.StringTokenizer;
+
+public class LampadinaRGB implements FileCSV {
     private String name;
     private boolean stateON;
     private int lum, r, g, b;
 
     /// GETTER
-    public String getName(){return this.name;}
-    public boolean isStateON(){return this.stateON;}
-    public int getLum(){return this.lum;}
-    public int getR(){return this.r;}
-    public int getG(){return this.g;}
-    public int getB(){return this.b;}
+    public String getName(){
+        return this.name;
+    }
+    public boolean isStateON(){
+        return this.stateON;
+    }
+    public int getLum(){
+        return this.lum;
+    }
+    public int getR(){
+        return this.r;
+    }
+    public int getG(){
+        return this.g;
+    }
+    public int getB(){
+        return this.b;
+    }
 
     /// SETTER
     public void setName(String name) {
@@ -39,6 +53,9 @@ public class LampadinaRGB {
     }
     public void changeState(){
         this.stateON = !this.stateON;
+    }
+    private void setStateON(boolean b){
+        this.stateON = b;
     }
     public void setLum(int lum){
         if(lum >= 1 && lum <=5)
@@ -92,5 +109,27 @@ public class LampadinaRGB {
         }
         else
             throw new IllegalStateException("Lampadina gia' spenta");
+    }
+
+    /// METODI INTERFACE FILECSV
+    public String toCSV(){
+        String s = "";
+        s = s.concat(getName() + ";");
+        s = s.concat(isStateON() + ";");
+        s = s.concat(getLum() + ";");
+        s = s.concat(getR() + ";" + getG() + ";" + getB() + ";\n");
+        return s;
+    }
+    public void fromCSV(String s){
+        StringTokenizer toks = new StringTokenizer(s, ";");
+        try {
+            setName(toks.nextToken());
+            setStateON(Boolean.parseBoolean(toks.nextToken()));
+            setLum(Integer.parseInt(toks.nextToken()));
+            setRGB(Integer.parseInt(toks.nextToken()), Integer.parseInt(toks.nextToken()), Integer.parseInt(toks.nextToken()));
+        }
+        catch(IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
