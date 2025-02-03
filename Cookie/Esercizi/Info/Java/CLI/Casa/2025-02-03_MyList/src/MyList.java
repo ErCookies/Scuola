@@ -133,19 +133,17 @@ public class MyList <E>{
     }
     public E removeLast(){
         if(getFirstNode() != null){
-            Nodo<E> aus;
             Nodo<E> prec = null;
             Nodo<E> last = getFirstNode();
             while(last.getNext() != null){
                 prec = last;
                 last = last.getNext();
             }
-            aus = last;
             if(prec == null)
                 clear();
             else
                 prec.setNext(null);
-            return aus.getDati();
+            return last.getDati();
         }
         else
             throw new IllegalStateException("Lista vuota");

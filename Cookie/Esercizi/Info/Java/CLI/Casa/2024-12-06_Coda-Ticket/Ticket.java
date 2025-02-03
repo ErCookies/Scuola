@@ -1,5 +1,5 @@
 public class Ticket {
-    private int num;
+    private final int num;
 
     public Ticket(){
         this.num = 1;
