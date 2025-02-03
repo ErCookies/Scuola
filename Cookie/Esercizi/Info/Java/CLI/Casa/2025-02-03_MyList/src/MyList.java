@@ -60,19 +60,19 @@ public class MyList <E>{
             throw new NullPointerException("Oggetto null non consentito");
     }
     public void addLast(E e){
-        if(getFirstNode() != null){
-            if(e != null){
-                Nodo<E> last = new Nodo<>(e);
+        if(e != null){
+            Nodo<E> last = new Nodo<>(e);
+            if(getFirstNode() != null){
                 Nodo<E> nodo = getFirstNode();
                 while(nodo.getNext() != null)
                     nodo = nodo.getNext();
                 nodo.setNext(last);
             }
             else
-                throw new NullPointerException("Oggetto null non consentito");
+                first = last;
         }
         else
-            throw new IllegalStateException("Lista vuota");
+            throw new NullPointerException("Oggetto null non consentito");
     }
     public void clear(){
         if(getFirstNode() != null)
