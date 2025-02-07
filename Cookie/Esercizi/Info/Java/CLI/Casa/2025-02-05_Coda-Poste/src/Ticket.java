@@ -1,4 +1,4 @@
-public class Ticket implements Str {
+public class Ticket {
     private final int num;
     private final String sez;
 
@@ -20,8 +20,8 @@ public class Ticket implements Str {
         return sez;
     }
 
-    /// METODI FILECSV
-    public String toStr(){
+    @Override
+    public String toString(){
         return getSez() + getNum();
     }
 }

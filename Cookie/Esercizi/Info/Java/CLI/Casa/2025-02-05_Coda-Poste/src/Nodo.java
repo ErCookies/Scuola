@@ -1,4 +1,4 @@
-public class Nodo <E extends Str>{
+public class Nodo <E>{
     private final E dati;
     private Nodo<E> next;
 

@@ -59,7 +59,7 @@ public class Main {
                     index = k;
                 }
             }
-            System.out.println("Tocca a: " + code.get(index).remove().toStr());
+            System.out.println("Tocca a: " + code.get(index).remove().toString());
         }
         catch(IllegalStateException e){
             System.out.println("Tutte le code sono vuote");
@@ -70,7 +70,7 @@ public class Main {
         for(int k = 0; k < code.size(); k++){
             if(code.get(k).size() > 0){
                 System.out.println(code.get(k).getName() + ":");
-                System.out.println(code.get(k).toStr());
+                System.out.println(code.get(k).toString());
             }
             else
                 System.out.println("Coda " + code.get(k).getName() + " vuota\n");

@@ -1,4 +1,4 @@
-public class MyList <E extends Str> implements Str{
+public class MyList <E>{
     private String name;
     private Nodo<E> first;
 
@@ -202,11 +202,13 @@ public class MyList <E extends Str> implements Str{
             throw new IllegalArgumentException("Indice negativo");
     }
 
-    public String toStr(){
+    @Override
+    public String toString(){
         if(size() > 0){
             String s = "";
             for(int k = 0; k < size(); k++)
-                s = s.concat("El " + k + ": " + get(k).toStr() + "\n");
+                s = s.concat(get(k).toString() + ";");
+            s = s.concat("\n");
             return s;
         }
         else
