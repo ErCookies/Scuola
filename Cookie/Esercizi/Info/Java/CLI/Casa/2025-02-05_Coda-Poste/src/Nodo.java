@@ -9,6 +9,7 @@ public class Nodo <E>{
     public E getDati(){
         return this.dati;
     }
+
     /// SETTER
     public void setNext(Nodo<E> next){
         this.next = next;

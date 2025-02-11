@@ -9,26 +9,21 @@
 public class Main {
     public static void main(String[] args) {
         int sc;
-        MyList<MyList<Ticket>> code = new MyList<>("Code");
-        code.addLast(new MyList<>("A"));
-        code.addLast(new MyList<>("B"));
-        code.addLast(new MyList<>("C"));
+        Gestore ges = new Gestore();
 
         do{
             menu();
-            sc = Input.lgInt(0,5,"Inserire funzione interessata: ");
+            sc = Input.lgInt(0,3,"Inserire funzione interessata: ");
             switch(sc){
-                case 1:
-                case 2:
-                case 3:{
-                    insert(code.get(sc - 1), code.get(sc - 1).getName());
+                case 1:{
+                    insert(ges);
                     break;
                 }
-                case 4:{
+                case 2:{
                     printTurn(code);
                     break;
                 }
-                case 5:{
+                case 3:{
                     printAll(code);
                     break;
                 }
@@ -38,7 +33,7 @@ public class Main {
         }while(sc != 0);
     }
 
-    static public void insert(MyList<Ticket> coda, String name){
+    static public void insert(Gestore ges){
         try{
             coda.addLast(new Ticket(coda.getLast().getNum() + 1, name));
         }
@@ -78,11 +73,9 @@ public class Main {
     }
 
     static public void menu(){
-        System.out.println("1) Inserisci in coda A;");
-        System.out.println("2) Inserisci in coda B;");
-        System.out.println("3) Inserisci in coda C;");
-        System.out.println("4) Stampa a chi tocca;");
-        System.out.println("5) Stampa interamente code;");
+        System.out.println("1) Inserisci ticket in una coda;");
+        System.out.println("2) Stampa a chi tocca;");
+        System.out.println("3) Stampa interamente code;");
         System.out.println("0) Termina il programma;");
     }
 }
