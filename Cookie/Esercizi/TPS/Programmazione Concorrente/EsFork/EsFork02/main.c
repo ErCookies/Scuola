@@ -24,7 +24,7 @@ int main()
     else{
         //ramo processo padre
         printf("Divisori di %d: ", x);
-        for(k = 0, k < x/2; k++){
+        for(k = 1, k < x/2; k++){
             if(x%k == 0)
                 printf("%d", k);
         }
