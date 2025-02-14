@@ -1,0 +1,9 @@
+Abbiamo due tipi di thread: 
+ - User thread
+ - Daemon thread 
+I primi rappresentano i thread che creiamo e gestiamo noi, in foreground.
+I daemon sono vincolati, creati e gestiti dalla JVM, come il garbage collector. Se la JVM termina i daemon vengono interrotti.
+Gli user permangono anche post terminazione JVM, ed essa aspetta la sua terminazione finche' vi e' anche solo un user thread.
+I thread hanno priorita' variabile fra 1 - 10, 5 di default
+Gli user thread hanno quasi sempre priorita' maggiore dei daemon.
+Gli user thread hanno delle task determiate dal programmatore, mentre i daemon fungono da support per gli altri.
