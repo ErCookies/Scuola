@@ -1,27 +1,48 @@
 <!DOCTYPE HTML>
 
+<!--
+Form contenente vari campi, fra cui delle textbox per nome, cognome ed eta', dei radioButton per il genere,
+un menu a tendina (select / combobox) per il colore ed una checkbox per il consenso.
+Terminare il tutto con il submit "INVIA".
+Alla pressione del submit vi saranno due casi:
+a - tutti i dati sono stati inseriti
+b - manca almeno un dato (errore)
+
+RICHIESTE:
+1 - Realizzare il form;
+2 - Gestire il feedback del submit (nel form -> onsubmit="func()")
+-->
+
 <html>
 	<head>
 		<!-- Cucchi Francesco 4BI form.html -->
 		<title>Form ed eventi</title>
+		<script src="boh.js"></script>
 	</head>
 	
 	<body>
-		<form>
-			Nome: <input type="text" name="name">
+		<form id="formettino" onsubmit="test()">
+			<label for="name">Nome: </label><input type="text" name="name">
 			<br>
-			Cognome: <input type="text" name="sur">
+			<label for="sur">Cognome: </label><input type="text" name="sur">
 			<br>
-			Et&agrave;: <input type="text" name="age">
+			<label for="age">Et&agrave;: </label><input type="text" name="age">
 			<br>
-			Genere: <input type="radio" name="gender" value="M"> <input type="radio" name="gender" value="F"> 
+			<label for="gender">Genere: </label><input type="radio" name="gender" value="M">M <input type="radio" name="gender" value="F">F
 			<br>
-			Colore: <select name="color">
-					/
+			<label for="color">Colore: </label><select name="color">
+						<option value="---" selected>---</option>
+						<option value="red">Rosso</option>
+						<option value="yellow">Giallo</option>
+						<option value="green">Verde</option>
 					</select>
 			<br>
-			Consenso: 
+			<label for="consent">Consenso: </label><input type="checkbox" name="consent">
 			<br>
+			<button type="submit">
+				INVIA
+			</button>
 		</form>
+		
 	</body>
 </html>
