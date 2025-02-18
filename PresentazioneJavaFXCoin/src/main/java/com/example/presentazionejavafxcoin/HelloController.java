@@ -11,41 +11,97 @@ import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
     @FXML private Button btnPlay;
+    @FXML private Button btnReset;
     @FXML private ImageView imgCoinHeads;
     @FXML private ImageView imgCoinTails;
     @FXML private Label lblVal;
-    @FXML private Label lblTest;
+    @FXML private Label lblSoldi;
     @FXML private Slider sldBet;
-    @FXML private Spinner<Integer> spnNumBet;
+    @FXML private Spinner<Integer> spnBet;
 
-    public void onSldBetHover(){
-        lblVal.setText(Double.toString(sldBet.getValue()));
+    private final Coin coin = new Coin();
+
+    public void onSldBetInteraction(){
+        lblVal.setText(Integer.toString((int)sldBet.getValue()));
     }
 
     public void onBtnPlayClick(){
+        btnReset.setDisable(false);
         try{
-            Coin coin = new Coin();
-            //
-            /*int randx;
-            for(int numBet = spnNumBet.getValue(); numBet != 0; numBet--){
-                randx = (int)Math.round(Math.random());
-                System.out.println("Numero: " + numBet + " | Ris: " + randx);
-                Thread.sleep(2000);
-                lblTest.setText(Integer.toString(numBet));
-            }*/
-            //
+            coin.flip();
+
+            //TEST
+            System.out.println("Tent: " + spnBet.getValue());
+            System.out.println("Risultato: " + coin.getRand());
+            System.out.println("Corrispondono? " + (spnBet.getValue() == coin.getRand()));
+
+            sldBet.setDisable(true);
+            btnPlay.setDisable(true);
+
+            Thread.sleep(2000);
+
+            showCoin(coin.getRand());
+            result(spnBet.getValue(), coin.getRand(), sldBet.getValue());
+            spnBet.setDisable(true);
         }
-        catch(Exception e){
+        catch(InterruptedException e){
             System.out.println(e.getMessage());
         }
+        catch(IllegalStateException e){
+            disableAll();
+        }
+    }
+
+    public void disableAll(){
+        sldBet.setDisable(true);
+        btnReset.setDisable(true);
+        btnPlay.setDisable(true);
+        spnBet.setDisable(true);
+    }
+
+    public void result(int bet, int res, double value){
+        sldBet.setMax((int)(sldBet.getMax() - sldBet.getValue()));
+
+        if(bet == res)
+            sldBet.setMax((int)(sldBet.getMax() + (value*2)));
+
+        lblSoldi.setText(Integer.toString((int)sldBet.getMax()));
+
+        if((int)(sldBet.getMax() / 10) > 0)
+            sldBet.setMajorTickUnit((int)(sldBet.getMax() / 10));
+        else
+            throw new IllegalStateException("Hai finito i soldi");
+    }
+
+    public void showCoin(int rand){
+        if(rand == 1){
+            imgCoinHeads.setVisible(true);
+            imgCoinTails.setVisible(false);
+        }
+        else{
+            imgCoinTails.setVisible(true);
+            imgCoinHeads.setVisible(false);
+        }
+    }
+
+    public void BtnResetOnClick(){
+        btnReset.setDisable(true);
+        sldBet.setDisable(false);
+        btnPlay.setDisable(false);
+        spnBet.setDisable(false);
+        imgCoinTails.setVisible(false);
+        imgCoinHeads.setVisible(false);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         SpinnerValueFactory<Integer> factory =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5);
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 2);
         factory.setValue(1);
-        spnNumBet.setValueFactory(factory);
+        spnBet.setValueFactory(factory);
+
+        lblVal.setText(Integer.toString((int)sldBet.getValue()));
+        lblSoldi.setText(Integer.toString((int)sldBet.getMax()));
     }
 
     public void imgOnClick(){
