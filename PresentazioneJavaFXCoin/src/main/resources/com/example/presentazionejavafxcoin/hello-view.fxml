@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.presentazionejavafxcoin.HelloController">
+   <children>
+      <ImageView fx:id="imgCoinHeads" fitHeight="150.0" fitWidth="200.0" layoutX="243.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../heads.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCoinTails" fitHeight="150.0" fitWidth="200.0" layoutX="243.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../tails.jpg" />
+         </image>
+      </ImageView>
+      <Slider fx:id="sldBet" blockIncrement="5.0" layoutX="14.0" layoutY="14.0" minorTickCount="4" onMouseMoved="#onSldBetHover" prefHeight="37.0" prefWidth="309.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="50.0" />
+      <Label layoutX="14.0" layoutY="77.0" text="Puntata: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblVal" layoutX="92.0" layoutY="77.0" prefHeight="30.0" prefWidth="122.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="spnNumBet" layoutX="453.0" layoutY="14.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="454.0" layoutY="77.0" text="Numero Giocate">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnPlay" layoutX="258.0" layoutY="366.0" mnemonicParsing="false" onAction="#onBtnPlayClick" text="GIOCA">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="585.0" layoutY="395.0" onMouseClicked="#imgOnClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../click.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblTest" layoutX="112.0" layoutY="197.0">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label layoutX="78.0" layoutY="167.0" text="Numero Giocate Rimanenti" />
+   </children>
+</Pane>
