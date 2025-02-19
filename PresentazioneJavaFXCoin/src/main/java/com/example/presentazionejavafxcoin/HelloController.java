@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,13 +22,17 @@ public class HelloController implements Initializable {
 
     private final Coin coin = new Coin();
 
+    /// alla modifica del valore dello slider
     public void onSldBetInteraction(){
         lblVal.setText(Integer.toString((int)sldBet.getValue()));
+        btnPlay.setDisable(false);
     }
 
+    /// pressione button per giocare
     public void onBtnPlayClick(){
         btnReset.setDisable(false);
         try{
+            //random testa o croce
             coin.flip();
 
             //TEST
@@ -35,23 +40,33 @@ public class HelloController implements Initializable {
             System.out.println("Risultato: " + coin.getRand());
             System.out.println("Corrispondono? " + (spnBet.getValue() == coin.getRand()));
 
+            //disabilitazione slider e button
             sldBet.setDisable(true);
             btnPlay.setDisable(true);
 
+            //pausa per suspance
             Thread.sleep(2000);
 
+            //mostra faccia moneta
             showCoin(coin.getRand());
+
+            //gestione punteggi
             result(spnBet.getValue(), coin.getRand(), sldBet.getValue());
+
+            //disabilitazione spinner
             spnBet.setDisable(true);
         }
         catch(InterruptedException e){
             System.out.println(e.getMessage());
         }
+        //se si hanno finito i soldi
         catch(IllegalStateException e){
             disableAll();
+            lblSoldi.setTextFill(new Color(1, 0, 0, 1));
         }
     }
 
+    /// disabilita tutti gli elementi interagibili
     public void disableAll(){
         sldBet.setDisable(true);
         btnReset.setDisable(true);
@@ -59,20 +74,32 @@ public class HelloController implements Initializable {
         spnBet.setDisable(true);
     }
 
+    /// gestione risultato
     public void result(int bet, int res, double value){
+        //detrazione puntata
         sldBet.setMax((int)(sldBet.getMax() - sldBet.getValue()));
 
+        //vincita puntata
         if(bet == res)
             sldBet.setMax((int)(sldBet.getMax() + (value*2)));
 
+        //mostra il risultato
         lblSoldi.setText(Integer.toString((int)sldBet.getMax()));
 
+        //applicare le modifiche allo slider
+        // + controllo se si hanno altri soldi
         if((int)(sldBet.getMax() / 10) > 0)
             sldBet.setMajorTickUnit((int)(sldBet.getMax() / 10));
         else
             throw new IllegalStateException("Hai finito i soldi");
+
+        //disabilita il bottone play se la puntata precedente non puo' essere effettuata,
+        //obbligando la modifica della stessa
+        if(Integer.parseInt(lblVal.getText()) > sldBet.getMax())
+            btnPlay.setDisable(true);
     }
 
+    /// mostra moneta (1 - HEADS | 2 TAILS)
     public void showCoin(int rand){
         if(rand == 1){
             imgCoinHeads.setVisible(true);
@@ -84,6 +111,7 @@ public class HelloController implements Initializable {
         }
     }
 
+    /// preparazione alla prossima giocata
     public void BtnResetOnClick(){
         btnReset.setDisable(true);
         sldBet.setDisable(false);
@@ -93,6 +121,7 @@ public class HelloController implements Initializable {
         imgCoinHeads.setVisible(false);
     }
 
+    /// inizializzazione scena
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         SpinnerValueFactory<Integer> factory =
@@ -104,6 +133,7 @@ public class HelloController implements Initializable {
         lblSoldi.setText(Integer.toString((int)sldBet.getMax()));
     }
 
+    /// interruzione applicazione
     public void imgOnClick(){
         Platform.exit();
     }
