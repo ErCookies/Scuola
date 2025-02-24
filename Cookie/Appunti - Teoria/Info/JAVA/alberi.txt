@@ -17,4 +17,27 @@ In questo tipo di albero i dati vengono inseriti secondo la logica:
 		| ValSX < ValROOT < ValDX |
 		---------------------------
 	Applicata RICORSIVAMENTE SU OGNI SOTTOALBERO
+Si suggerisce l'implementazione dell'interface Comparable per confrontare gli oggetti da inserire
+
+
+S: left
+D: right
+R: root
+Percorrimento ABR    -->    POSTorder - sdR
+	|	 \
+	|    PREorder - Rsd
+	|
+  INorder - sRd
+
+
+private String stampaInOrder(Nodo n){
+	if(n != null){
+		String s = "";
+		s = s.concat(stampaInOrder(n.getLeft()));
+		s = s.concat(n.toString());
+		s = s.concat(stampaInOrder(n.getRight()));
+	}
+}
+
+
 
