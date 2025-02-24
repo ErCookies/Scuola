@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.presentazionejavafxcagr.HelloController">
+   <children>
+      <Slider fx:id="sldFinale" layoutX="35.0" layoutY="219.0" majorTickUnit="500000.0" max="1000000.0" min="-1000000.0" minorTickCount="1" onKeyPressed="#sldFinaleOnInteraction" onMouseClicked="#sldFinaleOnInteraction" onMouseDragged="#sldFinaleOnInteraction" prefHeight="37.0" prefWidth="256.0" showTickLabels="true" showTickMarks="true" />
+      <Label layoutX="35.0" layoutY="185.0" text="Valore Finale: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Slider fx:id="sldIniziale" layoutX="35.0" layoutY="110.0" majorTickUnit="250000.0" max="1000000.0" min="1.0" minorTickCount="1" onKeyPressed="#sldInizialeOnInteraction" onMouseClicked="#sldInizialeOnInteraction" onMouseDragged="#sldInizialeOnInteraction" prefHeight="14.0" prefWidth="256.0" showTickLabels="true" showTickMarks="true" value="500000.0" />
+      <Label layoutX="35.0" layoutY="76.0" text="Valore iniziale: ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="390.0" layoutY="185.0" prefWidth="66.0" text="CAGR:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCagr" layoutX="456.0" layoutY="183.0" prefHeight="35.0" prefWidth="84.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="spnYY" editable="true" layoutX="391.0" layoutY="106.0" />
+      <Label layoutX="376.0" layoutY="76.0" text="Anni di Maturazione">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCalc" layoutX="245.0" layoutY="287.0" mnemonicParsing="false" onAction="#btnCalcOnClick" text="CALCOLA">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblValF" layoutX="163.0" layoutY="185.0" prefHeight="30.0" prefWidth="133.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblValI" layoutX="168.0" layoutY="76.0" prefHeight="30.0" prefWidth="123.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="14.0" text="Calcolo Tasso di Crescita Annuo Composto">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

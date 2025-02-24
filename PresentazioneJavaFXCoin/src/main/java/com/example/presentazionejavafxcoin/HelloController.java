@@ -36,9 +36,9 @@ public class HelloController implements Initializable {
             coin.flip();
 
             //TEST
-            System.out.println("Tent: " + spnBet.getValue());
-            System.out.println("Risultato: " + coin.getRand());
-            System.out.println("Corrispondono? " + (spnBet.getValue() == coin.getRand()));
+            //System.out.println("Tent: " + spnBet.getValue());
+            //System.out.println("Risultato: " + coin.getRand());
+            //System.out.println("Corrispondono? " + (spnBet.getValue() == coin.getRand()));
 
             //disabilitazione slider e button
             sldBet.setDisable(true);
@@ -86,7 +86,7 @@ public class HelloController implements Initializable {
         //mostra il risultato
         lblSoldi.setText(Integer.toString((int)sldBet.getMax()));
 
-        //applicare le modifiche allo slider
+        //applica le modifiche allo slider
         // + controllo se si hanno altri soldi
         if((int)(sldBet.getMax() / 10) > 0)
             sldBet.setMajorTickUnit((int)(sldBet.getMax() / 10));
@@ -99,7 +99,7 @@ public class HelloController implements Initializable {
             btnPlay.setDisable(true);
     }
 
-    /// mostra moneta (1 - HEADS | 2 TAILS)
+    /// mostra moneta (1 - TESTA | 2 CROCE)
     public void showCoin(int rand){
         if(rand == 1){
             imgCoinHeads.setVisible(true);

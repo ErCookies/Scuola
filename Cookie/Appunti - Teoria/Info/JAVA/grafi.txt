@@ -1,0 +1,7 @@
+Un grafo e' una struttura che prevede che ogni nodo possa avere una connessione con un qualsiasi altro nodo
+
+I grafi possono essere:
+ - Connesso;
+ - Non connesso (esistono loose ends);
+
+Solitamente esiste un nodo di partenza (il first della lista)

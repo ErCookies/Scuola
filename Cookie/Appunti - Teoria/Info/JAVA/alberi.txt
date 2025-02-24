@@ -1,0 +1,20 @@
+Gli alberi sono dei particolari tipi di grafi SENZA CICLI e SEMPRE CONNESSI
+Il nodo iniziale viene chiamato RADICE dell'albero.
+Quelli finali, ossia quelli che non hanno figli, vengono chiamati FOGLIE, ed essi non sono vincolati dal livello.
+Si possono avere foglie a qualsiasi livello.
+Non esiste un vincolo al numero di figli che ogni nodo puo' avere.
+
+L'albero si puo' definire come una struttura RICORSIVA, dato che al suo interno si possono individuare dei SOTTOalberi
+
+
+ALBERI BINARI
+Un albero binario e' un tipo particolare di albero che limita il numero di figli per nodo a 2: vengono definiti nodo di SX e di DX
+
+
+ALBERI BINARI DI RICERCA (ABR)
+In questo tipo di albero i dati vengono inseriti secondo la logica:
+		---------------------------
+		| ValSX < ValROOT < ValDX |
+		---------------------------
+	Applicata RICORSIVAMENTE SU OGNI SOTTOALBERO
+
