@@ -11,7 +11,6 @@ import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
 
-    @FXML private Button btnCalc;
     @FXML private Label lblCagr;
     @FXML private Label lblValF;
     @FXML private Label lblValI;
@@ -31,7 +30,7 @@ public class HelloController implements Initializable {
         double c;
         cagr.setvI(sldIniziale.getValue());
         cagr.setvF(sldFinale.getValue());
-        cagr.setvI(spnYY.getValue());
+        cagr.setYy(spnYY.getValue());
         c = cagr.calcoloCAGR();
         lblCagr.setText(Double.toString(c));
         if(c < 0)

@@ -10,7 +10,7 @@ public class Cagr {
     private double vI, vF;
     //Anni di maturazione investimento
     private int yy;
-    //Necessario per arrotondare il CAGR ad 1/2 sole cifre decimali
+    //Necessario per arrotondare il CAGR a sole 1/2 cifre decimali
     private final DecimalFormat df = new DecimalFormat("###.##");
 
     /// COSTRUTTORE
@@ -49,7 +49,7 @@ public class Cagr {
             throw new IllegalArgumentException("Numero anni non valido");
     }
 
-    /// METODO
+    /// METODO CALCOLO
     public double calcoloCAGR(){
         double cagr = (Math.pow(getvF() / getvI(), 1 / getYy()) - 1) * 100;
         cagr = Double.parseDouble(df.format(cagr));

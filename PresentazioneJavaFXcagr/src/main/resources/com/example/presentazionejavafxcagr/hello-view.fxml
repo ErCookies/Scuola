@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.presentazionejavafxcagr.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.presentazionejavafxcagr.HelloController">
    <children>
-      <Slider fx:id="sldFinale" layoutX="35.0" layoutY="219.0" majorTickUnit="500000.0" max="1000000.0" min="-1000000.0" minorTickCount="1" onKeyPressed="#sldFinaleOnInteraction" onMouseClicked="#sldFinaleOnInteraction" onMouseDragged="#sldFinaleOnInteraction" prefHeight="37.0" prefWidth="256.0" showTickLabels="true" showTickMarks="true" />
+      <Slider fx:id="sldFinale" layoutX="35.0" layoutY="219.0" majorTickUnit="250000.0" max="1000000.0" min="1.0" minorTickCount="1" onKeyPressed="#sldFinaleOnInteraction" onMouseClicked="#sldFinaleOnInteraction" onMouseDragged="#sldFinaleOnInteraction" prefHeight="37.0" prefWidth="256.0" showTickLabels="true" showTickMarks="true" value="500000.0" />
       <Label layoutX="35.0" layoutY="185.0" text="Valore Finale: ">
          <font>
             <Font size="20.0" />
@@ -54,5 +55,10 @@
             <Font size="23.0" />
          </font>
       </Label>
+      <ImageView fitHeight="66.0" fitWidth="74.0" layoutX="534.0" layoutY="334.0" onMouseClicked="#imgOnClick" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../click.gif" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
