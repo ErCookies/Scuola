@@ -7,3 +7,10 @@ Gli user permangono anche post terminazione JVM, ed essa aspetta la sua terminaz
 I thread hanno priorita' variabile fra 1 - 10, 5 di default
 Gli user thread hanno quasi sempre priorita' maggiore dei daemon.
 Gli user thread hanno delle task determiate dal programmatore, mentre i daemon fungono da support per gli altri.
+
+
+In una classe che implementa la possibilita' di diventare un thread gli attributi di classe possono essere visti da TUTTI i thread della classe
+Invece le variabili locali del metodo run() sono visibili solo dagli specifici thread
+
+
+

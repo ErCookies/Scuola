@@ -93,6 +93,9 @@ public class HelloController implements Initializable {
         else
             throw new IllegalStateException("Hai finito i soldi");
 
+        if(Integer.parseInt(lblVal.getText()) > sldBet.getMax())
+            lblVal.setText(Integer.toString((int)sldBet.getMax()));
+
         //disabilita il bottone play se la puntata precedente non puo' essere effettuata,
         //obbligando la modifica della stessa
         if(Integer.parseInt(lblVal.getText()) > sldBet.getMax())

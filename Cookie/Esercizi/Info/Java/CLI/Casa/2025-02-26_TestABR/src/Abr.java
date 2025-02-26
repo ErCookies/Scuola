@@ -4,6 +4,7 @@
     ed un main di esempio.
 */
 
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Abr<T extends Comparable<T> & FileCSV> {
@@ -41,21 +42,23 @@ public class Abr<T extends Comparable<T> & FileCSV> {
         }
     }
 
-    public String esporta(){
-        return this.concatRsd(root);
+    public void esporta(String filename) throws IOException{
+        PrintWriter fout = new PrintWriter(new FileWriter(filename));
+        fout.print(this.concatRsd(root));
+        fout.close();
     }
     private String concatRsd(Node<T> n){
         String s = "";
         if(n != null){
-            s = s.concat(n.toCSV());
+            s = s.concat(n.getValue().toCSV() + '\n');
             s = s.concat(concatRsd(n.getLeft()));
             s = s.concat(concatRsd(n.getRight()));
         }
         return s;
     }
 
-    public void importa(String s, T aus){
-        StringTokenizer toks = new StringTokenizer(s, ";");
-        //?????????????
+    public void importa(String filename) throws FileNotFoundException{
+        BufferedReader fin = new BufferedReader(new FileReader(filename));
+        //String
     }
 }
