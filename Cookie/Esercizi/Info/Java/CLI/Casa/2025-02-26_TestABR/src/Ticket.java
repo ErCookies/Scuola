@@ -1,6 +1,6 @@
 import java.util.StringTokenizer;
 
-public class Ticket implements Comparable<Ticket>, FileCSV{
+public class Ticket implements Comparable<Ticket>, FileCSV, Copyable<Ticket>{
     private int num;
 
     /// COSTRUTTORI
@@ -31,5 +31,9 @@ public class Ticket implements Comparable<Ticket>, FileCSV{
     public void fromCSV(String s){
         StringTokenizer tok = new StringTokenizer(s, ";");
         this.num = Integer.parseInt(tok.nextToken());
+    }
+
+    public Ticket copy(){
+        return new Ticket(this.getNum());
     }
 }

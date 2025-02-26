@@ -5,9 +5,8 @@
 */
 
 import java.io.*;
-import java.util.StringTokenizer;
 
-public class Abr<T extends Comparable<T> & FileCSV> {
+public class Abr<T extends Comparable<T> & FileCSV & Copyable<T>> {
     private Node<T> root;
 
     /// COSTRUTTORE
@@ -57,8 +56,15 @@ public class Abr<T extends Comparable<T> & FileCSV> {
         return s;
     }
 
-    public void importa(String filename) throws FileNotFoundException{
+    public void importa(String filename, T aus) throws IOException{
         BufferedReader fin = new BufferedReader(new FileReader(filename));
-        //String
+        String row = fin.readLine();
+        while(row != null){
+            aus = aus.copy();
+            aus.fromCSV(row);
+            this.add(aus);
+            row = fin.readLine();
+        }
+        fin.close();
     }
 }
