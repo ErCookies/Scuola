@@ -1,0 +1,54 @@
+1)
+1  -	offered 
+2  -	claimed 
+3  -	suggested 
+4  -	apologised 
+5  -	explained 
+6  -	advised 
+7  -	promised 
+8  -	offered 
+9  -	complained 
+10 -	reminded 
+11 -	claimed 
+12 -	told 
+
+
+BONUS)
+1  -	She said that she had offered to help me with my homework, but she never did.
+2  -	He claimed that he had never seen the missing document.		//????????????
+3  -	They mentioned that they had suggested giving us a discount, but we declined.
+4  -	I told my friend that I had apologised for forgetting her birthday.
+5  -	The waiter explained that the food would take at least 30 minutes.		//????????????
+6  -	My teacher advised me that I should revise for the test.
+7  -	She promised that she would pay me back by Friday.
+8  -	He said that he had offered to lend me his car, but I didn’t need it.
+9  -	She complained that the noise from the neighbors was too loud.
+10 -	I reminded him that he should take an umbrella because it was going to rain.
+11 -	He claimed that he was innocent, but nobody believed him.		//????????????
+12 -	My boss told me that I needed to send the email before 5 p.m.
+
+2) 
+1  -	He promised to arrive on time.
+2  -	He reminded me to buy milk.
+3  -	I told her not to worry.
+4  -	He claimed to have seen a UFO.
+5  -	My father offered to take me to the station.
+6  -	He refused to tell me the truth.
+7  -	The doctor advised me to rest.
+8  -	They suggested changing the restaurant.
+9  -	I apologised for forgetting our appointment.
+10 -	He admitted making a mistake.
+11 -	He complained about the poor service.
+12 -	He explained why he was late.
+
+3) 
+1  -	He admitted stealing the money.
+2  -	She told me not to be late.
+3  -	They refused to give us a refund.
+4  -	He suggested going to the doctor.
+5  -	She apologised for being rude.
+6  -	The teacher reminded us that we should bring our books.
+7  -	He claimed to have seen a ghost.
+8  -	She explained the situation to me.
+9  -	I advised him to take a break.
+10 -	He promised that he would call me later.

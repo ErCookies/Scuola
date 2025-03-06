@@ -1,0 +1,42 @@
+Participants
+Client (4)
+Competitor (5)
+Entrepreneur (7)
+Investor (10)
+Supplier (21)
+Stockist (20)
+
+Developing a Company
+Business plan (2)
+Launch (12)
+Market research (15)
+Start-up (19)
+Take over (23)
+Promotion
+Advertising (1)
+Marketing (17)
+
+Money
+Cash flow (3)
+Market share (16)
+Finance (8)
+Invoice (11)
+(Make a) loss (13)
+(Make a) profit (14)
+Turnover (24)
+
+Production
+Demand (6)
+Goods (9)
+Services (18)
+Supply (22)
+
+
+1 - entrepreneur
+2 - investor
+3 - start-up
+4 - take over
+5 - market research
+6 - cash flow
+7 - invoice
+8 - demand
