@@ -21,6 +21,7 @@ public class Ticket implements Comparable<Ticket>, FileCSV, Copyable<Ticket>{
         return Integer.toString(this.getNum());
     }
 
+    /// METODI INTERFACES
     public int compareTo(Ticket t){
         return Integer.compare(this.getNum(), t.getNum());
     }

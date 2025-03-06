@@ -23,7 +23,6 @@ public class Input {
         }
         return x;
     }
-
     public static double lgDbl(double vmin, double vmax, String mex){
         Scanner in = new Scanner(System.in);
         double x = 0;
@@ -45,7 +44,6 @@ public class Input {
         }
         return x;
     }
-
     public static char lgChar(String mex){
         Scanner in = new Scanner(System.in);
         char c;
@@ -58,7 +56,6 @@ public class Input {
         }
         return c;
     }
-
     public static String lgStr(String mex){
         Scanner in = new Scanner(System.in);
         String s;

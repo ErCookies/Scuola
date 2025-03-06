@@ -1,4 +1,4 @@
-public class Node<T extends Comparable<T> & FileCSV> implements FileCSV {
+public class Node<T extends Comparable<T> & FileCSV>{
     private T value;
     private Node<T> left, right;
     private boolean exists;
@@ -48,11 +48,4 @@ public class Node<T extends Comparable<T> & FileCSV> implements FileCSV {
         exists = true;
     }
 
-    /// METODI INTERFACE FILECSV
-    public void fromCSV(String s) {
-        this.value.fromCSV(s);
-    }
-    public String toCSV() {
-        return getValue().toCSV();
-    }
 }
