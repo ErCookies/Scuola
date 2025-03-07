@@ -1,0 +1,70 @@
+class RandomAccessFile{
+	//metodi utili
+	/// COSTRUTTORI
+	RandomAccessFile(String name, String mode);
+	RandomAccessFile(File file, String mode);
+
+	/// METODI
+	long getFilePointer();		// ritorna la posizione del filepointer
+	void close();			// chiude il file
+	void seek(long pos);		// sposta il filepointer, in modo assoluto, il filepointer
+	[type] read[type]();		// legge un dato di tipo [type] dal file, partendo dal filepointer
+	void write[type]([type] el);	// scrive un dato di tipo [type] sul file, partendo dal filepointer
+	long length();			// ritorna la lunghezza in byte del file
+}
+
+Opening mode:
+ - r	read		-	se non esiste lancia IOException
+ - rw	read-write	-	se non esiste lo crea
+
+
+Le stringhe devono avere una dimensione MASSIMA FISSA
+
+class Libro implements IOFileRandom{		// IOFileRandom e' una nostra interfaccia
+	private String titolo, codice, autore;
+	private int anno;
+	private final int LENSTR = 50;
+
+	public void writeLibro(RandomAccesFile raf){
+		//
+	}
+}
+
+public interface IOFileRandom{
+	public void writeLibro(RandomAccesFile raf);
+}
+
+
+
+AGGIUNGEREMO DEI METODI STATICI NELLA CLASSE INPUT PER SCRIVERE UNA STRINGA NEL RandomAccessFile
+
+public static void witeString(RandomAccessFile raf, String str, int len){
+	StringBuffer buf = new StringBuffer(str);
+	buf.setLength(len);
+	raf.writeChars(buf.toString());
+}
+
+public static String readString(RandomAccessFile raf, int len){
+	int i;
+	String s;
+	char str[] = new char[len];
+
+	for(i = 0; i < len; i++)
+		str[i] = f.readChar();
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
