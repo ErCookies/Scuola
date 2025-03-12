@@ -21,25 +21,21 @@ public class Pizzaiolo implements Runnable{
         this.c = c;
     }
 
-    private void cottura(){
-        try {
-            Thread.sleep(500);
-            p.setStato("In Cottura");
-            p.notify();
-            p.wait();
-            Thread.sleep(p.gettCott() * 1000L);
-            p.settCott(0);
-            p.setStato("Pronta");
-            p.notify();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     @Override
     public void run() {
         synchronized (p){
-            cottura();
+            try {
+                Thread.sleep(500);
+                p.setStato("In Cottura");
+                p.notify();
+                p.wait();
+                Thread.sleep(p.gettCott() * 1000L);
+                p.settCott(0);
+                p.setStato("Pronta");
+                p.notify();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
