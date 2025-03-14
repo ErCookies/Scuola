@@ -16,37 +16,17 @@ public class Main {
     public static void main(String[] args) {
         try{
             RandomAccessFile file = new RandomAccessFile("car.dat", "rw");
-            Macchina car = new Macchina();
             int sc;
             do{
                 menu();
                 sc = Input.lgInt(0, 2, "Inserire funzione desiderata: ");
                 switch(sc){
                     case 1:{
-                        file.seek(file.length());
-                        car = new Macchina(
-                                Input.lgChar("Inserire alimentazione: "),
-                                Input.lgInt(0, Integer.MAX_VALUE, "Inserire cilindrata: "),
-                                Input.lgStr("Inserire marca: "),
-                                Input.lgStr("Inserire modello: "),
-                                Input.lgDbl(0, Double.MAX_VALUE, "Inserire prezzo: "),
-                                Input.lgStr("Inserire targa: "),
-                                Input.lgInt(1900, Integer.MAX_VALUE, "Inserire anno: ")
-                        );
-                        car.write(file);
+                        ins(file);
                         break;
                     }
                     case 2:{
-                        if(file.length() == 0)
-                            System.out.println("Nessun'auto salvata");
-                        else{
-                            file.seek(0);
-                            while(file.getFilePointer() < file.length()){
-                                car.read(file);
-                                System.out.println(car);
-                                // implicita la chiamata al metodo .toString()
-                            }
-                        }
+                        readAll(file);
                         break;
                     }
                     case 0:{ break; }
@@ -56,6 +36,35 @@ public class Main {
         }
         catch(IOException | IllegalArgumentException e){
             System.out.println(e.getMessage());
+        }
+    }
+
+    public static void ins(RandomAccessFile file) throws IOException{
+        file.seek(file.length());
+        Macchina car = new Macchina(
+                Input.lgChar("Inserire alimentazione: "),
+                Input.lgInt(0, Integer.MAX_VALUE, "Inserire cilindrata: "),
+                Input.lgStr("Inserire marca: "),
+                Input.lgStr("Inserire modello: "),
+                Input.lgDbl(0, Double.MAX_VALUE, "Inserire prezzo: "),
+                Input.lgStr("Inserire targa: "),
+                Input.lgInt(1900, Integer.MAX_VALUE, "Inserire anno: ")
+        );
+        car.write(file);
+    }
+
+    public static void readAll(RandomAccessFile file)throws IOException{
+        if(file.length() == 0) {
+            System.out.println("Nessun'auto salvata");
+        }
+        else{
+            Macchina car = new Macchina();
+            file.seek(0);
+            while(file.getFilePointer() < file.length()){
+                car.read(file);
+                System.out.println(car);
+                // implicita la chiamata al metodo .toString()
+            }
         }
     }
 
