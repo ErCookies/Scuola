@@ -33,6 +33,7 @@ public class Main {
 
                 }
             }while(sc != 0);
+            file.close();
         }
         catch(IOException | IllegalArgumentException e){
             System.out.println(e.getMessage());
