@@ -1,31 +1,33 @@
-public class Node<T extends Comparable<T> & FileCSV>{
-    private T key;
-    private Node<T> left, right;
+import java.io.Serializable;
+
+public class Node /*implements Serializable*/ {
+    private String key;
+    private Node left, right;
     private boolean exists;
     private long pos;
 
     /// GETTER - SETTER
-    public T getKey(){
+    public String getKey(){
         return this.key;
     }
-    public void setKey(T key){
+    public void setKey(String key){
         if(key != null)
             this.key = key;
         else
             throw new NullPointerException("Null pointer non valido");
     }
 
-    public Node<T> getLeft() {
+    public Node getLeft() {
         return this.left;
     }
-    public void setLeft(Node<T> left){
+    public void setLeft(Node left){
         this.left = left;
     }
 
-    public Node<T> getRight() {
+    public Node getRight() {
         return this.right;
     }
-    public void setRight(Node<T> right){
+    public void setRight(Node right){
         this.right = right;
     }
 
@@ -39,20 +41,39 @@ public class Node<T extends Comparable<T> & FileCSV>{
     public long getPos(){
         return this.pos;
     }
-    //setPoslong pos()
+    public void setPos(long pos){
+        if(pos >= 0)
+            this.pos = pos;
+        else
+            throw new IllegalArgumentException("Posizione non valida");
+    }
 
     /// COSTRUTTORI
-    public Node(T key){
+    public Node(String key)
+            throws NullPointerException
+    {
         setKey(key);
         left = right = null;
         exists = true;
     }
-    public Node(T key, Node<T> right, Node<T> left, long pos){
+
+    public Node(String key, long pos)
+            throws NullPointerException, IllegalArgumentException
+    {
+        setKey(key);
+        left = right = null;
+        exists = true;
+        setPos(pos);
+    }
+
+    public Node(String key, Node right, Node left, long pos)
+            throws NullPointerException, IllegalArgumentException
+    {
         setKey(key);
         this.left = left;
         this.right = right;
         exists = true;
-
+        setPos(pos);
     }
 
 }

@@ -1,13 +1,8 @@
-/*
-    Classe ABR su tipo generico T vincolato all'interfaccia Comparable e FileCsv: metodi costruttore,
-    get e set del dato, add, importa ed esporta di file csv (e classe Nodo con get/set, fromCsv e toCsv)
-    ed un main di esempio.
-*/
-
+import javax.management.openmbean.KeyAlreadyExistsException;
 import java.io.*;
 
-public class Abr<T extends Comparable<T> & FileCSV & Copyable<T>> {
-    private Node<T> root;
+public class Abr {
+    private Node root;
 
     /// COSTRUTTORE
     public Abr(){
@@ -15,8 +10,24 @@ public class Abr<T extends Comparable<T> & FileCSV & Copyable<T>> {
     }
 
     /// METODI
-    public void add(T value){
-        Node<T> nodo = new Node<>(value);
+    public void add(String value){
+        Node nodo;
+        if(this.search(value) == -1){
+            nodo = new Node(value);
+            if(this.root == null){
+                this.root = nodo;
+                this.root.setLeft(null);
+                this.root.setRight(null);
+            }
+            else{
+                addRec(this.root, nodo);
+            }
+        }
+        else
+            throw new KeyAlreadyExistsException("Chiave gia' registrata");
+    }
+    public void add(String value, long pos){
+        Node nodo = new Node(value, pos);
         if(this.root == null){
             this.root = nodo;
             this.root.setLeft(null);
@@ -26,7 +37,7 @@ public class Abr<T extends Comparable<T> & FileCSV & Copyable<T>> {
             addRec(this.root, nodo);
         }
     }
-    private void addRec(Node<T> subRoot, Node<T> nodo){
+    private void addRec(Node subRoot, Node nodo){
         if(nodo.getKey().compareTo(subRoot.getKey()) > 0){
             if(subRoot.getRight() == null)
                 subRoot.setRight(nodo);
@@ -46,25 +57,51 @@ public class Abr<T extends Comparable<T> & FileCSV & Copyable<T>> {
         fout.print(this.concatRsd(root));
         fout.close();
     }
-    private String concatRsd(Node<T> n){
+    private String concatRsd(Node n){
         String s = "";
         if(n != null){
-            s = s.concat(n.getKey().toCSV() + '\n');
+            s = s.concat(n.getKey() + '\n');
             s = s.concat(concatRsd(n.getLeft()));
             s = s.concat(concatRsd(n.getRight()));
         }
         return s;
     }
 
-    public void importa(String filename, T aus) throws IOException{
+    public void importa(String filename) throws IOException{
         BufferedReader fin = new BufferedReader(new FileReader(filename));
         String row = fin.readLine();
         while(row != null){
-            aus = aus.copy();
-            aus.fromCSV(row);
-            this.add(aus);
+            this.add(row);
             row = fin.readLine();
         }
         fin.close();
+    }
+    public void importa(RandomAccessFile raf) throws IOException{
+        raf.seek(0);
+        for(int k = 0; raf.getFilePointer() <= raf.length(); k++){
+            this.add(Input.readString(raf, Macchina.LENSTR), raf.getFilePointer());
+            raf.seek(((long)Macchina.LENREC * k) + Macchina.LENREC - Macchina.LENSTR);
+        }
+    }
+
+    public long search(String key){
+        if(!key.isEmpty())
+            return searchRec(this.root, key);
+        else
+            throw new IllegalArgumentException("Stringa vuota");
+    }
+    private long searchRec(Node subRoot, String key){
+        long tro;
+        if(subRoot == null)
+            tro = -1;
+        else {
+            if(key.compareTo(subRoot.getKey()) == 0)
+                tro = subRoot.getPos();
+            else if(key.compareTo(subRoot.getKey()) > 0)
+                tro = searchRec(subRoot.getRight(), key);
+            else
+                tro = searchRec(subRoot.getLeft(), key);
+        }
+        return tro;
     }
 }

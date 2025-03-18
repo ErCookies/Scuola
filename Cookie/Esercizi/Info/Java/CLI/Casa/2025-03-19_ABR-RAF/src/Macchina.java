@@ -3,7 +3,9 @@ import java.io.RandomAccessFile;
 import java.util.StringTokenizer;
 
 public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comparable<Macchina>{
-    private final int LENSTR = 50;
+    public static final int LENSTR = 10;
+    public static final int LENREC = 51;
+    // 10 + 10 + 10 + 1 + 8 + 8 + 4 = 51
     private String targa, marca, modello;
     private char alim;
     private double cil, prezzo;
@@ -83,12 +85,13 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
         setCil(100);
         setMarca("Ford");
         setModello("Fiesta");
-        setPrezzo(100000);
+        setPrezzo(10000);
         setTarga("AA111AA");
         setYy(2014);
     }
     public Macchina(char alim, double cil, String marca, String modello,
-                    double prezzo, String targa, int yy) throws IllegalArgumentException{
+                    double prezzo, String targa, int yy) throws IllegalArgumentException
+    {
         setAlim(alim);
         setCil(cil);
         setMarca(marca);
@@ -100,50 +103,53 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
 
     @Override
     public String toString(){
-        String s = getAlim() + " ";
+        String s = getTarga() + " ";
+        s = s.concat(getAlim() + " ");
         s = s.concat(getCil() + " ");
         s = s.concat(getMarca() + " ");
         s = s.concat(getModello() + " ");
         s = s.concat(getPrezzo() + " ");
-        s = s.concat(getTarga() + " ");
-        s = s.concat(getYy() + "");
+        s = s.concat(Integer.toString(getYy()));
         return s;
     }
 
     public void write(RandomAccessFile raf) throws IOException {
-        Input.write(raf, this.toString(), LENSTR);
+        Input.writeString(raf, getTarga(), LENSTR);
+        raf.writeChar(getAlim());
+        raf.writeDouble(getCil());
+        Input.writeString(raf, getMarca(), LENSTR);
+        Input.writeString(raf, getModello(), LENSTR);
+        raf.writeDouble(getPrezzo());
+        raf.writeInt(getYy());
     }
     public void read(RandomAccessFile raf) throws IOException {
-         init(Input.readString(raf, LENSTR), false);
+        setTarga(Input.readString(raf, LENSTR));
+        setAlim(raf.readChar());
+        setCil(raf.readDouble());
+        setMarca(Input.readString(raf, LENSTR));
+        setModello(Input.readString(raf, LENSTR));
+        setPrezzo(raf.readDouble());
+        setYy(raf.readInt());
     }
 
     public String toCSV() {
-        String s = getAlim() + ";";
+        String s = getTarga() + ";";
+        s = s.concat(getAlim() + ";");
         s = s.concat(getCil() + ";");
         s = s.concat(getMarca() + ";");
         s = s.concat(getModello() + ";");
         s = s.concat(getPrezzo() + ";");
-        s = s.concat(getTarga() + ";");
         s = s.concat(getYy() + ";");
         return s;
     }
     public void fromCSV(String s) throws IllegalArgumentException{
-        init(s, true);
-    }
-
-    private void init(String s, boolean csv){
-        StringTokenizer toks;
-        if(csv)
-            toks = new StringTokenizer(s, ";");
-        else
-            toks = new StringTokenizer(s, " ");
-
+        StringTokenizer toks = new StringTokenizer(s, ";");
+        setTarga(toks.nextToken());
         setAlim(toks.nextToken().charAt(0));
         setCil(Double.parseDouble(toks.nextToken()));
         setMarca(toks.nextToken());
         setModello(toks.nextToken());
         setPrezzo(Double.parseDouble(toks.nextToken()));
-        setTarga(toks.nextToken());
         setYy(Integer.parseInt(toks.nextToken()));
     }
 

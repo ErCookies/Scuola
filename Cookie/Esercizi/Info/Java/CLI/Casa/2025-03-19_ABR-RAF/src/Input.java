@@ -71,7 +71,7 @@ public class Input {
         return s;
     }
 
-    public static void write(RandomAccessFile raf, String str, int len) throws IOException {
+    public static void writeString(RandomAccessFile raf, String str, int len) throws IOException {
         StringBuffer buf = new StringBuffer(str);
         buf.setLength(len);
         raf.writeChars(buf.toString());
