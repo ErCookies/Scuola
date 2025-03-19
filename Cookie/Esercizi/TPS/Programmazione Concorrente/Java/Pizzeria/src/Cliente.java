@@ -9,10 +9,11 @@ public class Cliente implements Runnable{
     public void run() {
         synchronized (p){
             try {
-                p.wait();
-                p.setStato("Mangiata");
-                notify();
+                while(!p.getStato().equals("Pronta"))
+                    p.wait();
+
                 Thread.sleep(1000);
+                p.setStato("Mangiata");
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

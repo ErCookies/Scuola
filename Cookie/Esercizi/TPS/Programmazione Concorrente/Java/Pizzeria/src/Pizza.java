@@ -12,6 +12,7 @@ public class Pizza {
     }
     public void setStato(String stato) {
         this.stato = stato;
+        this.notify();
     }
 
     public int gettCott(){
