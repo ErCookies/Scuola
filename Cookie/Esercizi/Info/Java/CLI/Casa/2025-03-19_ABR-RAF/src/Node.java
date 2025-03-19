@@ -1,6 +1,4 @@
-import java.io.Serializable;
-
-public class Node /*implements Serializable*/ {
+public class Node {
     private String key;
     private Node left, right;
     private boolean exists;

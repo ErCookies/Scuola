@@ -80,7 +80,9 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
     }
 
     /// COSTRUTTORI
-    public Macchina(){
+    public Macchina()
+            throws IllegalArgumentException
+    {
         setAlim('B');
         setCil(100);
         setMarca("Ford");
@@ -160,14 +162,6 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
 
     @Override
     public int compareTo(Macchina o) {
-        int x;
-        if(getTarga().compareTo(o.getTarga()) > 0)
-            x = 1;
-        else if(getTarga().compareTo(o.getTarga()) == 0)
-            x = 0;
-        else
-            x = -1;
-
-        return x;
+        return Integer.compare(getTarga().compareTo(o.getTarga()), 0);
     }
 }

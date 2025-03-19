@@ -5,12 +5,14 @@ public class Abr {
     private Node root;
 
     /// COSTRUTTORE
-    public Abr(){
+    public Abr()
+    {
         root = null;
     }
 
     /// METODI
-    public void add(String value){
+    public void add(String value)
+    {
         Node nodo;
         if(this.search(value) == -1){
             nodo = new Node(value);
@@ -26,7 +28,8 @@ public class Abr {
         else
             throw new KeyAlreadyExistsException("Chiave gia' registrata");
     }
-    public void add(String value, long pos){
+    public void add(String value, long pos)
+    {
         Node nodo = new Node(value, pos);
         if(this.root == null){
             this.root = nodo;
@@ -37,7 +40,8 @@ public class Abr {
             addRec(this.root, nodo);
         }
     }
-    private void addRec(Node subRoot, Node nodo){
+    private void addRec(Node subRoot, Node nodo)
+    {
         if(nodo.getKey().compareTo(subRoot.getKey()) > 0){
             if(subRoot.getRight() == null)
                 subRoot.setRight(nodo);
@@ -52,12 +56,15 @@ public class Abr {
         }
     }
 
-    public void esporta(String filename) throws IOException{
+    public void esporta(String filename)
+            throws IOException
+    {
         PrintWriter fout = new PrintWriter(new FileWriter(filename));
         fout.print(this.concatRsd(root));
         fout.close();
     }
-    private String concatRsd(Node n){
+    private String concatRsd(Node n)
+    {
         String s = "";
         if(n != null){
             s = s.concat(n.getKey() + '\n');
@@ -67,7 +74,9 @@ public class Abr {
         return s;
     }
 
-    public void importa(String filename) throws IOException{
+    public void importa(String filename)
+            throws IOException
+    {
         BufferedReader fin = new BufferedReader(new FileReader(filename));
         String row = fin.readLine();
         while(row != null){
@@ -76,21 +85,28 @@ public class Abr {
         }
         fin.close();
     }
-    public void importa(RandomAccessFile raf) throws IOException{
+    public void importa(RandomAccessFile raf)
+            throws IOException
+    {
+        this.root = null;
         raf.seek(0);
+        long curPos;
         for(int k = 0; raf.getFilePointer() <= raf.length(); k++){
-            this.add(Input.readString(raf, Macchina.LENSTR), raf.getFilePointer());
-            raf.seek(((long)Macchina.LENREC * k) + Macchina.LENREC - Macchina.LENSTR);
+            curPos = raf.getFilePointer();
+            this.add(Input.readString(raf, Macchina.LENSTR), curPos);
+            raf.seek(((long)Macchina.LENREC * (k + 1)));
         }
     }
 
-    public long search(String key){
+    public long search(String key)
+    {
         if(!key.isEmpty())
             return searchRec(this.root, key);
         else
             throw new IllegalArgumentException("Stringa vuota");
     }
-    private long searchRec(Node subRoot, String key){
+    private long searchRec(Node subRoot, String key)
+    {
         long tro;
         if(subRoot == null)
             tro = -1;

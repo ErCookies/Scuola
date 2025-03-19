@@ -5,9 +5,10 @@ import java.io.RandomAccessFile;
 import java.util.NoSuchElementException;
 
 public class Gestore {
-    private Abr abr;
-    private RandomAccessFile raf;
+    private final Abr abr;
+    private final RandomAccessFile raf;
 
+    /// COSTRUTTORE
     public Gestore(String filename)
             throws FileNotFoundException
     {
@@ -15,8 +16,14 @@ public class Gestore {
         raf = new RandomAccessFile(filename, "rw");
     }
 
-    public void importa() throws IOException {
-        abr.importa(raf);
+    /// METODI
+    public void importa()
+            throws IOException
+    {
+        if(raf.length() > 0)
+            abr.importa(raf);
+        else
+            throw new IllegalStateException("File vuoto");
     }
 
     public void add(char alim, double cil, String marca, String modello,
@@ -26,13 +33,16 @@ public class Gestore {
         if(abr.search(targa) == -1){
             Macchina car = new Macchina(alim, cil, marca, modello, prezzo, targa, yy);
             raf.seek(raf.length());
+            abr.add(car.getTarga(), raf.length());
             car.write(raf);
         }
         else
             throw new KeyAlreadyExistsException("Targa gia' registrata");
     }
 
-    public Macchina search(String targa) throws IOException{
+    public Macchina search(String targa)
+            throws IOException
+    {
         long pos = abr.search(targa);
         if(pos == -1)
             throw new NoSuchElementException("Targa non trovata");
