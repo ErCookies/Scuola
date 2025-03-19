@@ -18,7 +18,7 @@ public class Main {
         int sc;
         try{
             ges = new Gestore("car.dat");
-
+            ges.importa();
             do{
                 menu();
                 sc = Input.lgInt(0, 2, "Inserire funzione interessata: ");
@@ -52,7 +52,7 @@ public class Main {
                 }
             }while(sc != 0);
         }
-        catch (FileNotFoundException e) {
+        catch (IOException e) {
             System.out.println("Errore nell'importazione");
         }
     }
