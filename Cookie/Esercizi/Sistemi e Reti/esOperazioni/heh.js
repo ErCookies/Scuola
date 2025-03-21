@@ -62,5 +62,5 @@ function checkSelections(){
 	const out = document.getElementById("output");
 	
 	if((!isNaN(txtNum1.value) || txtNum1.value == "0") && (!isNaN(txtNum2.value) || txtNum2.value == "0") && txtOp.value != "---")
-		//
+		
 }

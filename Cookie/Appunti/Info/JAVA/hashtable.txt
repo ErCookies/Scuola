@@ -1,0 +1,10 @@
+Le hashtable memorizzano i dati tramite coppie "key - value"
+La key deve essere univoca.
+Tramite delle funzioni matematiche (dette funzioni di hash), la key verra' trasformata nel valore relativo.
+Una collisione e' quando la funzione di hash assegna lo stesso indirizzo a due (o piu') chiavi diverse.
+
+Class Hashtable<K,V>	// Doppio tipo generico NON primitivo
+
+private Hashtable<String, Macchina> elenco;	// Struttura dati COMPLETAMENTE in memoria
+
+private Hashtable<String, Long> elenco;		// Solo la table e' contenuta in memoria, il Long indica la posizione nel RAF
