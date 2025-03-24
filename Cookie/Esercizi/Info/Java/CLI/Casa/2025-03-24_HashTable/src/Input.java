@@ -71,13 +71,17 @@ public class Input {
         return s;
     }
 
-    public static void writeString(RandomAccessFile raf, String str, int len) throws IOException {
-        StringBuffer buf = new StringBuffer(str);
+    public static void writeString(RandomAccessFile raf, String str, int len)
+            throws IOException
+    {
+        StringBuilder buf = new StringBuilder(str);
         buf.setLength(len);
         raf.writeChars(buf.toString());
     }
-    public static String readString(RandomAccessFile raf, int len) throws IOException{
-        char str[] = new char[len];
+    public static String readString(RandomAccessFile raf, int len)
+            throws IOException
+    {
+        char[] str = new char[len];
         for(int k = 0; k < len; k++)
             str[k] = raf.readChar();
 

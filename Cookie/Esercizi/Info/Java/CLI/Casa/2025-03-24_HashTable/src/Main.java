@@ -1,28 +1,16 @@
-/*
-    Modificare esercizio di gestione di un RAF con oggetti di tipo AUTO considerando di
-    aggiungere un ABR che contenga la targa (chiave primaria) e l'indirizzo del record su raf.
-    Prevedere la realizzazione delle seguenti funzionalità:
-        a) importazione dell'ABR a partire da RAF (da realizzare ad inizio programma)
-        b) inserimento di un nuovo record con controllo unicità della chiave
-        c) ricerca di una targa e sua visualizzazione con accesso random al raf
-    Postare codice su OneNOte
-*/
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 
 public class Main {
     public static void main(String[] args) {
-
         Gestore ges;
         int sc;
-
         try{
             ges = new Gestore();
             do{
                 menu();
-                sc = Input.lgInt(0, 3, "Inserire funzione interessata: ");
+                sc = Input.lgInt(0, 4, "Inserire funzione interessata: ");
 
                 switch (sc){
                     case 1: {
@@ -52,7 +40,21 @@ public class Main {
                         break;
                     }
                     case 3:{
-                        ges.stampaTable();
+                        try{
+                            System.out.println('\n' + ges.printAll());
+                        }
+                        catch (IOException e) {
+                            System.out.println("Errore nella lettura da file");
+                        }
+                        break;
+                    }
+                    case 4:{
+                        try{
+                            System.out.println('\n' + ges.printSort());
+                        }
+                        catch (IOException e) {
+                            System.out.println("Errore nella lettura da file");
+                        }
                         break;
                     }
                     case 0:{break;}
@@ -85,7 +87,8 @@ public class Main {
     {
         System.out.println("1) Inserire una nuova auto;");
         System.out.println("2) Stampa auto data targa;");
-        System.out.println("3) **TEST** Stampa table;");
+        System.out.println("3) Visualizzazione di tutte le macchine");
+        System.out.println("4) Visualizzazione di tutte le macchine in ordine di targa");
         System.out.println("0) Termina il programma;");
     }
 }

@@ -1,6 +1,8 @@
 import javax.management.openmbean.KeyAlreadyExistsException;
 import java.io.*;
+import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class Gestore implements Closeable {
@@ -22,7 +24,9 @@ public class Gestore implements Closeable {
         }
     }
 
-    private void initTable() throws IOException{
+    private void initTable()
+            throws IOException
+    {
         this.raf.seek(0);
         long posPreRead;
         for(int k = 0; this.raf.getFilePointer() < this.raf.length(); k++){
@@ -34,7 +38,8 @@ public class Gestore implements Closeable {
 
     /// CLOSE
     @Override
-    public void close(){
+    public void close()
+    {
         try{
             ObjectOutputStream fout = new ObjectOutputStream(new FileOutputStream("table.dat", false));
             fout.writeObject(this.table);
@@ -47,7 +52,6 @@ public class Gestore implements Closeable {
     }
 
     /// METODI
-
     public void add(char alim, double cil, String marca, String modello,
                     double prezzo, String targa, int yy)
             throws IOException, IllegalArgumentException
@@ -81,7 +85,46 @@ public class Gestore implements Closeable {
         }
     }
 
-    public void stampaTable(){
-        System.out.println(table);
+    public String printAll()
+            throws IOException
+    {
+        StringBuilder s = new StringBuilder();
+        Iterator<Long> it = this.table.elements().asIterator();
+        Macchina car = new Macchina();
+
+        while(it.hasNext()){
+            raf.seek(it.next());
+            car.read(raf);
+            s.append(car);
+            s.append('\n');
+        }
+
+        return s.toString();
+    }
+
+    public String printSort()
+            throws IOException
+    {
+        StringBuilder s = new StringBuilder();
+        String[] keys = tableToSortedArray();
+        long pos;
+        Macchina car = new Macchina();
+        for(String key: keys){
+            pos = table.get(key);
+            raf.seek(pos);
+            car.read(raf);
+            s.append(car);
+            s.append('\n');
+        }
+
+        return s.toString();
+    }
+
+    public String[] tableToSortedArray()
+    {
+        String[] arr = new String[table.size()];
+        this.table.keySet().toArray(arr);
+        Arrays.sort(this.table.keySet().toArray(arr));
+        return arr;
     }
 }

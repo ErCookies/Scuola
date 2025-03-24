@@ -104,7 +104,8 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
     }
 
     @Override
-    public String toString(){
+    public String toString()
+    {
         String s = getTarga() + " ";
         s = s.concat(getAlim() + " ");
         s = s.concat(getCil() + " ");
@@ -115,7 +116,9 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
         return s;
     }
 
-    public void write(RandomAccessFile raf) throws IOException {
+    public void write(RandomAccessFile raf)
+            throws IOException
+    {
         Input.writeString(raf, getTarga(), LENSTR);
         raf.writeChar(getAlim());
         raf.writeDouble(getCil());
@@ -124,7 +127,10 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
         raf.writeDouble(getPrezzo());
         raf.writeInt(getYy());
     }
-    public void read(RandomAccessFile raf) throws IOException {
+
+    public void read(RandomAccessFile raf)
+            throws IOException
+    {
         setTarga(Input.readString(raf, LENSTR));
         setAlim(raf.readChar());
         setCil(raf.readDouble());
@@ -134,7 +140,8 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
         setYy(raf.readInt());
     }
 
-    public String toCSV() {
+    public String toCSV()
+    {
         String s = getTarga() + ";";
         s = s.concat(getAlim() + ";");
         s = s.concat(getCil() + ";");
@@ -144,7 +151,10 @@ public class Macchina implements IOFileRandom, FileCSV, Copyable<Macchina>, Comp
         s = s.concat(getYy() + ";");
         return s;
     }
-    public void fromCSV(String s) throws IllegalArgumentException{
+
+    public void fromCSV(String s)
+            throws IllegalArgumentException
+    {
         StringTokenizer toks = new StringTokenizer(s, ";");
         setTarga(toks.nextToken());
         setAlim(toks.nextToken().charAt(0));
