@@ -1,0 +1,41 @@
+1. Introduzione
+Questa relazione ha l’obiettivo di descrivere la progettazione e lo sviluppo del sito web per il viaggio di istruzione che si terrà dal 1° al 5 aprile 2025. Il sito web sarà sviluppato per fornire informazioni riguardo al viaggio e le attività che verranno svolte.
+Il sito sarà strutturato in diverse sezioni che permetteranno agli utenti di consultare le informazioni riguardanti il viaggio di istruzione: programma dettagliato, informazioni sull’agenzia, trasporto, sistemazioni alberghiere ed altro. Verrà realizzato in HTML5, con integrazioni CSS e JavaScript.
+
+2. Obiettivi del Sito Web
+Fornire informazioni dettagliate riguardo al programma del viaggio, le tappe, le attività e i luoghi da visitare.
+Permettere il download dei programmi del viaggio in formato PDF.
+Offrire una galleria fotografica che mostri i luoghi di interesse.
+Permettere la richiesta di informazioni tramite un modulo di contatto interattivo.
+Target di riferimento
+Studenti delle classi 5AI, 5AT, 5AE, 5AM.
+Genitori e accompagnatori che desiderano ottenere informazioni aggiuntive.
+Altri interessati alla programmazione del viaggio.
+
+3. Caratteristiche Tecniche
+HTML5: Struttura e contenuto del sito.
+CSS: Fogli di stile personalizzati.
+JavaScript: Per le interazioni dinamiche, come la validazione del form e la gestione delle immagini nella galleria fotografica.
+
+4. Struttura e Architettura del Sito
+Home page: Introduzione generale al viaggio, programma e link alle sezioni principali.
+Download programma: Link per il download dei PDF con il programma completo del viaggio.
+Informazioni sull’agenzia: Dettagli su agenzia, bus, hotel, ristoranti e accompagnatori.
+Organizzazione del programma: Descrizione dettagliata delle attività giorno per giorno.
+Musei e Monumenti: Tabelle riepilogative dei luoghi da visitare, suddivisi per giorno.
+Galleria fotografica: Immagini dei luoghi visitati.
+Richiesta informazioni: Modulo di contatto per inviare richieste.
+
+Menu principale con link a tutte le pagine.
+Navigazione chiara e lineare che permette di raggiungere facilmente tutte le sezioni.
+Link interni per navigare rapidamente tra le diverse giornate del programma e le informazioni sui luoghi da visitare.
+
+5. Contenuto
+Ogni pagina sarà progettata per essere chiara, con un titolo in evidenza e una descrizione del contenuto. Le pagine più lunghe, come quella con il programma dettagliato, sono suddivise in sezioni per migliorare la leggibilità.
+
+Intestazione: Logo e menu di navigazione.
+Corpo: Contenuti strutturati in paragrafi e liste.
+Piè di pagina: Informazioni di contatto e link utili.
+Immagini: Utilizzate per fornire una visuale sulle località visitate.
+
+6. Design e User Experience (UX/UI)
