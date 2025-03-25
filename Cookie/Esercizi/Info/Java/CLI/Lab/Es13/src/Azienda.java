@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Azienda {
     private String nome, responsabile, indirizzo, mail, web;
     private MyList<Dipendente> list;
@@ -74,7 +76,10 @@ public class Azienda {
     }
 
     /// COSTRUTTORE
-    public Azienda(String nome, String responsabile, String indirizzo, String mail, String web){
+    public Azienda(String nome, String responsabile,
+                   String indirizzo, String mail, String web)
+            throws IllegalArgumentException, NullPointerException
+    {
         this.setNome(nome);
         this.setResponsabile(responsabile);
         this.setIndirizzo(indirizzo);
@@ -82,4 +87,40 @@ public class Azienda {
         this.setWeb(web);
         this.list = new MyList<>();
     }
+
+    /// METODI
+    public void add(Dipendente d)
+    {
+        //
+    }
+
+    public String printAll()
+    {
+        StringBuilder s = new StringBuilder();
+        //
+        return s.toString();
+    }
+
+    public String printStipLess()
+    {
+        StringBuilder s = new StringBuilder();
+        //
+        return s.toString();
+    }
+
+    public void licenzia(int mat)
+    {
+        //
+    }
+
+    public double totStip()
+    {
+        return 0;
+    }
+
+    public void expOrd(String s)
+    {
+        //
+    }
+
 }

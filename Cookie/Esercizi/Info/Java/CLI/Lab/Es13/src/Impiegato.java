@@ -1,5 +1,7 @@
+import java.util.StringTokenizer;
+
 public class Impiegato extends Dipendente {
-    private final int decurt = 20;
+    private final int DECURT = 20;
     private double salMen;
     private int hhPerm;
 
@@ -25,7 +27,8 @@ public class Impiegato extends Dipendente {
     }
 
     /// COSTRUTTORE
-    public Impiegato(int mat, String name, String sur, double salMen, int hhPerm)
+    public Impiegato(int mat, String name, String sur,
+                     double salMen, int hhPerm)
             throws IllegalArgumentException
     {
         super(mat, name, sur);
@@ -34,17 +37,30 @@ public class Impiegato extends Dipendente {
     }
 
     /// METODI
-    @Override
-    public String stampaDati(){
+    @Override public String stampaDati(){
         String s = this.getMatricola() + " + ";
         s = s.concat(this.getName() + " + ");
         s = s.concat(this.getSur() + " + ");
         s = s.concat(Double.toString(this.getSalMen()));
         return s;
     }
+    @Override public double calcolaPaga(){
+        return (getSalMen() - (getHhPerm() * this.DECURT));
+    }
 
-    @Override
-    public double calcolaPaga(){
-        return (getSalMen() - (getHhPerm() * this.decurt));
+    /// METODI INTERFACES
+    public void fromCSV(String s){
+        StringTokenizer toks = new StringTokenizer(s, ";");
+        setMatricola(Integer.parseInt(toks.nextToken()));
+        setName(toks.nextToken());
+        setSur(toks.nextToken());
+        setSalMen(Double.parseDouble(toks.nextToken()));
+        setHhPerm(Integer.parseInt(toks.nextToken()));
+    }
+    public String toCSV(){
+        StringBuilder s = new StringBuilder(super.toCSV());
+        s.append(getSalMen() + ";");
+        s.append(getHhPerm() + ";");
+        return s.toString();
     }
 }

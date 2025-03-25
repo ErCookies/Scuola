@@ -1,4 +1,4 @@
-public class Dipendente {
+public class Dipendente implements Comparable<Dipendente>, FileCSV{
     private int matricola;
     private String name, sur;
 
@@ -55,5 +55,21 @@ public class Dipendente {
         this.setMatricola(mat);
         this.setName(name);
         this.setSur(sur);
+    }
+
+    /// METODI INTERFACES
+    public int compareTo(Dipendente d) {
+        return this.getSur().compareTo(d.getSur());
+    }
+
+    public void fromCSV(String s){
+        //
+    }
+    public String toCSV(){
+        StringBuilder s = new StringBuilder();
+        s.append(getSur() + ";");
+        s.append(getName() + ";");
+        s.append(getMatricola() + ";");
+        return s.toString();
     }
 }

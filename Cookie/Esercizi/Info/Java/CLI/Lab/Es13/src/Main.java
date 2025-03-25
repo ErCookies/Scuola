@@ -36,6 +36,112 @@
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        int sc;
+        Azienda azienda = initAzienda();
+
+        do{
+            menu();
+            sc = Input.lgInt(0, 6, "Inserire funzione interessata: ");
+
+            switch(sc){
+                case 1:{
+                    addDip(azienda);
+                    break;
+                }
+                case 2:{
+                    System.out.println(azienda.printAll());
+                    break;
+                }
+                case 3:{
+                    System.out.println(azienda.printStipLess());
+                    break;
+                }
+                case 4:{
+                    azienda.licenzia(Input.lgInt(0, Integer.MAX_VALUE, "Inserire matricola: "));
+                    break;
+                }
+                case 5:{
+                    System.out.println("Totale stipendi da versare: " + azienda.totStip());
+                    break;
+                }
+                case 6:{
+                    azienda.expOrd(Input.lgStr("Inserire nome file: "));
+                    break;
+                }
+                case 0:{break;}
+            }
+        }while(sc != 0);
+    }
+
+    public static Azienda initAzienda()
+    {
+        String nome, resp, ind, mail, web;
+        boolean val = false;
+        Azienda a = null;
+        do{
+            try{
+                nome = Input.lgStr("Inserire il nome: ");
+                resp = Input.lgStr("Inserire il responsabile: ");
+                ind = Input.lgStr("Inserire la via: ");
+                mail = Input.lgStr("Inserire l'indirizzo e-mail: ");
+                web = Input.lgStr("Inserire l'indirizzo web: ");
+                a = new Azienda(nome, resp, ind, mail, web);
+                val = true;
+            }
+            catch(NullPointerException | IllegalArgumentException e){
+                System.out.println(e.getMessage());
+                System.out.println("Reinserire i dati");
+            }
+        }while(!val);
+
+        return a;
+    }
+
+    public static void addDip(Azienda az)
+    {
+        boolean val = false;
+        char type;
+        int mat, hhPerm;
+        String name, sur;
+        Dipendente d = null;
+        do{
+            try{
+                type = Input.lgChar("Inserire tipo dipendente (i/o): ");
+                while(type != 'i' && type != 'o'){
+                    System.out.println("Errore");
+                    type = Input.lgChar("Inserire tipo dipendente (i/o): ");
+                }
+                // ins dati dip generico
+                mat = Input.lgInt(0, Integer.MAX_VALUE, "Inserire matricola: ");
+                name = Input.lgStr("Inserire nome: ");
+                sur = Input.lgStr("Inserire cognome: ");
+                hhPerm = Input.lgInt(0, Integer.MAX_VALUE, "Inserire ore di permesso: ");
+
+                if(type == 'i'){
+                    // impiegato
+                    double salMen = Input.lgDbl(0, Double.MAX_VALUE, "Inserire salario mensile: ");
+                }
+                else{
+                    // operaio (pagaHH, hhXtra)
+                }
+                az.add(d);
+                val = true;
+            }
+            catch(NullPointerException | IllegalArgumentException e){
+                System.out.println(e.getMessage());
+                System.out.println("Reinserire i dati");
+            }
+        }while(!val);
+    }
+
+    public static void menu()
+    {
+        System.out.println("1) Inserimento di un nuovo dipendente;");
+        System.out.println("2) Stampa dell’elenco dei dipendenti dell’azienda;");
+        System.out.println("3) Stampa dipendenti con stipendio mensile < 1350€;");
+        System.out.println("4) Licenziamento di un dipendente, data la matricola;");
+        System.out.println("5) Stampa totale stipendi da versare;");
+        System.out.println("6) Esportazione su file CSV di tutti i dipendenti di un tipo indicato ordinati per cognome;");
+        System.out.println("0) Termina il programma;");
     }
 }

@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 public class Operaio extends Dipendente {
     private final double aum = 1.3;
     private final int hhBase = 160;
@@ -36,7 +38,8 @@ public class Operaio extends Dipendente {
     }
 
     /// COSTRUTTORE
-    public Operaio(int mat, String name, String sur, double pagaHH, int hhXtra, int hhPerm)
+    public Operaio(int mat, String name, String sur,
+                   double pagaHH, int hhXtra, int hhPerm)
             throws IllegalArgumentException
     {
         super(mat, name, sur);
@@ -67,5 +70,23 @@ public class Operaio extends Dipendente {
             stip = (hhBase * getPagaHH()) + (xtra * getPagaHH() * aum);
         }
         return stip;
+    }
+
+    /// METODI INTERFACES
+    public void fromCSV(String s){
+        StringTokenizer toks = new StringTokenizer(s, ";");
+        setMatricola(Integer.parseInt(toks.nextToken()));
+        setName(toks.nextToken());
+        setSur(toks.nextToken());
+        setPagaHH(Double.parseDouble(toks.nextToken()));
+        setHhXtra(Integer.parseInt(toks.nextToken()));
+        setHhPerm(Integer.parseInt(toks.nextToken()));
+    }
+    public String toCSV(){
+        StringBuilder s = new StringBuilder(super.toCSV());
+        s.append(getPagaHH() + ";");
+        s.append(getHhXtra() + ";");
+        s.append(getHhPerm() + ";");
+        return s.toString();
     }
 }
