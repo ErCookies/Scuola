@@ -49,8 +49,23 @@ public class MyList <E extends Comparable<E> & FileCSV>{
                     while(aus != null && !tro){
                         if (e.compareTo(aus.getDati()) < 0)
                             tro = true;
-                        else
+                        else{
+                            prec = aus;
                             aus = aus.getNext();
+                        }
+                    }
+                    if(prec == null){
+                        Nodo<E> exFirst = first;
+                        first = toAdd;
+                        toAdd.setNext(exFirst);
+                    }
+                    else if(aus == null){
+                        prec.setNext(toAdd);
+                        toAdd.setNext(null);
+                    }
+                    else{
+                        toAdd.setNext(aus);
+                        prec.setNext(toAdd);
                     }
                     aus.setNext(toAdd);
                 }

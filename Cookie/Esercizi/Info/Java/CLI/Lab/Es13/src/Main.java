@@ -34,6 +34,8 @@
     Descrivere, inoltre, la struttura del file csv.
 */
 
+import java.util.NoSuchElementException;
+
 public class Main {
     public static void main(String[] args) {
         int sc;
@@ -53,7 +55,12 @@ public class Main {
                     break;
                 }
                 case 3:{
-                    System.out.println(azienda.printStipLess());
+                    try{
+                        System.out.println(azienda.printStipLess());
+                    }
+                    catch(NoSuchElementException e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 }
                 case 4:{
@@ -103,7 +110,7 @@ public class Main {
         char type;
         int mat, hhPerm;
         String name, sur;
-        Dipendente d = null;
+        Dipendente d;
         do{
             try{
                 type = Input.lgChar("Inserire tipo dipendente (i/o): ");
@@ -111,7 +118,7 @@ public class Main {
                     System.out.println("Errore");
                     type = Input.lgChar("Inserire tipo dipendente (i/o): ");
                 }
-                // ins dati dip generico
+
                 mat = Input.lgInt(0, Integer.MAX_VALUE, "Inserire matricola: ");
                 name = Input.lgStr("Inserire nome: ");
                 sur = Input.lgStr("Inserire cognome: ");
@@ -120,9 +127,13 @@ public class Main {
                 if(type == 'i'){
                     // impiegato
                     double salMen = Input.lgDbl(0, Double.MAX_VALUE, "Inserire salario mensile: ");
+                    d = new Impiegato(mat, name, sur, salMen, hhPerm);
                 }
                 else{
                     // operaio (pagaHH, hhXtra)
+                    int hhXtra = Input.lgInt(0, Integer.MAX_VALUE, "Inserire ore di straordinario: ");
+                    double pagaHH = Input.lgDbl(0, Double.MAX_VALUE, "Inserire paga oraria: ");
+                    d = new Operaio(mat, name, sur, pagaHH, hhXtra, hhPerm);
                 }
                 az.add(d);
                 val = true;

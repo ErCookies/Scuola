@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 public class Azienda {
     private String nome, responsabile, indirizzo, mail, web;
@@ -104,18 +105,36 @@ public class Azienda {
     public String printStipLess()
     {
         StringBuilder s = new StringBuilder();
-        //
+        for(int k = 0; k < list.size(); k++){
+            Dipendente d = list.get(k);
+            if(d.calcolaPaga() <= 1350)
+                s.append(d.stampaDati());
+        }
+        if(s.isEmpty())
+            throw new NoSuchElementException("Nessun elemento trovato");
         return s.toString();
     }
 
     public void licenzia(int mat)
     {
-        //
+        boolean tro = false;
+        for(int k = 0; k < list.size() && !tro; k++){
+            Dipendente d = list.get(k);
+            if(d.getMatricola() == mat){
+                tro = true;
+                list.remove(k);
+            }
+        }
     }
 
     public double totStip()
     {
-        return 0;
+        double tot = 0;
+        for(int k = 0; k < list.size(); k++){
+            Dipendente d = list.get(k);
+            tot += d.calcolaPaga();
+        }
+        return tot;
     }
 
     public void expOrd(String s)
