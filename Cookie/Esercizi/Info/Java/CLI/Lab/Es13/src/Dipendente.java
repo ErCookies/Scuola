@@ -1,6 +1,6 @@
 public class Dipendente implements Comparable<Dipendente>, FileCSV{
-    private int matricola;
-    private String name, sur;
+    protected int matricola;
+    protected String name, sur;
 
     /// GETTER - SETTER
     public int getMatricola(){

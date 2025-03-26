@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 public class Azienda {
     private String nome, responsabile, indirizzo, mail, web;
-    private MyList<Dipendente> list;
+    private final MyList<Dipendente> list;
 
     /// GETTER - SETTER
     public String getNome() {
@@ -155,6 +155,7 @@ public class Azienda {
         PrintWriter fout;
         StringBuilder s = new StringBuilder();
 
+        //     val  = boolCond |   ramo true   |  ramo false
         String type = (t == 'i' ? "Impiegato" : "Operaio");
 
         for(int k = 0; k < list.size(); k++){
@@ -166,7 +167,7 @@ public class Azienda {
         }
         if(!s.isEmpty()){
             fout = new PrintWriter(new FileWriter(filename));
-            fout.print(s.toString());
+            fout.print(s);
             fout.close();
         }
         else

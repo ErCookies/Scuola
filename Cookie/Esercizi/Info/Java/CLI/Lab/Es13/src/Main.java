@@ -7,7 +7,6 @@
         - Matricola (Intero / UNIVOCO)
         - Nome
         - Cognome
-        - Data di nascita
     Gli impiegati sono caratterizzati da un salario mensile e dal numero di ore di permesso
     (per ogni ora di permesso vengono decurtati 20€ dallo stipendio).
     Gli operai, invece, sono caratterizzati da una paga oraria, un numero di ore di straordinario
@@ -72,6 +71,17 @@ public class Main {
                     System.out.println("Totale stipendi da versare: " + azienda.totStip());
                     break;
                 }
+
+                /*
+                DESCRIZIONE FILE CSV:
+                    Il file CSV conterra' un elemento per riga seguendo la seguente struttura:
+                    Per TUTTI i dipendenti inizia con "cognome;nome;matricola;" e continua con:
+                        SE il dipendente e' un operaio
+                        ALLORA
+                            "pagaOraria;oreStraordinario;orePermesso"
+                        ALTRIMENTI
+                            "salarioMensile;orePermesso"
+                */
                 case 6:{
                     char type = Input.lgChar("Inserire tipo dipendente (i/o): ");
                     while(type != 'i' && type != 'o'){
@@ -149,6 +159,7 @@ public class Main {
                     double pagaHH = Input.lgDbl(0, Double.MAX_VALUE, "Inserire paga oraria: ");
                     d = new Operaio(mat, name, sur, pagaHH, hhXtra, hhPerm);
                 }
+
                 az.add(d);
                 val = true;
             }

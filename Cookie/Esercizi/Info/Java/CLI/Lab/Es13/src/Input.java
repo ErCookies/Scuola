@@ -77,7 +77,7 @@ public class Input {
         raf.writeChars(buf.toString());
     }
     public static String readString(RandomAccessFile raf, int len) throws IOException{
-        char str[] = new char[len];
+        char[] str = new char[len];
         for(int k = 0; k < len; k++)
             str[k] = raf.readChar();
 
