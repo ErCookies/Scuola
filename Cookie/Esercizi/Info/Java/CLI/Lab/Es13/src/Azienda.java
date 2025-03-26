@@ -1,4 +1,6 @@
-import java.util.Arrays;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.NoSuchElementException;
 
 public class Azienda {
@@ -146,9 +148,29 @@ public class Azienda {
         return tot;
     }
 
-    public void expOrd(String s)
+    public void expOrd(String filename, char t)
+            throws IOException
     {
-        //
+        Dipendente d;
+        PrintWriter fout;
+        StringBuilder s = new StringBuilder();
+
+        String type = (t == 'i' ? "Impiegato" : "Operaio");
+
+        for(int k = 0; k < list.size(); k++){
+            d = list.get(k);
+            if(d.getClass().toString().contains(type)){
+                s.append(d.toCSV());
+                s.append('\n');
+            }
+        }
+        if(!s.isEmpty()){
+            fout = new PrintWriter(new FileWriter(filename));
+            fout.print(s.toString());
+            fout.close();
+        }
+        else
+            throw new NoSuchElementException("Nessun dipendente di tale tipo trovato");
     }
 
 }

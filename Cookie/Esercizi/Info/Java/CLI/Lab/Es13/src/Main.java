@@ -34,6 +34,7 @@
     Descrivere, inoltre, la struttura del file csv.
 */
 
+import java.io.IOException;
 import java.util.NoSuchElementException;
 
 public class Main {
@@ -72,7 +73,20 @@ public class Main {
                     break;
                 }
                 case 6:{
-                    azienda.expOrd(Input.lgStr("Inserire nome file: "));
+                    char type = Input.lgChar("Inserire tipo dipendente (i/o): ");
+                    while(type != 'i' && type != 'o'){
+                        System.out.println("Errore");
+                        type = Input.lgChar("Inserire tipo dipendente (i/o): ");
+                    }
+                    try{
+                        azienda.expOrd(Input.lgStr("Inserire nome file: "), type);
+                    }
+                    catch(IOException e){
+                        System.out.println("Errore nell'esportazione");
+                    }
+                    catch(NoSuchElementException e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 }
                 case 0:{break;}

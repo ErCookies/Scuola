@@ -75,9 +75,9 @@ public class Operaio extends Dipendente {
     /// METODI INTERFACES
     public void fromCSV(String s){
         StringTokenizer toks = new StringTokenizer(s, ";");
-        setMatricola(Integer.parseInt(toks.nextToken()));
-        setName(toks.nextToken());
         setSur(toks.nextToken());
+        setName(toks.nextToken());
+        setMatricola(Integer.parseInt(toks.nextToken()));
         setPagaHH(Double.parseDouble(toks.nextToken()));
         setHhXtra(Integer.parseInt(toks.nextToken()));
         setHhPerm(Integer.parseInt(toks.nextToken()));
