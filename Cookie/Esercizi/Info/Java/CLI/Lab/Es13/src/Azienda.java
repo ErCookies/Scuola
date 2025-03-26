@@ -92,13 +92,20 @@ public class Azienda {
     /// METODI
     public void add(Dipendente d)
     {
-        //
+        if(d != null)
+            list.add(d);
+        else
+            throw new NullPointerException("Null pointer non valido");
     }
 
     public String printAll()
     {
         StringBuilder s = new StringBuilder();
-        //
+        for(int k = 0; k < list.size(); k++){
+            Dipendente d = list.get(k);
+            s.append(d.stampaDati());
+            s.append('\n');
+        }
         return s.toString();
     }
 
@@ -107,8 +114,10 @@ public class Azienda {
         StringBuilder s = new StringBuilder();
         for(int k = 0; k < list.size(); k++){
             Dipendente d = list.get(k);
-            if(d.calcolaPaga() <= 1350)
+            if(d.calcolaPaga() <= 1350){
                 s.append(d.stampaDati());
+                s.append('\n');
+            }
         }
         if(s.isEmpty())
             throw new NoSuchElementException("Nessun elemento trovato");

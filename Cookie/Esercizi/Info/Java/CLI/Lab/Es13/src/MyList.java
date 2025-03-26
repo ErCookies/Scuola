@@ -32,46 +32,38 @@ public class MyList <E extends Comparable<E> & FileCSV>{
     }
 
     /// METODI
-    public boolean add(E e) // Aggiunta ordinata
+    public void add(E e) // Aggiunta ordinata
     {
         if(e != null){
-            boolean val;
-            if(contains(e))
-                val = false;
+            Nodo<E> toAdd = new Nodo<>(e);
+            if(getFirstNode() == null)
+                this.first = toAdd;
             else{
-                Nodo<E> toAdd = new Nodo<>(e);
-                if(getFirstNode() == null || e.compareTo(getFirstNode().getDati()) < 0)
-                    this.first = toAdd;
-                else{
-                    Nodo<E> aus = getFirstNode();
-                    Nodo<E> prec = null;
-                    boolean tro = false;
-                    while(aus != null && !tro){
-                        if (e.compareTo(aus.getDati()) < 0)
-                            tro = true;
-                        else{
-                            prec = aus;
-                            aus = aus.getNext();
-                        }
-                    }
-                    if(prec == null){
-                        Nodo<E> exFirst = first;
-                        first = toAdd;
-                        toAdd.setNext(exFirst);
-                    }
-                    else if(aus == null){
-                        prec.setNext(toAdd);
-                        toAdd.setNext(null);
-                    }
+                Nodo<E> aus = getFirstNode();
+                Nodo<E> prec = null;
+                boolean tro = false;
+                while(aus != null && !tro){
+                    if (e.compareTo(aus.getDati()) < 0)
+                        tro = true;
                     else{
-                        toAdd.setNext(aus);
-                        prec.setNext(toAdd);
+                        prec = aus;
+                        aus = aus.getNext();
                     }
-                    aus.setNext(toAdd);
                 }
-                val = true;
+                if(prec == null){
+                    Nodo<E> exFirst = first;
+                    first = toAdd;
+                    toAdd.setNext(exFirst);
+                }
+                else if(aus == null){
+                    prec.setNext(toAdd);
+                    toAdd.setNext(null);
+                }
+                else{
+                    toAdd.setNext(aus);
+                    prec.setNext(toAdd);
+                }
             }
-            return val;
         }
         else
             throw new NullPointerException("Oggetto null non consentito");
