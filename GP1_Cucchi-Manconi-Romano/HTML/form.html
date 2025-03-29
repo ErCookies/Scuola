@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <!-- GP1 CUCCHI MANCONI ROMANO 4BI form.html -->
+        <title>
+            Modulo Reclami
+        </title>
+		<link rel="stylesheet" type="text/css" href="../CSS/style.css">
+        <script src="../JS/script.js"></script>
+    </head>
+
+    <body class="bodyForm">
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="index.html">HOME PAGE</a>
+					</li>
+					<li>
+						<a href="../1-24_25_Trieste_Gorizia_Lubiana.pdf" target="_blank">
+							DOWNLOAD PROGRAMMA
+						</a>
+					</li>
+					<li>
+						<a href="presentazioni.html">PRESENTAZIONI</a>
+					</li>
+					<li>
+						<a href="1_giorno.html">ORGANIZZAZIONE</a>
+					</li>
+					<li>
+						<a href="tabelle.html">TABELLE DATI MUSEI</a>
+					</li>
+					<li>
+						<a href="galleria.html">GALLERIA FOTO</a>
+					</li>
+					<li>
+						<span>
+							&rarr; RICHIESTA INFORMAZIONI &larr;
+						</span>
+					</li>
+				</ul>
+			</nav>	
+		</header>
+        <div class="titoli">
+            <h1> Servono altre informazioni? </h1>
+            <h3> Compila il modulo sottostante per ricevere informazioni aggiuntive. </h3>
+        </div>
+        <div class="formContainer">
+            <form id="formettino" onsubmit="return formOnSubmit(this);" method="post">
+                <label for="name"><img src="../IMGs/user.png" width="16px" height="auto">&nbsp;&nbsp;&nbsp;NOME:</label> <input id="name" type="text" name="name" placeholder="Nome...">
+                <br>
+                <label for="sur"><img src="../IMGs/user.png" width="16px" height="auto">&nbsp;&nbsp;&nbsp;COGNOME:</label> <input id="sur" type="text" name="sur" placeholder="Cognome...">
+                <br>
+                <label for="mail"><img src="../IMGs/mail.png" width="16px" height="auto">&nbsp;&nbsp;&nbsp;E-MAIL:</label> <input id="mail" type="email" name="mail" placeholder="tizio.caio11@esempio.com">
+                <br>
+                <label for="oggetto"><img src="../IMGs/qMark.png" width="16px" height="auto">&nbsp;&nbsp;&nbsp;OGGETTO:</label>
+                <select id="oggetto" name="oggetto">
+                    <option value="---"> --- </option>
+                    <option value="opt1"> 1 </option>
+                    <option value="opt2"> 2 </option>
+                    <option value="altro"> Altro </option>
+                </select>
+                <br>
+                <label for="mex"><img src="../IMGs/chatBubble.png" width="16px" height="auto">&nbsp;&nbsp;&nbsp;MESSAGGIO:</label>
+                <textarea id="mex" name="mex" rows="5" cols="25" placeholder="Messaggio..."></textarea>
+                <br>
+                <!-- SELEZIONE PER IL DESTINATARIO -->
+                <button type="submit"> &rarr; INVIA &larr; </button>
+            </form>
+        </div>
+    </body>
+
+	<footer>
+		<hr>
+		<p> 
+			Copyright &copy; 2025 <strong> sito sul viaggio di istruzione materia: sistemi reti realizzato da cucchi manconi romano della classe 4bi </strong><br>
+			Privacy Policy - Cookie policy - Preferenze Cookie Policy
+		</p>
+	</footer>
+</html>

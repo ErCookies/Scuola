@@ -18,13 +18,13 @@ CSS: Fogli di stile personalizzati.
 JavaScript: Per le interazioni dinamiche, come la validazione del form e la gestione delle immagini nella galleria fotografica.
 
 4. Struttura e Architettura del Sito
-Home page: Introduzione generale al viaggio, programma e link alle sezioni principali.
-Download programma: Link per il download dei PDF con il programma completo del viaggio.
-Informazioni sull’agenzia: Dettagli su agenzia, bus, hotel, ristoranti e accompagnatori.
-Organizzazione del programma: Descrizione dettagliata delle attività giorno per giorno.
-Musei e Monumenti: Tabelle riepilogative dei luoghi da visitare, suddivisi per giorno.
-Galleria fotografica: Immagini dei luoghi visitati.
-Richiesta informazioni: Modulo di contatto per inviare richieste.
+1 - Home page: Introduzione generale al viaggio, programma e link alle sezioni principali.
+2 - Download programma: Link per il download dei PDF con il programma completo del viaggio.
+3 - Informazioni sull’agenzia: Dettagli su agenzia, bus, hotel, ristoranti e accompagnatori.
+4 - Organizzazione del programma: Descrizione dettagliata delle attività giorno per giorno.
+5 - Musei e Monumenti: Tabelle riepilogative dei luoghi da visitare, suddivisi per giorno.
+6 - Galleria fotografica: Immagini dei luoghi visitati.
+7 - Richiesta informazioni: Modulo di contatto per inviare richieste.
 
 Menu principale con link a tutte le pagine.
 Navigazione chiara e lineare che permette di raggiungere facilmente tutte le sezioni.
@@ -39,3 +39,4 @@ Piè di pagina: Informazioni di contatto e link utili.
 Immagini: Utilizzate per fornire una visuale sulle località visitate.
 
 6. Design e User Experience (UX/UI)
+Colori istituzionali della scuola
