@@ -15,28 +15,32 @@ Altri interessati alla programmazione del viaggio.
 3. Caratteristiche Tecniche
 HTML5: Struttura e contenuto del sito.
 CSS: Fogli di stile personalizzati.
-JavaScript: Per le interazioni dinamiche, come la validazione del form e la gestione delle immagini nella galleria fotografica.
+JavaScript: Per la validazione del form.
 
 4. Struttura e Architettura del Sito
 1 - Home page: Introduzione generale al viaggio, programma e link alle sezioni principali.
 2 - Download programma: Link per il download dei PDF con il programma completo del viaggio.
-3 - Informazioni sull’agenzia: Dettagli su agenzia, bus, hotel, ristoranti e accompagnatori.
+3 - Informazioni sull’agenzia: Dettagli e contatti di agenzia, bus, hotel, ristoranti e accompagnatori.
 4 - Organizzazione del programma: Descrizione dettagliata delle attività giorno per giorno.
 5 - Musei e Monumenti: Tabelle riepilogative dei luoghi da visitare, suddivisi per giorno.
 6 - Galleria fotografica: Immagini dei luoghi visitati.
 7 - Richiesta informazioni: Modulo di contatto per inviare richieste.
 
-Menu principale con link a tutte le pagine.
-Navigazione chiara e lineare che permette di raggiungere facilmente tutte le sezioni.
+Sara' presente una nav bar.
+La navigazione sara' chiara e lineare che permette di raggiungere facilmente tutte le sezioni.
 Link interni per navigare rapidamente tra le diverse giornate del programma e le informazioni sui luoghi da visitare.
 
 5. Contenuto
 Ogni pagina sarà progettata per essere chiara, con un titolo in evidenza e una descrizione del contenuto. Le pagine più lunghe, come quella con il programma dettagliato, sono suddivise in sezioni per migliorare la leggibilità.
 
-Intestazione: Logo e menu di navigazione.
+Intestazione: menu di navigazione (nav bar).
 Corpo: Contenuti strutturati in paragrafi e liste.
-Piè di pagina: Informazioni di contatto e link utili.
+Piè di pagina: Informazioni sui produttori.
 Immagini: Utilizzate per fornire una visuale sulle località visitate.
 
 6. Design e User Experience (UX/UI)
-Colori istituzionali della scuola
+Design semplice ed efficace, colori scuri.
+
+7. Conclusione e prossimi passi
+6 pagine + download, design non complesso, nav bar per la navigazione e colori scuri.
+Non verra' aggiornato in futuro, salvo cambio di programma.
