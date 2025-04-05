@@ -5,11 +5,13 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/// Classe Controller del programma
 public class Gestore implements Closeable {
     private Hashtable<String, Long> table;
     private final RandomAccessFile raf;
 
-    /// COSTRUTTORE
+    /// Costruttore default
+    /// @throws IOException Errore durante le operazioni di IO
     public Gestore()
             throws IOException
     {
@@ -36,7 +38,7 @@ public class Gestore implements Closeable {
         }
     }
 
-    /// CLOSE
+    /// Salva i dati su file e chiude quelli aperti
     @Override
     public void close()
     {
@@ -51,7 +53,17 @@ public class Gestore implements Closeable {
         }
     }
 
-    /// METODI
+    /// Metodo di aggiunta di una macchina
+    /// @param alim a
+    /// @param cil a
+    /// @param marca a
+    /// @param modello a
+    /// @param prezzo a
+    /// @param targa a
+    /// @param yy a
+    /// @throws IOException Errore durante le operazioni di IO
+    /// @throws IllegalArgumentException /
+    /// @throws KeyAlreadyExistsException /
     public void add(char alim, double cil, String marca, String modello,
                     double prezzo, String targa, int yy)
             throws IOException, IllegalArgumentException
@@ -67,6 +79,12 @@ public class Gestore implements Closeable {
             throw new KeyAlreadyExistsException("Targa gia' registrata");
     }
 
+    /// Metodo di ricerca di una macchina data la targa
+    /// @param targa /
+    /// @throws IOException Errore durante le operazioni di IO
+    /// @throws IllegalStateException /
+    /// @throws NoSuchElementException /
+    /// @return /
     public Macchina search(String targa)
             throws IOException
     {
@@ -85,6 +103,9 @@ public class Gestore implements Closeable {
         }
     }
 
+    /// Metodo che ritorna una stringa contenente ogni macchina senza ordinamento
+    /// @throws IOException Errore durante le operazioni di IO
+    /// @return /
     public String printAll()
             throws IOException
     {
@@ -102,11 +123,14 @@ public class Gestore implements Closeable {
         return s.toString();
     }
 
+    /// Metodo che ritorna una stringa contenente ogni macchina ORDINATE per targa
+    /// @throws IOException Errore durante le operazioni di IO
+    /// @return /
     public String printSort()
             throws IOException
     {
         StringBuilder s = new StringBuilder();
-        String[] keys = tableToSortedArray();
+        String[] keys = tableKeysToSortedArray();
         long pos;
         Macchina car = new Macchina();
         for(String key: keys){
@@ -120,7 +144,7 @@ public class Gestore implements Closeable {
         return s.toString();
     }
 
-    public String[] tableToSortedArray()
+    private String[] tableKeysToSortedArray()
     {
         String[] arr = new String[table.size()];
         this.table.keySet().toArray(arr);

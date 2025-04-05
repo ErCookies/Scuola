@@ -1,7 +1,9 @@
+import javax.management.openmbean.KeyAlreadyExistsException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 
+/// Gestisce l'intrerazione con l'utente
 public class Main {
     public static void main(String[] args) {
         Gestore ges;
@@ -70,8 +72,13 @@ public class Main {
         }
     }
 
+    /// Metodo di aggiunta di una macchina
+    /// @param ges Gestore su cui basare l'aggiunta
+    /// @throws IOException Errore durante le operazioni di IO
+    /// @throws IllegalArgumentException Se uno dei dati letti non e' valido
+    /// @throws KeyAlreadyExistsException Se la targa e' gia' registrata
     public static void add(Gestore ges)
-            throws IOException, IllegalArgumentException
+            throws IOException, IllegalArgumentException, KeyAlreadyExistsException
     {
         char alim = Input.lgChar("Inserire alimentazione: ");
         double cil = Input.lgDbl(0, Double.MAX_VALUE, "Inserire cilindrata: ");
@@ -83,6 +90,7 @@ public class Main {
         ges.add(alim, cil, marca, modello, prezzo, targa, yy);
     }
 
+    /// Stampa il menu di selezione
     public static void menu()
     {
         System.out.println("1) Inserire una nuova auto;");

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Copyable"},{"p":"<Unnamed>","l":"FileCSV"},{"p":"<Unnamed>","l":"Gestore"},{"p":"<Unnamed>","l":"Input"},{"p":"<Unnamed>","l":"IOFileRandom"},{"p":"<Unnamed>","l":"Macchina"},{"p":"<Unnamed>","l":"Main"}];updateSearchResults();
