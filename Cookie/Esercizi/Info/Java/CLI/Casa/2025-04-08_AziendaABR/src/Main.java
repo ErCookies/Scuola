@@ -13,9 +13,71 @@
     L’indice dovrà essere salvato su disco al termine del programma e ricaricato in ram all’inizio del programma.
 */
 
+import javax.management.openmbean.KeyAlreadyExistsException;
+import java.io.IOException;
+import java.util.NoSuchElementException;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        int sc;
+        try{
+            Gestore ges = new Gestore();
+            do{
+                menu();
+                sc = Input.lgInt(0, 2, "Selezionare una funzione: ");
+                switch (sc){
+                    case 1:{
+                        try{
+                            ges.add(
+                                    Input.lgInt(0, Integer.MAX_VALUE, "Inserire codice prodotto: "),
+                                    Input.lgStr("Inserire il nome del prodotto: "),
+                                    Input.lgDbl(0, Double.MAX_VALUE, "Inserire il prezzo del prodotto: ")
+                            );
+                        }
+                        catch (KeyAlreadyExistsException e){
+                            System.out.println("Chiave già esistente");
+                        }
+                        catch (IllegalArgumentException e){
+                            System.out.println(e.getMessage());
+                        }
+                        catch (IOException e){
+                            System.out.println("Errore lettura file");
+                        }
+                        break;
+                    }
+                    case 2:{
+                        try{
+                            Prodotto p = ges.search(
+                                    Input.lgInt(0, Integer.MAX_VALUE, "Inserire il codice del prodotto: ")
+                            );
+                            System.out.println(p);
+                        }
+                        catch (NoSuchElementException e){
+                            System.out.println("Prodotto non trovato");
+                        }
+                        catch (IllegalStateException e){
+                            System.out.println("Nessun elemento inserito");
+                        }
+                        catch (IOException e){
+                            System.out.println("Errore lettura file");
+                        }
+                        break;
+                    }
+                    case 0:{
+                        try{
+                            ges.close();
+                        }
+                        catch (IOException e){
+                            System.out.println("Errore salvataggio file");
+                        }
+                        break;
+                    }
+                }
+            }while(sc != 0);
+        }
+        catch (IOException e) {
+            System.out.println("Errore apertura file");
+        }
     }
 
     public static void menu(){
